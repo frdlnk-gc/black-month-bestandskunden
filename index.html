@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#173B2B">
+<title>Black Month für Bestandskunden · GreenCareers</title>
+<link rel="icon" href="img/marke-signet.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --gc-action:#126440; --gc-action-hover:#0F5636;
+  --gc-accent:#C6F17B; --gc-accent-hover:#D6F6A1;
+  --gc-ink:#142D23; --gc-ink-soft:#244126; --gc-ink-muted:#56654D;
+  --gc-dark:#173B2B; --gc-dark-deep:#142D1D; --gc-dark-card:#1F4A35; --gc-on-dark:#EAF5DC;
+  --gc-canvas:#F6F8F4; --gc-canvas-2:#EDF4E3; --gc-canvas-3:#DFEDE2; --gc-surface:#FFFFFF;
+  --gc-line:#DCE3D3; --gc-line-ui:#5F7566; --gc-star:#F4A524;
+  --r-btn:11px; --r-chip:8px; --r-card:18px; --r-stage:22px;
+  --sh-card:0 30px 70px rgb(20 45 29/.08); --sh-card-hover:0 30px 80px rgb(20 45 29/.16);
+  --sh-btn:0 18px 50px rgb(18 100 64/.22); --sh-float:0 18px 44px rgb(20 45 29/.14);
+  --ease:cubic-bezier(0.16,1,0.3,1);
+  --pad:clamp(16px,4vw,48px);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;overflow-x:hidden}
+body{font-family:Poppins,Arial,sans-serif;background:var(--gc-canvas);color:var(--gc-ink-soft);font-size:16px;line-height:1.7;overflow-x:hidden;padding-bottom:84px}
+@media(min-width:900px){body{padding-bottom:26px}}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-weight:600;color:var(--gc-ink);letter-spacing:-0.055em}
+h1{font-size:clamp(40px,5.2vw,78px);line-height:1.06}
+h2{font-size:clamp(32px,4vw,49px);line-height:1.13}
+h3{font-size:clamp(21px,2vw,23px);letter-spacing:-0.035em;line-height:1.25}
+.akz{color:var(--gc-action)} .dark .akz{color:var(--gc-accent)}
+.over{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--gc-action)}
+.over::before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.dark .over{color:var(--gc-accent)}
+.wrap{max-width:1320px;margin:0 auto;padding:0 var(--pad)}
+.inner{max-width:1120px;margin:0 auto}
+section{padding:clamp(64px,8vw,120px) 0}
+.lead{font-size:clamp(17px,1.6vw,19px);line-height:1.6}
+.center{text-align:center}
+.sec-head{max-width:760px;margin:0 auto clamp(32px,4vw,56px);text-align:center}
+.sec-head h2{margin:14px 0 14px}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:54px;padding:0 26px;border-radius:var(--r-btn);font:600 16px/1.2 Poppins,Arial,sans-serif;text-decoration:none;border:0;cursor:pointer;transition:transform .3s var(--ease),box-shadow .3s var(--ease),background .2s}
+.btn svg{width:18px;height:18px;transition:transform .3s var(--ease);flex:none}
+.btn:hover{transform:translateY(-1px)} .btn:hover svg{transform:translateX(4px)}
+.btn-main{background:var(--gc-action);color:#fff;box-shadow:var(--sh-btn)} .btn-main:hover{background:var(--gc-action-hover)}
+.btn-accent{background:var(--gc-accent);color:var(--gc-dark-deep)} .btn-accent:hover{background:var(--gc-accent-hover)}
+.btn-ghost-dark{background:transparent;color:var(--gc-on-dark);border:1px solid rgb(234 245 220/.45)}
+.btn-block{width:100%}
+.btn-lg{min-height:60px;font-size:17px;padding:0 30px}
+
+/* Draft band */
+.draft{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#8A1C12;color:#fff;font:600 11px/1 Poppins,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;text-align:center;padding:7px 10px;pointer-events:none}
+
+/* Header */
+.top{position:sticky;top:0;z-index:40;background:#fff;border-bottom:1px solid var(--gc-line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;height:72px}
+.top img{height:46px;width:auto}
+.top .btn{min-height:44px;padding:0 16px;font-size:14px}
+.top__count{display:none;font-size:14px;font-weight:600;color:var(--gc-ink);margin-right:16px}
+.top__count b{color:var(--gc-action);font-variant-numeric:tabular-nums}
+@media(min-width:900px){.top .wrap{height:86px}.top img{height:56px}.top__count{display:inline}.top .btn{min-height:48px;padding:0 22px;font-size:15px}}
+
+/* Hero */
+.hero{padding:16px 0 0}
+.stage{position:relative;border-radius:var(--r-stage);overflow:hidden;background:var(--gc-dark);color:var(--gc-on-dark);isolation:isolate}
+.stage__bg{position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgb(23 59 43/.80),rgb(20 45 29/.94) 62%),url(img/hero.jpg) center/cover}
+@media(min-width:900px){.stage__bg{background:linear-gradient(90deg,rgb(20 45 29/.96) 0%,rgb(23 59 43/.88) 46%,rgb(23 59 43/.35) 100%),url(img/hero.jpg) center/cover}}
+.stage__in{padding:26px 20px 24px;display:grid;gap:22px}
+.hero__ctas{display:none}
+.count-label{margin-top:0!important}
+@media(min-width:900px){.stage__in{padding:60px 60px 56px;grid-template-columns:1.25fr .9fr;grid-template-areas:"a b" "c b";column-gap:48px;row-gap:28px;align-items:center}
+  .stage__in>div:first-child{grid-area:a;align-self:end}.hcard{grid-area:b}.hcount{grid-area:c;align-self:start}.hero__ctas{display:flex}}
+.bm-kicker{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:16px}
+.bm-tag{display:inline-block;background:var(--gc-accent);color:var(--gc-dark-deep);font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px;border-radius:var(--r-chip)}
+.bm-until{font-size:14px;font-weight:600;color:var(--gc-on-dark);letter-spacing:.04em}
+.hero h1{color:#fff;font-size:clamp(40px,6vw,78px)}
+.hero h1 .akz{color:var(--gc-accent);display:block}
+.hero .lead{color:rgb(234 245 220/.86);margin:14px 0 0;max-width:560px}
+@media(min-width:900px){.hero .lead{margin:16px 0 24px}}
+.hero .lead b{color:#fff}
+.hero__ctas{flex-wrap:wrap;gap:12px}
+.hero__ctas .btn{flex:1 1 220px}
+@media(min-width:900px){.hero__ctas .btn{flex:0 0 auto}}
+
+/* Countdown */
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:420px}
+.count div{background:var(--gc-dark-card);border:1px solid rgb(198 241 123/.22);border-radius:var(--r-btn);padding:10px 4px 8px;text-align:center}
+.count b{display:block;font-size:clamp(26px,3.4vw,38px);font-weight:600;line-height:1;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
+.count span{display:block;margin-top:6px;font-size:12px;font-weight:500;color:rgb(234 245 220/.7);text-transform:uppercase;letter-spacing:.1em}
+.count-label{font-size:13px;font-weight:600;color:var(--gc-accent);letter-spacing:.12em;text-transform:uppercase;margin:22px 0 8px}
+
+/* Hero price card */
+.hcard{position:relative;background:#fff;color:var(--gc-ink-soft);border-radius:var(--r-card);box-shadow:var(--sh-float);padding:44px 20px 20px}
+@media(min-width:900px){.hcard{padding-top:40px}}
+.sticker{position:absolute;top:-18px;right:-8px;background:var(--gc-accent);color:var(--gc-dark-deep);font-weight:700;font-size:15px;border-radius:var(--r-btn);transform:rotate(-4deg);padding:9px 14px;box-shadow:0 10px 24px rgb(20 45 29/.25)}
+.hcard__t{font-size:13px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--gc-action);margin-bottom:10px}
+.hrow{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:8px 12px;padding:14px 0;border-top:1px solid var(--gc-line);text-decoration:none}
+.hrow:first-of-type{border-top:0}
+.hrow__l{flex:1 1 0;min-width:0;font-weight:600;color:var(--gc-ink);font-size:16px;line-height:1.3}
+.hrow__l small{display:block;font-weight:500;font-size:13px;color:var(--gc-ink-muted)}
+.hrow__p{flex:none;text-align:right;line-height:1.05;white-space:nowrap}
+.hrow__p s{display:block;font-size:19px;font-weight:700;color:var(--gc-ink-muted);text-decoration-thickness:3px;text-decoration-color:#B42318}
+.hrow__p b{font-size:36px;font-weight:700;color:var(--gc-ink);letter-spacing:-.04em}
+.hrow__p i{font-style:normal;font-size:13px;color:var(--gc-ink-muted);font-weight:500}
+.hsave{flex-basis:100%;text-align:center;white-space:nowrap;display:block;margin-top:2px;font-style:normal;font-size:12.5px;font-weight:700;background:var(--gc-accent);color:var(--gc-dark-deep);padding:3px 8px;border-radius:var(--r-chip)}
+.hsetup{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:6px;background:var(--gc-canvas-2);border-radius:var(--r-btn);padding:12px 14px;font-weight:600;color:var(--gc-ink);font-size:15px}
+.hsetup s{color:var(--gc-ink-muted);font-weight:700;text-decoration-thickness:3px;text-decoration-color:#B42318;font-size:19px;margin-left:4px}
+.hsetup em{font-style:normal;background:var(--gc-action);color:#fff;font-size:12.5px;padding:5px 9px;border-radius:var(--r-chip);white-space:nowrap}
+.hcard .btn{margin-top:14px}
+.hresult{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;font-weight:600;font-size:14.5px;color:var(--gc-action)}
+.hresult svg{width:18px;height:18px;flex:none}
+.hnote-link{display:block;text-align:center;margin-top:12px;font-size:14.5px;font-weight:600;color:var(--gc-action)}
+.hnote{font-size:12px;color:var(--gc-ink-muted);margin-top:10px;text-align:center}
+
+/* Garantie */
+.guar{display:flex;gap:12px;align-items:flex-start;margin-top:18px;max-width:560px;background:var(--gc-dark-card);border:1px solid rgb(198 241 123/.35);border-radius:var(--r-btn);padding:12px 14px}
+.guar svg{width:28px;height:28px;flex:none;color:var(--gc-accent)}
+.guar b{display:block;color:#fff;font-size:16px;line-height:1.3}
+.guar span{display:block;font-size:14px;line-height:1.45;color:rgb(234 245 220/.82)}
+.pguar{display:flex;gap:10px;align-items:flex-start;margin-top:12px;padding:12px 14px;border-radius:var(--r-btn);background:#fff;border:1px solid var(--gc-line)}
+.pguar svg{width:24px;height:24px;flex:none;color:var(--gc-action)}
+.pguar b{display:block;color:var(--gc-ink);font-size:15px;line-height:1.35}
+.pguar span{display:block;font-size:13.5px;line-height:1.45}
+.dark .pguar{background:var(--gc-dark-card);border-color:rgb(198 241 123/.3)}
+.dark .pguar svg{color:var(--gc-accent)} .dark .pguar b{color:#fff} .dark .pguar span{color:rgb(234 245 220/.8)}
+.staffel{max-width:980px;margin:22px auto 0;background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);padding:20px;box-shadow:var(--sh-card)}
+.staffel h3{font-size:19px;margin-bottom:4px}
+.staffel p{font-size:14px;color:var(--gc-ink-muted);margin-bottom:12px}
+.staffel table{width:100%;border-collapse:collapse;font-size:15px;font-variant-numeric:tabular-nums}
+.staffel th,.staffel td{padding:9px 6px;text-align:right;border-top:1px solid var(--gc-line)}
+.staffel th:first-child,.staffel td:first-child{text-align:left}
+.staffel thead th{border-top:0;font-size:13px;color:var(--gc-ink-muted);font-weight:600}
+.staffel td b{color:var(--gc-ink)}
+.staffel .chip{display:inline-block;background:var(--gc-canvas-2);color:var(--gc-action);font-weight:700;font-size:12.5px;padding:2px 7px;border-radius:var(--r-chip);margin-left:6px}
+/* Trust */
+.trust{padding:clamp(40px,5vw,64px) 0 clamp(20px,3vw,32px)}
+.trust__num{display:flex;justify-content:center;align-items:center;gap:14px;text-align:left;max-width:720px;margin:0 auto}
+@media(min-width:700px){.trust__num{align-items:baseline}}
+.trust__num b{font-size:clamp(40px,5vw,60px);font-weight:700;color:var(--gc-action);letter-spacing:-.05em;line-height:1}
+.trust__num span{font-size:clamp(18px,2vw,26px);font-weight:600;color:var(--gc-ink);letter-spacing:-.02em;line-height:1.25}
+.trust__num b{flex:none}
+.trust p{text-align:center;color:var(--gc-ink-muted);margin-top:8px;font-size:15px}
+.trust__res{margin-top:12px!important}
+.trust__res b{display:inline-block;background:var(--gc-canvas-2);color:var(--gc-action);font-size:clamp(16px,1.8vw,19px);font-weight:600;padding:8px 14px;border-radius:var(--r-btn)}
+.marquee{overflow:hidden;margin-top:26px;mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
+.marquee__track{display:flex;gap:18px;width:max-content;animation:scroll 60s linear infinite}
+.marquee__track div{flex:none;width:150px;height:84px;background:#fff;border:1px solid var(--gc-line);border-radius:14px;display:flex;align-items:center;justify-content:center;padding:12px}
+.marquee__track img{max-height:58px;max-width:120px;object-fit:contain}
+@keyframes scroll{to{transform:translateX(-50%)}}
+@media(prefers-reduced-motion:reduce){.marquee__track{animation:none}}
+
+/* Offer cards */
+.offer{background:var(--gc-canvas)}
+.cards{display:grid;gap:22px;max-width:980px;margin:0 auto}
+@media(min-width:900px){.cards{grid-template-columns:1fr 1fr;align-items:stretch}}
+.pcard{position:relative;background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);box-shadow:var(--sh-card);padding:30px 24px 26px;display:flex;flex-direction:column}
+.pcard.dark{background:var(--gc-dark);border-color:var(--gc-dark);color:var(--gc-on-dark)}
+.pcard__badge{position:absolute;top:-14px;left:24px;background:var(--gc-accent);color:var(--gc-dark-deep);font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:var(--r-chip)}
+.pcard__chip{align-self:flex-start;font-size:13px;font-weight:600;padding:5px 10px;border-radius:var(--r-chip);background:var(--gc-canvas-2);color:var(--gc-ink)}
+.dark .pcard__chip{background:var(--gc-dark-card);color:var(--gc-on-dark)}
+.pcard h3{font-size:28px;margin:14px 0 4px}
+.dark h3{color:#fff}
+.pcard__sub{font-size:15px;color:var(--gc-ink-muted);line-height:1.5}
+.dark .pcard__sub{color:rgb(234 245 220/.72)}
+.price{margin:22px 0 4px;display:flex;align-items:flex-end;flex-wrap:wrap;gap:4px 14px}
+.price s{font-size:30px;font-weight:600;color:var(--gc-ink-muted);text-decoration-thickness:3px;text-decoration-color:#B42318;line-height:1.1;margin-bottom:10px}
+.price b{font-size:clamp(64px,8vw,84px);font-weight:700;line-height:.9;letter-spacing:-.06em;color:var(--gc-ink)}
+.dark .price b{color:#fff}
+.dark .price s{color:rgb(234 245 220/.6);text-decoration-color:#FF6B5E}
+.price b small{font-size:.42em;letter-spacing:-.02em;margin-left:4px}
+.price__unit{font-size:14px;color:var(--gc-ink-muted)}
+.dark .price__unit{color:rgb(234 245 220/.7)}
+.setup{position:relative;display:flex;align-items:center;gap:12px;margin-top:26px;padding:14px 16px;border-radius:var(--r-btn);background:var(--gc-canvas-2);border:2px dashed var(--gc-action)}
+.setup__l{font-weight:600;color:var(--gc-ink);font-size:clamp(15px,4vw,17px);line-height:1.35;white-space:nowrap}
+.setup__l s{display:inline-block;font-size:22px;font-weight:700;color:var(--gc-ink-muted);text-decoration-thickness:3px;text-decoration-color:#B42318;margin:0 2px}
+.setup__badge{position:absolute;top:-24px;right:12px;background:var(--gc-action);color:#fff;font-weight:700;font-size:14px;padding:8px 11px;border-radius:var(--r-chip);transform:rotate(-3deg);text-align:center;line-height:1.2}
+.dark .setup{background:var(--gc-dark-card);border-color:var(--gc-accent)}
+.dark .setup__l{color:#fff}
+.dark .setup__l s{color:rgb(234 245 220/.6)}
+.dark .setup__badge{background:var(--gc-accent);color:var(--gc-dark-deep)}
+.save{margin-top:12px;padding:16px;border-radius:var(--r-btn);background:var(--gc-accent);color:var(--gc-dark-deep)}
+.save__k{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
+.save__v{font-size:34px;font-weight:700;letter-spacing:-.04em;line-height:1.1}
+.save__p{font-size:.62em;font-weight:700;letter-spacing:-.02em}
+.save__d{font-size:13px;line-height:1.45;margin-top:4px}
+.feat{list-style:none;margin:22px 0 22px;display:grid;gap:9px}
+.feat li{position:relative;padding-left:30px;font-size:15px;line-height:1.5}
+.feat li::before{content:"";position:absolute;left:0;top:2px;width:20px;height:20px;border-radius:50%;background:var(--gc-action) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E") center/12px no-repeat}
+.dark .feat li::before{background-color:var(--gc-accent);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142D1D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5L20 7'/%3E%3C/svg%3E")}
+.pcard__total{font-size:14px;color:var(--gc-ink-muted);margin-bottom:12px;display:flex;justify-content:space-between;gap:10px;border-top:1px solid var(--gc-line);padding-top:14px;margin-top:auto}
+.dark .pcard__total{color:rgb(234 245 220/.72);border-color:rgb(234 245 220/.14)}
+.pcard__total b{color:var(--gc-ink)} .dark .pcard__total b{color:#fff}
+.ph-tag{display:block;font-size:11px;font-weight:700;letter-spacing:.1em;opacity:.8;margin-top:2px}
+.btn[data-placeholder]{flex-direction:column;gap:0;padding-top:8px;padding-bottom:8px}
+.btn[data-placeholder] .ph-row{display:inline-flex;align-items:center;gap:10px}
+.afterbuy{margin-top:10px;text-align:center;font-size:13.5px;color:var(--gc-ink-muted)}
+.dark .afterbuy{color:rgb(234 245 220/.75)}
+.ph-note{display:none;margin-top:10px;padding:10px 12px;border:1px dashed #B54708;background:#FFF4E5;color:#7A2E0E;border-radius:var(--r-btn);font-size:13px;font-weight:600;text-align:center}
+.ph-note.show{display:block}
+.info2{display:grid;gap:14px;max-width:980px;margin:22px auto 0}
+@media(min-width:900px){.info2{grid-template-columns:1fr 1fr}}
+.info{background:#fff;border:1px solid var(--gc-line);border-left:4px solid var(--gc-action);border-radius:var(--r-btn);padding:16px 18px}
+.info b{color:var(--gc-ink);font-size:16px}
+.info p{font-size:14.5px;line-height:1.55;margin-top:4px}
+.talk{max-width:980px;margin:14px auto 0;display:grid;gap:14px;align-items:center;background:var(--gc-canvas-2);border-radius:var(--r-card);padding:20px}
+@media(min-width:900px){.talk{grid-template-columns:1fr auto;padding:22px 26px}}
+.talk b{display:block;color:var(--gc-ink);font-size:18px}
+.talk span{font-size:14.5px;line-height:1.55}
+.btn-ghost{background:#fff;color:var(--gc-ink);border:1px solid var(--gc-line-ui)}
+.slot{max-width:980px;margin:22px auto 0;border:2px dashed #B54708;background:#FFF4E5;color:#7A2E0E;border-radius:var(--r-btn);padding:14px 18px;text-align:center}
+.slot b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.slot p{font-weight:600;font-size:15px;line-height:1.5}
+.slot--inline{max-width:620px;margin:14px auto 0;padding:10px 14px}
+.slot--small{margin:12px 0 0;padding:8px 10px}.slot--small p{font-size:13px}
+.slot[hidden]{display:none}
+.slot--final{border:1px solid var(--gc-line);border-left:4px solid var(--gc-action);background:#fff;color:var(--gc-ink)}
+.fine{max-width:980px;margin:22px auto 0;text-align:center;font-size:13px;color:var(--gc-ink-muted);line-height:1.6}
+.fine a{color:var(--gc-action)}
+
+/* Benefits */
+.ben{display:grid;gap:16px}
+@media(min-width:700px){.ben{grid-template-columns:1fr 1fr}}
+.bcard{background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);box-shadow:var(--sh-card);padding:24px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),border-color .35s}
+.bcard:hover{transform:translateY(-4px);border-color:var(--gc-action);box-shadow:var(--sh-card-hover)}
+.ico{width:46px;height:46px;border-radius:11px;background:var(--gc-canvas-2);color:var(--gc-action);display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.ico svg{width:24px;height:24px}
+.bcard p{margin-top:6px;font-size:15px;line-height:1.6}
+
+/* Ergebnisse (Logos) */
+.hc__img.logo .bgm{font-weight:700;font-size:18px;line-height:1.25;color:var(--gc-ink);text-align:center}
+.hgrid .hc.hc--more{display:none}
+.hgrid.open .hc.hc--more{display:flex}
+.more-wrap{text-align:center;margin-top:22px}
+/* Hired */
+.hired{background:#fff}
+.hgrid{display:grid;gap:12px;grid-template-columns:1fr 1fr}
+@media(min-width:700px){.hgrid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1050px){.hgrid{grid-template-columns:repeat(3,1fr)}}
+.hc{border:1px solid var(--gc-line);border-radius:var(--r-card);overflow:hidden;background:var(--gc-canvas);display:flex;flex-direction:column}
+.hc__img{position:relative;aspect-ratio:16/9;background:#fff center/cover no-repeat;display:flex;align-items:center;justify-content:center}
+.hc__img.logo{background:#fff;padding:14px 12px 22px;aspect-ratio:3/2}
+@media(min-width:700px){.hc__img.logo{padding:22px}}
+.hc__img.logo img{max-height:72px;max-width:82%;object-fit:contain}
+.stamp2{display:inline-block!important;background:var(--gc-accent);color:var(--gc-dark-deep)!important;font-weight:700;font-size:12px!important;padding:3px 8px;border-radius:var(--r-chip);margin-bottom:8px}
+.stamp{position:absolute;right:8px;bottom:8px;font-size:12px!important;background:var(--gc-accent);color:var(--gc-dark-deep);font-weight:700;font-size:13px;padding:6px 10px;border-radius:var(--r-chip);transform:rotate(-3deg);box-shadow:0 6px 16px rgb(20 45 29/.2)}
+.hc__b{padding:12px 12px 14px}
+@media(min-width:700px){.hc__b{padding:16px 18px 18px}}
+.hc__b strong{display:block;color:var(--gc-ink);font-size:clamp(13.5px,1.6vw,16px);line-height:1.3}
+.hc__b span{display:block;font-size:13.5px;color:var(--gc-ink-muted)}
+.hc__b em{display:block;font-style:normal;margin-top:6px;font-size:clamp(13px,1.5vw,14.5px);line-height:1.4;font-weight:600;color:var(--gc-action)}
+.hc__b span{font-size:12.5px!important}
+
+/* Steps */
+.steps{display:grid;gap:16px;counter-reset:s}
+@media(min-width:900px){.steps{grid-template-columns:repeat(3,1fr)}}
+.step{background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);padding:24px}
+.step__n{font-size:15px;font-weight:700;color:var(--gc-action);letter-spacing:.06em}
+.step h3{margin:8px 0 6px}
+.step p{font-size:15px;line-height:1.6}
+
+/* Reviews-Slider */
+.rslider{position:relative}
+.rtrack{display:grid;grid-auto-flow:column;grid-auto-columns:86%;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 2px 22px;scrollbar-width:none}
+.rtrack::-webkit-scrollbar{display:none}
+.rtrack .rc{scroll-snap-align:start}
+@media(min-width:700px){.rtrack{grid-auto-columns:calc(50% - 8px)}}
+@media(min-width:1050px){.rtrack{grid-auto-columns:calc(33.333% - 11px)}}
+.rnav{display:flex;justify-content:center;align-items:center;gap:12px;margin-top:4px}
+.rnav button{width:46px;height:46px;border-radius:var(--r-btn);border:1px solid var(--gc-line-ui);background:#fff;color:var(--gc-ink);font-size:20px;cursor:pointer}
+.rnav span{font-size:14px;color:var(--gc-ink-muted);min-width:70px;text-align:center}
+.gscore{display:inline-flex;align-items:center;gap:10px;background:#fff;border-radius:var(--r-btn);padding:8px 14px;box-shadow:var(--sh-card);margin-top:10px;font-weight:600;color:var(--gc-ink)}
+.gscore b{font-size:22px}
+.gscore .stars{font-size:16px}
+/* Reviews */
+.rev{background:var(--gc-canvas-2)}
+.rgrid{display:grid;gap:16px}
+@media(min-width:900px){.rgrid{grid-template-columns:repeat(3,1fr)}}
+.rc{background:#fff;border-radius:var(--r-card);box-shadow:var(--sh-card);padding:24px;display:flex;flex-direction:column}
+.rchip{align-self:flex-start;background:var(--gc-canvas-2);color:var(--gc-action);font-weight:700;font-size:14px;padding:5px 10px;border-radius:var(--r-chip);margin-bottom:10px}
+.stars{color:var(--gc-star);font-size:18px;letter-spacing:2px}
+.rc q{display:block;margin:10px 0 16px;font-size:15.5px;line-height:1.6;color:var(--gc-ink)}
+.rc q::before,.rc q::after{content:""}
+.rc__who{margin-top:auto;font-size:14px;color:var(--gc-ink-muted)}
+.rc__who b{color:var(--gc-ink);display:block}
+
+/* Safety */
+.safe{display:grid;gap:14px}
+@media(min-width:700px){.safe{grid-template-columns:1fr 1fr}}
+.sf{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);padding:20px}
+.sf .ico{margin:0;flex:none}
+.sf b{display:block;color:var(--gc-ink);font-size:16.5px;line-height:1.35}
+.sf p{font-size:14.5px;line-height:1.55;margin-top:4px}
+
+/* FAQ */
+.faq{max-width:860px;margin:0 auto;display:grid;gap:10px}
+.faq details{background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);padding:0 20px}
+.faq summary{list-style:none;cursor:pointer;display:flex;gap:14px;align-items:center;padding:18px 0;font-weight:600;color:var(--gc-ink);font-size:16.5px;line-height:1.4}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary span{color:var(--gc-action);font-size:14px;font-weight:700;flex:none}
+.faq summary::after{content:"+";margin-left:auto;font-size:24px;font-weight:500;color:var(--gc-action);transition:transform .3s var(--ease)}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{padding:0 0 18px 38px;font-size:15px;line-height:1.65}
+
+/* CTA band */
+.band{padding:clamp(16px,2vw,24px) 0 clamp(56px,7vw,96px)}
+.band .stage__bg{background:linear-gradient(180deg,rgb(20 45 29/.92),rgb(23 59 43/.88)),url(img/cta.jpg) center 40%/cover}
+.band__in{padding:44px 22px;text-align:center;display:flex;flex-direction:column;align-items:center}
+@media(min-width:900px){.band__in{padding:72px 60px}}
+.band h2{color:#fff;font-size:clamp(32px,4.4vw,56px)}
+.band h2 .akz{color:var(--gc-accent);display:block}
+.band .lead{color:rgb(234 245 220/.86);margin:14px auto 22px;max-width:620px}
+.band .count{margin:0 auto 24px}
+
+/* Footer */
+footer{background:var(--gc-dark-deep);color:rgb(234 245 220/.76);padding:44px 0 36px;font-size:14px}
+footer .wrap{display:flex;flex-direction:column;gap:18px}
+@media(min-width:900px){footer .wrap{flex-direction:row;align-items:center;justify-content:space-between}}
+footer img{height:56px;width:auto}
+footer nav{display:flex;flex-wrap:wrap;gap:18px}
+footer a{text-decoration:none} footer a:hover{color:#fff}
+
+/* Sticky CTA mobile */
+.sticky{position:fixed;left:0;right:0;bottom:25px;z-index:50;background:#fff;border-top:1px solid var(--gc-line);box-shadow:0 -10px 30px rgb(20 45 29/.12);padding:10px 14px;display:flex;align-items:center;gap:12px;transform:translateY(140%);transition:transform .4s var(--ease)}
+.sticky.show{transform:none}
+.sticky__t{flex:1;line-height:1.25;font-size:13px;color:var(--gc-ink-muted)}
+.sticky__t b{display:block;color:var(--gc-ink);font-size:16px}
+.sticky .btn{min-height:48px;padding:0 18px;font-size:15px}
+@media(min-width:900px){.sticky{display:none}}
+
+/* Reveal (nur unterhalb des Hero) */
+.rv{opacity:0;transform:translateY(18px);transition:opacity .7s var(--ease),transform .7s var(--ease)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none}}
+
+/* Warteliste */
+.form label{display:block;font-size:13px;font-weight:600;color:var(--gc-ink);margin:14px 0 6px}
+.form input[type=text],.form input[type=email],.form input[type=tel]{width:100%;height:52px;border:1px solid var(--gc-line-ui);border-radius:var(--r-btn);padding:0 14px;font:400 16px Poppins,Arial,sans-serif;color:var(--gc-ink);background:#fff}
+.form input::placeholder{color:var(--gc-ink-muted)}
+.form input:focus{outline:none;border-color:var(--gc-action);box-shadow:0 0 0 3px rgb(18 100 64/.15)}
+.form .chk{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:13px;line-height:1.5;color:var(--gc-ink-muted)}
+.form .chk input{margin-top:3px;width:18px;height:18px;accent-color:var(--gc-action);flex:none}
+.form .chk a{color:var(--gc-action)}
+.form .btn{margin-top:16px;flex-direction:column;gap:2px}
+.form .btn small{font-weight:500;font-size:12.5px;opacity:.85}
+.form .err{display:none;color:#B42318;font-size:13px;font-weight:600;margin-top:8px}
+.form .err.show{display:block}
+.ok{display:none;text-align:center;padding:10px 0}
+.ok.show{display:block}
+.ok .ico{margin:0 auto 12px;background:var(--gc-action);color:#fff;width:56px;height:56px;border-radius:50%}
+.ok h3{margin-bottom:6px}
+.ok p{font-size:15px;line-height:1.55}
+.ex-tag{display:inline-block;background:var(--gc-dark-card);color:var(--gc-on-dark);border:1px solid rgb(198 241 123/.35);font-size:13px;font-weight:600;padding:6px 10px;border-radius:var(--r-chip)}
+.when{display:grid;gap:10px;margin-top:20px;max-width:560px}
+@media(min-width:600px){.when{grid-template-columns:1fr 1fr}}
+.when div{background:var(--gc-dark-card);border:1px solid rgb(198 241 123/.22);border-radius:var(--r-btn);padding:12px 14px}
+.when b{display:block;color:#fff;font-size:16px;line-height:1.3}
+.when span{display:block;font-size:13px;color:rgb(234 245 220/.75)}
+.pcard .price b small{font-size:.38em}
+.vgl{max-width:980px;margin:18px auto 0;background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);padding:18px 20px;font-size:14.5px}
+.vgl table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+.vgl th,.vgl td{padding:8px 6px;text-align:right;border-top:1px solid var(--gc-line)}
+.vgl th:first-child,.vgl td:first-child{text-align:left}
+.vgl thead th{border-top:0;font-size:13px;color:var(--gc-ink-muted);font-weight:600}
+.vgl tr.me td{background:var(--gc-canvas-2);font-weight:700;color:var(--gc-ink)}
+.hcard h3{color:var(--gc-ink)}
+.hcard .form h3{margin-bottom:2px}
+.pers{display:flex;align-items:center;gap:12px;margin-bottom:14px}
+.pers__logo{flex:none;width:64px;height:64px;border-radius:11px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.pers__logo img{max-width:56px;max-height:56px;object-fit:contain}
+.pers__logo span{font-weight:700;color:var(--gc-dark);font-size:22px}
+.pers__t{font-size:14px;line-height:1.4;color:rgb(234 245 220/.85)}
+.pers__t b{display:block;color:#fff;font-size:16px}
+.seats{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:var(--gc-accent);color:var(--gc-dark-deep);font-weight:700;font-size:14px;padding:8px 12px;border-radius:var(--r-chip)}
+.seats i{font-style:normal;display:inline-block;width:8px;height:8px;border-radius:50%;background:#B42318}
+.hist{margin-top:14px;font-size:15px;line-height:1.5;color:rgb(234 245 220/.86);max-width:560px}
+.hist b{color:#fff}
+.closer{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);box-shadow:var(--sh-card);padding:24px;display:flex;gap:18px;align-items:flex-start}
+.closer__av{flex:none;width:64px;height:64px;border-radius:50%;background:var(--gc-dark);color:var(--gc-accent);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:24px}
+.closer p{font-size:16px;line-height:1.6;color:var(--gc-ink-soft)}
+.closer .sig{margin-top:10px;font-weight:600;color:var(--gc-ink)}
+.closer .sig small{display:block;font-weight:500;color:var(--gc-ink-muted);font-size:13px}
+.big{font-size:clamp(44px,6vw,64px);font-weight:700;letter-spacing:-.05em;line-height:1;color:var(--gc-dark-deep)}
+
+</style>
+</head>
+<body>
+<header class="top" id="top">
+  <div class="wrap">
+    <img src="img/logo-tinte-380.png" alt="GreenCareers">
+    <div><span class="top__count" data-phase-short>Angebot öffnet in <b data-count-short>–</b></span><a href="#warteliste" class="btn btn-main">Platz sichern</a></div>
+  </div>
+</header>
+
+<section class="hero" style="padding-bottom:0">
+  <div class="wrap">
+    <div class="stage dark">
+      <div class="stage__bg"></div>
+      <div class="stage__in">
+        <div>
+          <div class="pers" data-p-only><div class="pers__logo" id="p-logo"></div><div class="pers__t"><b id="p-betrieb"></b><span id="p-res">Angebot für Bestandskunden</span></div></div>
+          <div class="bm-kicker"><span class="bm-tag">Black Month</span><span class="ex-tag" id="p-tag">Nur für Bestandskunden</span></div>
+          <h1><span id="p-h1">Ihr Bestandskunden-Preis.</span><span class="akz">Über 50&nbsp;% auf Premium.</span></h1>
+          <p class="hist" id="p-hist">Wir haben schon zusammengearbeitet. Darum bekommen Sie unser Premium-Abo zum Bestandskunden-Preis, fest für die ganze Laufzeit.</p>
+          <div class="seats"><i></i><span id="p-seats">Begrenzt auf 30 Betriebe · nur bis Fr 20.11.</span></div>
+          <div class="when">
+            <div><b>Do 05.11., 8 Uhr</b><span id="p-w1">Kauf startet</span></div>
+            <div><b>Fr 20.11., 23:59 Uhr</b><span>Angebot endet</span></div>
+          </div>
+        </div>
+        <div class="hcard" id="warteliste">
+          <div class="sticker" id="p-sticker">Bestandskunden-Preis</div>
+          <div class="hcard__t">Warteliste · 30 Plätze</div>
+          <form class="form" id="wl" novalidate><input type="text" id="f-web" name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+            <h3 style="font-size:22px" id="p-formh">Angebot auf der Warteliste sichern.</h3>
+            <label for="f-name">Name</label>
+            <input id="f-name" name="name" type="text" autocomplete="name" placeholder="Vor- und Nachname" required>
+            <label for="f-mail">E-Mail</label>
+            <input id="f-mail" name="email" type="email" autocomplete="email" placeholder="name@betrieb.de" required>
+            <label for="f-tel">Telefon</label>
+            <input id="f-tel" name="telefon" type="tel" autocomplete="tel" placeholder="Für den Rückruf" required>
+            <label class="chk"><input type="checkbox" id="f-ok" required><span id="p-consent">Ich bin einverstanden, dass GreenCareers mich zu diesem Angebot per E-Mail oder Telefon kontaktiert. Widerruf jederzeit möglich, zum Beispiel per E-Mail an hello@green-careers.de. <a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a></span></label>
+            <button class="btn btn-main btn-block btn-lg" type="submit"><span>Auf die Warteliste</span><small>unverbindlich · dauert 10 Sekunden</small></button>
+            <p class="err" id="f-err">Bitte Name, E-Mail, Telefon und Häkchen ausfüllen.</p>
+          </form>
+          <div class="ok" id="wl-ok">
+            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
+            <h3 id="p-okh">Sie stehen auf der Warteliste.</h3>
+            <p id="p-okt">Damit haben Sie sich das Angebot gesichert. Wir melden uns schnellstmöglich bei Ihnen.</p>
+                      </div>
+          <p class="hnote">Preise je Stelle, zzgl. gesetzlicher USt., nur für Unternehmen.</p>
+        </div>
+        <div class="hcount">
+          <div class="count-label" data-phase>Angebot öffnet in</div>
+          <div class="count" data-count><div><b data-d>–</b><span>Tage</span></div><div><b data-h>–</b><span>Std</span></div><div><b data-m>–</b><span>Min</span></div><div><b data-s>–</b><span>Sek</span></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="trust">
+  <div class="wrap">
+    <div class="trust__num"><b>300+</b><span>GaLaBau-Betriebe stellen mit uns ein.</span></div>
+    <p class="trust__res"><b>Wir stellen in durchschnittlich 45 Tagen ein.</b></p>
+    <div class="marquee"><div class="marquee__track" id="logos"></div></div>
+  </div>
+</div>
+
+<section class="offer" id="angebot">
+  <div class="wrap"><div class="inner">
+    <div class="sec-head rv">
+      <span class="over" id="p-over">Ihr Preis als Bestandskunde</span>
+      <h2>Premium-Abo. <span class="akz">Über 50&nbsp;% unter Liste.</span></h2>
+      <p class="lead">Gleiche Leistung wie im Premium-Paket, fester Monatspreis, eine Stelle immer online. Ist sie besetzt, setzen Sie die nächste Stelle drauf.</p>
+    </div>
+    <div class="cards">
+      <div class="pcard rv">
+        <span class="pcard__chip">6 Monate Mindestlaufzeit</span>
+        <h3>Premium · 6 Monate</h3>
+        <p class="pcard__sub">Zum Einstieg, wenn eine Stelle drängt.</p>
+        <div class="price"><s data-list="6m"></s><b data-price="6m"></b></div>
+        <div class="price__unit">pro Monat netto je Stelle</div>
+        <div class="save"><div class="save__k">Sie sparen</div><div class="save__v" data-save="6m"></div><div class="save__d">über 6 Monate gegenüber dem Listenpreis ab 01.11.</div></div>
+        <ul class="feat" data-feat></ul>
+        <div class="pcard__total"><span>Gesamt 6 Monate</span><b data-total="6m"></b></div>
+        <a href="#warteliste" class="btn btn-main btn-block">Platz sichern</a>
+      </div>
+      <div class="pcard dark rv">
+        <span class="pcard__badge">Bester Preis</span>
+        <span class="pcard__chip">12 Monate Mindestlaufzeit</span>
+        <h3>Premium · 12 Monate</h3>
+        <p class="pcard__sub">Für Betriebe, die das ganze Jahr suchen.</p>
+        <div class="price"><s data-list="12m"></s><b data-price="12m"></b></div>
+        <div class="price__unit">pro Monat netto je Stelle</div>
+        <div class="save"><div class="save__k">Sie sparen</div><div class="save__v" data-save="12m"></div><div class="save__d">über 12 Monate gegenüber dem Listenpreis ab 01.11.</div></div>
+        <ul class="feat" data-feat></ul>
+        <div class="pcard__total"><span>Gesamt 12 Monate</span><b data-total="12m"></b></div>
+        <a href="#warteliste" class="btn btn-accent btn-block">Platz sichern</a>
+      </div>
+    </div>
+    <div class="info2">
+      <div class="info"><b>Preis fest für die ganze Laufzeit</b><p>Der Vorzugspreis gilt für alle Monate der Mindestlaufzeit, nicht nur für den ersten.</p></div>
+      <div class="info"><b>30 Plätze, bis Fr 20.11.</b><p>Nur für GreenCareers-Bestandskunden. Wir nehmen 30 Betriebe auf, damit das Onboarding sauber läuft.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div class="inner">
+    <div class="sec-head rv"><span class="over">So läuft es</span><h2>Drei Schritte. <span class="akz">Kein Aufwand.</span></h2></div>
+    <div class="steps">
+      <div class="step rv"><div class="step__n">01</div><h3>Eintragen.</h3><p>Name, E-Mail, Telefon. Unverbindlich, dauert 10 Sekunden.</p></div>
+      <div class="step rv"><div class="step__n">02</div><h3>Wir melden uns.</h3><p>Ihr Ansprechpartner meldet sich schnellstmöglich und klärt mit Ihnen, welche Stelle Sie besetzen wollen.</p></div>
+      <div class="step rv"><div class="step__n">03</div><h3>Stelle geht live.</h3><p>Wir bauen Ihre Anzeige, Sie bekommen Bewerbungen per E-Mail und WhatsApp.</p></div>
+    </div>
+  </div></div>
+</section>
+
+<section class="rev">
+  <div class="wrap"><div class="inner">
+    <div class="sec-head rv">
+      <span class="over">Google-Bewertungen</span>
+      <h2>Das sagen <span class="akz">unsere Kunden.</span></h2>
+      <div class="gscore"><b>4,5</b><span class="stars">★★★★★</span><span>31 Bewertungen auf Google</span></div>
+    </div>
+    <div class="rslider rv">
+      <div class="rtrack" id="rtrack"></div>
+      <div class="rnav"><button type="button" id="rprev" aria-label="Zurück">←</button><span id="rpos"></span><button type="button" id="rnext" aria-label="Weiter">→</button></div>
+    </div>
+  </div></div>
+</section>
+
+<section>
+  <div class="wrap"><div class="inner">
+    <div class="sec-head rv"><span class="over">Fragen</span><h2>Kurz <span class="akz">beantwortet.</span></h2></div>
+    <div class="faq">
+      <details><summary><span>01</span>Wer bekommt den Preis?</summary><p>Nur Betriebe, die schon einmal eine Stelle bei GreenCareers geschaltet haben und gerade keine aktive Anzeige haben. Höchstens 30 Betriebe.</p></details>
+      <details><summary><span>02</span>Kostet die Warteliste etwas?</summary><p>Nein. Mit dem Eintrag sichern Sie sich das Angebot. Gebucht wird erst im Gespräch mit Ihrem Ansprechpartner.</p></details>
+      <details><summary><span>03</span>Gilt der Preis nur im ersten Monat?</summary><p>Nein. Der Preis gilt für die ganze Mindestlaufzeit von 6 bzw. 12 Monaten.</p></details>
+      <details><summary><span>04</span>Was ist, wenn meine Stelle schnell besetzt ist?</summary><p>Dann setzen Sie die nächste Stelle auf denselben Platz. Ohne Aufpreis.</p></details>
+      <details><summary><span>05</span>Was ist, wenn niemand passt?</summary><p>Wird die gesuchte Person innerhalb der Mindestlaufzeit nicht eingestellt, kommen 30 Tage ohne Aufpreis dazu. Eine Einstellung wird nicht zugesagt.</p></details>
+      <details><summary><span>06</span>Bis wann gilt das Angebot?</summary><p>Von Do 05.11., 8 Uhr, bis Fr 20.11., 23:59 Uhr.</p></details>
+    </div>
+  </div></div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap"><div class="closer rv"><div class="closer__av" id="c-av">J</div><div><p id="c-text">Rückfragen gern direkt an mich, einfach auf meine Mail antworten.</p><p class="sig"><span id="c-gruss">Liebe Grüße</span>, <span id="c-name">Julian</span><small id="c-rolle">Julian Kohansal · Ihr Ansprechpartner bei GreenCareers</small></p></div></div></div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="stage dark">
+      <div class="stage__bg"></div>
+      <div class="band__in">
+        <h2 id="p-band">Ihre nächste Stelle.<span class="akz">Über 50&nbsp;% günstiger.</span></h2>
+        <p class="lead">Nur für Bestandskunden, 30 Plätze, bis Fr 20.11.</p>
+        <a href="#warteliste" class="btn btn-accent btn-lg">Auf die Warteliste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-sandlight-380.png" alt="GreenCareers">
+    <div>Das Karrierenetzwerk für die grüne Branche. Ein Angebot der GreenCareers GmbH.</div>
+    <nav><a href="https://www.green-careers.de/impressum" target="_blank" rel="noopener">Impressum</a><a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a><a href="https://www.green-careers.de/agb" target="_blank" rel="noopener">AGB</a></nav>
+  </div>
+</footer>
+
+<div class="sticky" id="sticky">
+  <div class="sticky__t"><b>Premium über 50 % günstiger</b><span data-count-short>–</span></div>
+  <a href="#warteliste" class="btn btn-main">Platz sichern</a>
+</div>
+
+<script>
+/* Mail-Links: ?l=<Close-Lead-ID> → Personalisierung vom GC-Dashboard holen und als ?p= neu laden */
+(() => { const u = new URL(location.href), l = u.searchParams.get('l');
+  if (l && !u.searchParams.get('p') && /^lead_[A-Za-z0-9]+$/.test(l)) {
+    fetch('https://gc-tracking-dashboard.vercel.app/api/bw?z=json&l=' + encodeURIComponent(l)).then(r => r.json()).then(j => {
+      u.searchParams.delete('l'); if (j && j.p) u.searchParams.set('p', j.p); location.replace(u.toString());
+    }).catch(() => {});
+  } })();
+/* Ex-Kunden-Preise Black Month (Freddy 27.10.): Premium 6 Mon. 499 € statt 899 €, 12 Mon. 349 € statt 739 € (Listenpreise ab 01.11.). Ganze Prozent. */
+const NACH = new URLSearchParams(location.search).get('n') === '1';   // Nachzügler-Preis (Freddy 27.10.): 24 h, Mo 23.11. 9 Uhr bis Di 24.11. 9 Uhr
+const ANGEBOT = NACH ? { '6m': { liste: 899, preis: 599, monate: 6 }, '12m': { liste: 739, preis: 399, monate: 12 } }
+                     : { '6m': { liste: 899, preis: 499, monate: 6 }, '12m': { liste: 739, preis: 349, monate: 12 } };
+const eur = n => n.toLocaleString('de-DE', { maximumFractionDigits: 0 }) + '\u00a0€';
+for (const k in ANGEBOT) {
+  const o = ANGEBOT[k], pct = Math.round((o.liste - o.preis) / o.liste * 100);
+  document.querySelector(`[data-list="${k}"]`).textContent = eur(o.liste);
+  document.querySelector(`[data-price="${k}"]`).innerHTML = o.preis + '<small>€</small>';
+  document.querySelector(`[data-save="${k}"]`).innerHTML = eur((o.liste - o.preis) * o.monate) + ` <span class="save__p">(${pct}\u00a0%)</span>`;
+  document.querySelector(`[data-total="${k}"]`).textContent = eur(o.preis * o.monate);
+}
+const FEATURES = [
+  'Zugang zu 30.000+ Fachkräften aus der grünen Branche',
+  'Stellenanzeige mit Bildern und Videos',
+  'Premium-Platzierung: 3-fach höhere Sichtbarkeit',
+  'Ausspielung auf allen Social-Media-Kanälen',
+  'Vorauswahl: nur passende Bewerbungen',
+  'Bewerbungen per E-Mail und WhatsApp',
+  'Stelle besetzt? Nächste Stelle drauf.',
+  '30-Tage-Garantie',
+  'Fester Ansprechpartner',
+];
+document.querySelectorAll('[data-feat]').forEach(ul => ul.innerHTML = FEATURES.map(f => `<li>${f}</li>`).join(''));
+const LOGOS = ['roring','diederich','knappmann','lemberghof','floreana','beck','huben','spilker','garten-linke','astwerk','goldblume','lieblingsgaertner','prager-kurz','gruenkonzept','gerlach','blumenkamp','idh','reiss','schenk','gruenbau','groebner'];
+const logoHtml = LOGOS.map(n => `<div><img src="img/logos/${n}.png" alt="" loading="lazy"></div>`).join('');
+document.getElementById('logos').innerHTML = logoHtml + logoHtml;
+const REVIEWS = [
+  { chip:'Vielzahl an Bewerbern', name:'Saatzucht Breun', when:'vor einer Woche', text:'Es ist unser erster Kontakt mit GreenCareers. Mit der bisherigen Zusammenarbeit und den Vermittlungsresultaten sind wir als kleine Firma sehr zufrieden. Wir waren überrascht über die Vielzahl an Bewerbern auf unsere zwei geschalteten Anzeigen und auch über die große Reichweite.' },
+  { chip:'20+ Bewerber', name:'Tobias Knauf', when:'vor 6 Monaten', text:'Nach kurzer Zeit hatte ich mehr als 20 Bewerber auf meine ausgeschriebene Stelle im Garten- und Landschaftsbau. Ich kann GreenCareers jedem Arbeitgeber und Arbeitnehmer nur empfehlen. …' },
+  { chip:'Zwei Fachkräfte eingestellt', name:'Dominik Heinlein', when:'vor 7 Monaten', text:'Zwei neue Fachkräfte über GreenCareers eingestellt. Nachdem wir bei einer Recruiting-Agentur und anderen Stellenportalen monatelang nur unpassende Profile bekommen haben, war hier die Qualität spürbar höher. Die Betreuung von Frau Reike war zudem sehr angenehm.' },
+  { chip:'Eingestellt nach 3 Wochen', name:'Christine U.', when:'vor 7 Monaten', text:'Nach 3 Wochen konnten wir einen Baumschulgärtner fest einstellen. Es waren zwar auch sehr viele Gespräche mit Bewerbern nötig, aber ein vergleichbares Ergebnis hatten wir über andere Wege noch nicht. Ich kann GreenCareers empfehlen.' },
+  { chip:'Straßen- und Tiefbau', name:'Jana Sturm', when:'vor 4 Monaten', text:'Wir waren ehrlich gesagt skeptisch, ob GreenCareers für ein Straßen- und Tiefbauunternehmen geeignet ist. Nach der ersten erfolgreichen Einstellung muss ich das revidieren. Hat besser funktioniert als ich dachte …' },
+  { chip:'Mehrere Bewerber pro Tag', name:'Boas Diehl', when:'vor 6 Monaten', text:'Unkomplizierte Plattform, bei der es einen guten Rücklauf von mehreren Bewerbern pro Tag gegeben hat. Eine gute, unkomplizierte und offene Kommunikation der Mitarbeiter erleichtern die Zusammenarbeit! Vielen Dank für Eure Bemühungen! Die Plattform kann man weiterempfehlen!' },
+  { chip:'Kleiner Betrieb', name:'Nora S.', when:'vor 6 Monaten', text:'Wir sind wirklich begeistert von der Zusammenarbeit. Als kleines Unternehmen kann die Suche nach passenden Mitarbeitern ganz schön zeit- und nervenraubend sein, aber dank GreenCareers hat es ganz unkompliziert …' },
+  { chip:'Schnelle Kommunikation', name:'Maryna Türr', when:'vor 7 Monaten', text:'Gute Plattform, wo sich die Landschaftsgärtner einfach unkompliziert bewerben können. Gute schnelle Kommunikation mit dem GreenCareers-Team. …' },
+  { chip:'Freundlich und kompetent', name:'Alexander Hildebrand', when:'Local Guide', text:'Die Zusammenarbeit mit GreenCareers war insgesamt sehr positiv. Das Team ist freundlich, kompetent und engagiert. Besonders angenehm war die offene und wertschätzende Kommunikation. …' },
+];
+
+const rtrack = document.getElementById('rtrack');
+rtrack.innerHTML = REVIEWS.map(r => `<div class="rc"><span class="rchip">${r.chip}</span><div class="stars">★★★★★</div><q>${r.text}</q><div class="rc__who"><small style="display:block;font-size:12px;color:var(--gc-ink-muted)">Google-Bewertung · ${r.when}</small><b>${r.name}</b></div></div>`).join('');
+const rpos = document.getElementById('rpos');
+const rStep = () => rtrack.querySelector('.rc').getBoundingClientRect().width + 16;
+const rUpd = () => { const per = Math.max(1, Math.round(rtrack.clientWidth / rStep())); const i = Math.round(rtrack.scrollLeft / rStep()); rpos.textContent = `${Math.min(i + per, REVIEWS.length)} / ${REVIEWS.length}`; };
+document.getElementById('rprev').addEventListener('click', () => rtrack.scrollBy({ left: -rStep(), behavior: 'smooth' }));
+document.getElementById('rnext').addEventListener('click', () => rtrack.scrollBy({ left: rStep(), behavior: 'smooth' }));
+rtrack.addEventListener('scroll', () => requestAnimationFrame(rUpd), { passive: true });
+rUpd();
+
+/* Personalisierung: ?p=<base64url-JSON> aus der Kundenliste.
+   g=sie|du, a=Herr|Frau, v=Vorname, n=Nachname, b=Betrieb, c=julian|liam, s=letzte Stelle, o=Ort (PLZ), y=Jahr, l=Logo-URL, e=E-Mail, t=Telefon */
+const CLOSER = { julian: ['Julian', 'Julian Kohansal'], liam: ['Liam', 'Liam Quick'] };
+let P = {};
+try { const raw = new URLSearchParams(location.search).get('p'); if (raw) P = JSON.parse(decodeURIComponent(escape(atob(raw.replace(/-/g,'+').replace(/_/g,'/'))))); } catch (e) { P = {}; }
+const $ = id => document.getElementById(id), txt = (id, t) => { if ($(id) && t) $(id).textContent = t; };
+const du = P.g === 'du', cl = CLOSER[P.c] || CLOSER.julian;
+document.querySelectorAll('[data-p-only]').forEach(el => el.style.display = P.b ? '' : 'none');
+if (P.b) {
+  txt('p-betrieb', P.b); txt('p-res', P.y ? `Zusammenarbeit seit ${P.y}` : 'Bestandskunde');
+  $('p-logo').innerHTML = P.l ? `<img src="${P.l}" alt="">` : `<span>${P.b.trim()[0]}</span>`;
+}
+if (du) {
+  txt('p-h1', 'Dein Bestandskunden-Preis.'); txt('p-w1', 'Kauf startet');
+  txt('p-formh', 'Sicher dir das Angebot auf der Warteliste.'); txt('p-okh', 'Du stehst auf der Warteliste.');
+  txt('p-okt', 'Damit hast du dir das Angebot gesichert. Wir melden uns schnellstmöglich bei dir.');
+  txt('p-over', 'Dein Preis als Bestandskunde');
+  $('p-band').innerHTML = 'Deine nächste Stelle.<span class="akz">Über 50&nbsp;% günstiger.</span>';
+  txt('c-text', 'Rückfragen gern direkt an mich, antworte einfach auf meine Mail.');
+}
+if (P.s || P.y) {
+  const st = P.s ? `${du ? 'deine' : 'Ihre'} Stelle als ${P.s}${P.o ? ' in ' + P.o : ''}` : '';
+  $('p-hist').innerHTML = (du ? `Wir haben ${P.y ? P.y + ' ' : ''}schon zusammengearbeitet${st ? ': ' + st : ''}. Jetzt bekommst du unser Premium-Abo zum Bestandskunden-Preis, fest für die ganze Laufzeit.`
+                              : `Wir haben ${P.y ? P.y + ' ' : ''}schon zusammengearbeitet${st ? ': ' + st : ''}. Jetzt bekommen Sie unser Premium-Abo zum Bestandskunden-Preis, fest für die ganze Laufzeit.`);
+}
+txt('c-av', cl[0][0]); txt('c-name', cl[0]); txt('c-rolle', `${cl[1]} · ${du ? 'dein' : 'Ihr'} Ansprechpartner bei GreenCareers`);
+if (P.v || P.n) $('f-name').value = [P.v, P.n].filter(Boolean).join(' ');
+if (P.e) $('f-mail').value = P.e; if (P.t) $('f-tel').value = P.t;
+
+/* Formular: Vorbelegung aus der Mail (?name=&email=&tel=), Vorschau speichert nichts */
+const q = new URLSearchParams(location.search);
+[['name','f-name'],['email','f-mail'],['tel','f-tel']].forEach(([k,id]) => { if (q.get(k)) document.getElementById(id).value = q.get(k); });
+document.getElementById('wl').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = e.target, ok = f.querySelector('#f-name').value.trim() && /\S+@\S+\.\S+/.test(f.querySelector('#f-mail').value) && f.querySelector('#f-tel').value.replace(/\D/g,'').length >= 6 && f.querySelector('#f-ok').checked;
+  document.getElementById('f-err').classList.toggle('show', !ok);
+  if (!ok) return;
+  const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
+  fetch('https://gc-tracking-dashboard.vercel.app/api/warteliste', { method: 'POST', headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name: f.querySelector('#f-name').value.trim(), email: f.querySelector('#f-mail').value.trim(), tel: f.querySelector('#f-tel').value.trim(),
+      p: q.get('p') || '', lp: location.href, website: (f.querySelector('#f-web') || {}).value || '' }) })
+    .then(r => r.ok ? r.json() : Promise.reject(r))
+    .then(() => { f.style.display = 'none'; document.getElementById('wl-ok').classList.add('show'); })
+    .catch(() => { btn.disabled = false; const er = document.getElementById('f-err'); er.textContent = 'Das hat gerade nicht geklappt. Bitte noch einmal versuchen oder kurz Ihrem Ansprechpartner antworten.'; er.classList.add('show'); });
+});
+
+/* Zeitplan Variante B: öffnet Mo 02.11. 08:00, endet Fr 20.11. 23:59 (MEZ) */
+const OPEN = NACH ? new Date('2026-11-23T09:00:00+01:00').getTime() : new Date('2026-11-05T08:00:00+01:00').getTime();
+const END = NACH ? new Date('2026-11-24T09:00:00+01:00').getTime() : new Date('2026-11-20T23:59:59+01:00').getTime();
+if (NACH) {
+  document.querySelectorAll('.when').forEach(w => w.innerHTML = '<div><b>Nur 24 Stunden</b><span>Nachzügler-Preis</span></div><div><b>Di 24.11., 9 Uhr</b><span>Angebot endet</span></div>');
+  document.getElementById('p-seats').textContent = 'Nachzügler-Preis · nur bis Di 24.11., 9 Uhr';
+  document.querySelectorAll('.akz').forEach(a => { if (a.textContent.includes('Über 50')) a.innerHTML = '24 Stunden Nachzügler-Preis.'; });
+}
+const pad = n => String(n).padStart(2, '0');
+function tick() {
+  const now = Date.now(), before = now < OPEN, target = before ? OPEN : END, d = Math.max(0, target - now);
+  const D = Math.floor(d / 864e5), H = Math.floor(d % 864e5 / 36e5), M = Math.floor(d % 36e5 / 6e4), S = Math.floor(d % 6e4 / 1e3);
+  document.querySelectorAll('[data-count]').forEach(c => {
+    c.querySelector('[data-d]').textContent = D; c.querySelector('[data-h]').textContent = pad(H);
+    c.querySelector('[data-m]').textContent = pad(M); c.querySelector('[data-s]').textContent = pad(S);
+  });
+  document.querySelectorAll('[data-phase]').forEach(e => e.textContent = before ? 'Angebot öffnet in' : 'Angebot endet in');
+  document.querySelectorAll('[data-count-short]').forEach(e => e.textContent = d ? `${before ? 'öffnet in' : 'endet in'} ${D} T ${pad(H)} Std` : 'Angebot beendet');
+}
+tick(); setInterval(tick, 1000);
+const sticky = document.getElementById('sticky');
+new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting)).observe(document.querySelector('.hero'));
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.rv').forEach(el => io.observe(el));
+
+</script>
+</body>
+</html>
