@@ -81,7 +81,7 @@ section{padding:clamp(64px,8vw,120px) 0}
 .bm-kicker{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-bottom:16px}
 .bm-tag{display:inline-block;background:var(--gc-accent);color:var(--gc-dark-deep);font-weight:700;font-size:14px;letter-spacing:.16em;text-transform:uppercase;padding:7px 12px;border-radius:var(--r-chip)}
 .bm-until{font-size:14px;font-weight:600;color:var(--gc-on-dark);letter-spacing:.04em}
-.hero h1{color:#fff;font-size:clamp(40px,6vw,78px)}
+.hero h1{color:#fff;font-size:clamp(34px,5vw,68px)}
 .hero h1 .akz{color:var(--gc-accent);display:block}
 .hero .lead{color:rgb(234 245 220/.86);margin:14px 0 0;max-width:560px}
 @media(min-width:900px){.hero .lead{margin:16px 0 24px}}
@@ -90,7 +90,10 @@ section{padding:clamp(64px,8vw,120px) 0}
 .hero__ctas .btn{flex:1 1 220px}
 @media(min-width:900px){.hero__ctas .btn{flex:0 0 auto}}
 
-/* Countdown */
+/* Ersparnis ruhig als eine Zeile */
+.save2{margin:12px 0 4px;font-size:14px;font-weight:600;color:var(--gc-action)}
+.pcard.dark .save2{color:var(--gc-accent)}
+/* Countdown (entfernt 28.10.) */
 .count{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;max-width:420px}
 .count div{background:var(--gc-dark-card);border:1px solid rgb(198 241 123/.22);border-radius:var(--r-btn);padding:10px 4px 8px;text-align:center}
 .count b{display:block;font-size:clamp(26px,3.4vw,38px);font-weight:600;line-height:1;color:#fff;font-variant-numeric:tabular-nums;letter-spacing:-.03em}
@@ -378,8 +381,8 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
 .pers__logo span{font-weight:700;color:var(--gc-dark);font-size:22px}
 .pers__t{font-size:14px;line-height:1.4;color:rgb(234 245 220/.85)}
 .pers__t b{display:block;color:#fff;font-size:16px}
-.seats{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:var(--gc-accent);color:var(--gc-dark-deep);font-weight:700;font-size:14px;padding:8px 12px;border-radius:var(--r-chip)}
-.seats i{font-style:normal;display:inline-block;width:8px;height:8px;border-radius:50%;background:#B42318}
+.seats{display:inline-flex;align-items:center;gap:8px;margin-top:16px;background:rgb(234 245 220/.1);color:var(--gc-on-dark);border:1px solid rgb(198 241 123/.35);font-weight:600;font-size:14px;padding:8px 12px;border-radius:var(--r-chip)}
+.seats i{font-style:normal;display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--gc-accent)}
 .hist{margin-top:14px;font-size:15px;line-height:1.5;color:rgb(234 245 220/.86);max-width:560px}
 .hist b{color:#fff}
 .closer{max-width:760px;margin:0 auto;background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-card);box-shadow:var(--sh-card);padding:24px;display:flex;gap:18px;align-items:flex-start}
@@ -395,7 +398,7 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
 <header class="top" id="top">
   <div class="wrap">
     <img src="img/logo-tinte-380.png" alt="GreenCareers">
-    <div><span class="top__count" data-phase-short>Angebot öffnet in <b data-count-short>–</b></span><a href="#warteliste" class="btn btn-main">Platz sichern</a></div>
+    <div><span class="top__count" id="p-topwhen">Kauf ab Do 05.11. · bis Fr 20.11.</span><a href="#warteliste" class="btn btn-main">Platz sichern</a></div>
   </div>
 </header>
 
@@ -406,10 +409,10 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
       <div class="stage__in">
         <div>
           <div class="pers" data-p-only><div class="pers__logo" id="p-logo"></div><div class="pers__t"><b id="p-betrieb"></b><span id="p-res">Angebot für Bestandskunden</span></div></div>
-          <div class="bm-kicker"><span class="bm-tag">Black Month</span><span class="ex-tag" id="p-tag">Nur für Bestandskunden</span></div>
-          <h1><span id="p-h1">Ihr Bestandskunden-Preis.</span><span class="akz">Über 50&nbsp;% auf Premium.</span></h1>
+          <div class="bm-kicker"><span class="ex-tag" id="p-tag">Nur für Bestandskunden</span></div>
+          <h1><span id="p-h1">Danke für die Zusammenarbeit.</span><span class="akz" id="p-h1b">Ihr Bestandskunden-Preis.</span></h1>
           <p class="hist" id="p-hist">Wir haben schon zusammengearbeitet. Darum bekommen Sie unser Premium-Abo zum Bestandskunden-Preis, fest für die ganze Laufzeit.</p>
-          <div class="seats"><i></i><span id="p-seats">Begrenzt auf 30 Betriebe · nur bis Fr 20.11.</span></div>
+          <div class="seats"><i></i><span id="p-seats">Premium-Abo über 50 % unter Listenpreis · 30 Plätze · bis Fr 20.11.</span></div>
           <div class="when">
             <div><b>Do 05.11., 8 Uhr</b><span id="p-w1">Kauf startet</span></div>
             <div><b>Fr 20.11., 23:59 Uhr</b><span>Angebot endet</span></div>
@@ -437,10 +440,6 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
                       </div>
           <p class="hnote">Preise je Stelle, zzgl. gesetzlicher USt., nur für Unternehmen.</p>
         </div>
-        <div class="hcount">
-          <div class="count-label" data-phase>Angebot öffnet in</div>
-          <div class="count" data-count><div><b data-d>–</b><span>Tage</span></div><div><b data-h>–</b><span>Std</span></div><div><b data-m>–</b><span>Min</span></div><div><b data-s>–</b><span>Sek</span></div></div>
-        </div>
       </div>
     </div>
   </div>
@@ -458,7 +457,7 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
   <div class="wrap"><div class="inner">
     <div class="sec-head rv">
       <span class="over" id="p-over">Ihr Preis als Bestandskunde</span>
-      <h2>Premium-Abo. <span class="akz">Über 50&nbsp;% unter Liste.</span></h2>
+      <h2>Premium-Abo. <span class="akz">Zum Bestandskunden-Preis.</span></h2>
       <p class="lead">Gleiche Leistung wie im Premium-Paket, fester Monatspreis, eine Stelle immer online. Ist sie besetzt, setzen Sie die nächste Stelle drauf.</p>
     </div>
     <div class="cards">
@@ -468,19 +467,19 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
         <p class="pcard__sub">Zum Einstieg, wenn eine Stelle drängt.</p>
         <div class="price"><s data-list="6m"></s><b data-price="6m"></b></div>
         <div class="price__unit">pro Monat netto je Stelle</div>
-        <div class="save"><div class="save__k">Sie sparen</div><div class="save__v" data-save="6m"></div><div class="save__d">über 6 Monate gegenüber dem Listenpreis ab 01.11.</div></div>
+        <div class="save2" data-save="6m"></div>
         <ul class="feat" data-feat></ul>
         <div class="pcard__total"><span>Gesamt 6 Monate</span><b data-total="6m"></b></div>
         <a href="#warteliste" class="btn btn-main btn-block">Platz sichern</a>
       </div>
       <div class="pcard dark rv">
-        <span class="pcard__badge">Bester Preis</span>
+        <span class="pcard__badge">Empfehlung</span>
         <span class="pcard__chip">12 Monate Mindestlaufzeit</span>
         <h3>Premium · 12 Monate</h3>
         <p class="pcard__sub">Für Betriebe, die das ganze Jahr suchen.</p>
         <div class="price"><s data-list="12m"></s><b data-price="12m"></b></div>
         <div class="price__unit">pro Monat netto je Stelle</div>
-        <div class="save"><div class="save__k">Sie sparen</div><div class="save__v" data-save="12m"></div><div class="save__d">über 12 Monate gegenüber dem Listenpreis ab 01.11.</div></div>
+        <div class="save2" data-save="12m"></div>
         <ul class="feat" data-feat></ul>
         <div class="pcard__total"><span>Gesamt 12 Monate</span><b data-total="12m"></b></div>
         <a href="#warteliste" class="btn btn-accent btn-block">Platz sichern</a>
@@ -495,7 +494,7 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
 
 <section style="padding-top:0">
   <div class="wrap"><div class="inner">
-    <div class="sec-head rv"><span class="over">So läuft es</span><h2>Drei Schritte. <span class="akz">Kein Aufwand.</span></h2></div>
+    <div class="sec-head rv"><span class="over">So läuft es</span><h2>Drei Schritte. <span class="akz">Wenig Aufwand.</span></h2></div>
     <div class="steps">
       <div class="step rv"><div class="step__n">01</div><h3>Eintragen.</h3><p>Name, E-Mail, Telefon. Unverbindlich, dauert 10 Sekunden.</p></div>
       <div class="step rv"><div class="step__n">02</div><h3>Wir melden uns.</h3><p>Ihr Ansprechpartner meldet sich schnellstmöglich und klärt mit Ihnen, welche Stelle Sie besetzen wollen.</p></div>
@@ -541,7 +540,7 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
     <div class="stage dark">
       <div class="stage__bg"></div>
       <div class="band__in">
-        <h2 id="p-band">Ihre nächste Stelle.<span class="akz">Über 50&nbsp;% günstiger.</span></h2>
+        <h2 id="p-band">Ihre nächste Stelle.<span class="akz">Zum Bestandskunden-Preis.</span></h2>
         <p class="lead">Nur für Bestandskunden, 30 Plätze, bis Fr 20.11.</p>
         <a href="#warteliste" class="btn btn-accent btn-lg">Auf die Warteliste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
@@ -552,13 +551,13 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
 <footer>
   <div class="wrap">
     <img src="img/logo-sandlight-380.png" alt="GreenCareers">
-    <div>Das Karrierenetzwerk für die grüne Branche. Ein Angebot der GreenCareers GmbH.</div>
+    <div>Das Karrierenetzwerk für die grüne Branche. Ein Angebot von GreenCareers.</div>
     <nav><a href="https://www.green-careers.de/impressum" target="_blank" rel="noopener">Impressum</a><a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a><a href="https://www.green-careers.de/agb" target="_blank" rel="noopener">AGB</a></nav>
   </div>
 </footer>
 
 <div class="sticky" id="sticky">
-  <div class="sticky__t"><b>Premium über 50 % günstiger</b><span data-count-short>–</span></div>
+  <div class="sticky__t"><b>Ihr Bestandskunden-Preis</b><span id="p-stickywhen">Premium-Abo · bis Fr 20.11.</span></div>
   <a href="#warteliste" class="btn btn-main">Platz sichern</a>
 </div>
 
@@ -579,7 +578,7 @@ for (const k in ANGEBOT) {
   const o = ANGEBOT[k], pct = Math.round((o.liste - o.preis) / o.liste * 100);
   document.querySelector(`[data-list="${k}"]`).textContent = eur(o.liste);
   document.querySelector(`[data-price="${k}"]`).innerHTML = o.preis + '<small>€</small>';
-  document.querySelector(`[data-save="${k}"]`).innerHTML = eur((o.liste - o.preis) * o.monate) + ` <span class="save__p">(${pct}\u00a0%)</span>`;
+  document.querySelector(`[data-save="${k}"]`).textContent = `${pct}\u00a0% unter dem Listenpreis ab 01.11.`;
   document.querySelector(`[data-total="${k}"]`).textContent = eur(o.preis * o.monate);
 }
 const FEATURES = [
@@ -636,7 +635,8 @@ if (du) {
   txt('p-formh', 'Sicher dir das Angebot auf der Warteliste.'); txt('p-okh', 'Du stehst auf der Warteliste.');
   txt('p-okt', 'Damit hast du dir das Angebot gesichert. Wir melden uns schnellstmöglich bei dir.');
   txt('p-over', 'Dein Preis als Bestandskunde');
-  $('p-band').innerHTML = 'Deine nächste Stelle.<span class="akz">Über 50&nbsp;% günstiger.</span>';
+  $('p-band').innerHTML = 'Deine nächste Stelle.<span class="akz">Zum Bestandskunden-Preis.</span>';
+  txt('p-h1b', 'Dein Bestandskunden-Preis.');
   txt('c-text', 'Rückfragen gern direkt an mich, antworte einfach auf meine Mail.');
 }
 if (P.s || P.y) {
@@ -657,6 +657,7 @@ document.getElementById('wl').addEventListener('submit', e => {
   document.getElementById('f-err').classList.toggle('show', !ok);
   if (!ok) return;
   const btn = f.querySelector('button[type=submit]'); btn.disabled = true;
+  if (!/green-careers\.de$/.test(location.hostname)) { f.style.display = 'none'; document.getElementById('wl-ok').classList.add('show'); return; } // Vorschau: nichts senden
   fetch('https://gc-tracking-dashboard.vercel.app/api/warteliste', { method: 'POST', headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({ name: f.querySelector('#f-name').value.trim(), email: f.querySelector('#f-mail').value.trim(), tel: f.querySelector('#f-tel').value.trim(),
       p: q.get('p') || '', lp: location.href, website: (f.querySelector('#f-web') || {}).value || '' }) })
@@ -671,20 +672,8 @@ const END = NACH ? new Date('2026-11-24T09:00:00+01:00').getTime() : new Date('2
 if (NACH) {
   document.querySelectorAll('.when').forEach(w => w.innerHTML = '<div><b>Nur 24 Stunden</b><span>Nachzügler-Preis</span></div><div><b>Di 24.11., 9 Uhr</b><span>Angebot endet</span></div>');
   document.getElementById('p-seats').textContent = 'Nachzügler-Preis · nur bis Di 24.11., 9 Uhr';
-  document.querySelectorAll('.akz').forEach(a => { if (a.textContent.includes('Über 50')) a.innerHTML = '24 Stunden Nachzügler-Preis.'; });
+  txt('p-h1b', '24 Stunden Nachzügler-Preis.'); txt('p-topwhen', 'Nachzügler-Preis · bis Di 24.11., 9 Uhr'); txt('p-stickywhen', 'Nachzügler-Preis · bis Di 24.11., 9 Uhr');
 }
-const pad = n => String(n).padStart(2, '0');
-function tick() {
-  const now = Date.now(), before = now < OPEN, target = before ? OPEN : END, d = Math.max(0, target - now);
-  const D = Math.floor(d / 864e5), H = Math.floor(d % 864e5 / 36e5), M = Math.floor(d % 36e5 / 6e4), S = Math.floor(d % 6e4 / 1e3);
-  document.querySelectorAll('[data-count]').forEach(c => {
-    c.querySelector('[data-d]').textContent = D; c.querySelector('[data-h]').textContent = pad(H);
-    c.querySelector('[data-m]').textContent = pad(M); c.querySelector('[data-s]').textContent = pad(S);
-  });
-  document.querySelectorAll('[data-phase]').forEach(e => e.textContent = before ? 'Angebot öffnet in' : 'Angebot endet in');
-  document.querySelectorAll('[data-count-short]').forEach(e => e.textContent = d ? `${before ? 'öffnet in' : 'endet in'} ${D} T ${pad(H)} Std` : 'Angebot beendet');
-}
-tick(); setInterval(tick, 1000);
 const sticky = document.getElementById('sticky');
 new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting)).observe(document.querySelector('.hero'));
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12, rootMargin: '0px 0px -40px 0px' });
