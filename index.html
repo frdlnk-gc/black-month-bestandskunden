@@ -563,11 +563,11 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
 </div>
 
 <script>
-/* Mail-Links: ?l=<Close-Lead-ID> → Personalisierung vom GC-Dashboard holen und als ?p= neu laden */
-(() => { const u = new URL(location.href), l = u.searchParams.get('l');
-  if (l && !u.searchParams.get('p') && /^lead_[A-Za-z0-9]+$/.test(l)) {
-    fetch('https://gc-tracking-dashboard.vercel.app/api/bw?z=json&l=' + encodeURIComponent(l)).then(r => r.json()).then(j => {
-      u.searchParams.delete('l'); if (j && j.p) u.searchParams.set('p', j.p); location.replace(u.toString());
+/* Mail-Links: ?t=<Empfänger-Token> → Personalisierung vom GC-Dashboard holen und als ?p= neu laden */
+(() => { const u = new URL(location.href), t = u.searchParams.get('t');
+  if (t && !u.searchParams.get('p') && /^[0-9a-f-]{36}$/i.test(t)) {
+    fetch('https://gc-tracking-dashboard.vercel.app/api/bw?z=json&t=' + encodeURIComponent(t)).then(r => r.json()).then(j => {
+      u.searchParams.delete('t'); if (j && j.p) u.searchParams.set('p', j.p); location.replace(u.toString());
     }).catch(() => {});
   } })();
 /* Ex-Kunden-Preise Black Month (Freddy 27.10.): Premium 6 Mon. 499 € statt 899 €, 12 Mon. 349 € statt 739 € (Listenpreise ab 01.11.). Ganze Prozent. */
