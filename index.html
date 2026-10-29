@@ -513,7 +513,11 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 </div>
 
 <script>
-const MODE = document.documentElement.dataset.mode;           // einmal | abo | bestand
+/* MODE: einmal | abo | bestand | auto. auto = eine Domain für Neukunden: bis 15.11. Einmalkauf, ab 16.11. 0 Uhr Abo (Vorschau: ?modus=einmal|abo) */
+const Q0 = new URLSearchParams(location.search);
+const MODE = (() => { const m = document.documentElement.dataset.mode; if (m !== 'auto') return m;
+  const f = Q0.get('modus'); if (f === 'einmal' || f === 'abo') return f;
+  return Date.now() >= new Date('2026-11-16T00:00:00+01:00').getTime() ? 'abo' : 'einmal'; })();
 const LIVE = /(^|\.)green-careers\.de$/.test(location.hostname);
 if (LIVE) document.getElementById('vorschau').remove();
 const Q = new URLSearchParams(location.search);
@@ -540,10 +544,12 @@ const KAUF_AB = new Date('2026-11-05T00:00:00+01:00').getTime();
    Bestandskunden (Freddy 27.10.): Premium 6 M 899 → 499, 12 M 739 → 349.
    Mengenstaffel IMMER je Stelle: 2 −10 %, 3 −20 %, 4 −30 %. */
 const STAFFEL = {1:0, 2:10, 3:20, 4:30};
+/* Offene Freddy-Frage: Statt-Preis Premium 12 Monate (Neukunden-Abo) = 699 (Call 28.10.) oder 739 (Katalog 26.10.). Hier umstellen. */
+const STATT_PREMIUM_12 = 699;
 const PREISE = {
   einmal: { smart:{liste:2990, preis:2550}, premium:{liste:4290, preis:3650}, exzellenz:{liste:7490, preis:6370} },
   abo: { '6':  { smart:{preis:699}, premium:{liste:899, preis:699}, exzellenz:{preis:1099} },
-         '12': { smart:{preis:499}, premium:{liste:699, preis:499}, exzellenz:{preis:899} } },
+         '12': { smart:{preis:499}, premium:{liste:STATT_PREMIUM_12, preis:499}, exzellenz:{preis:899} } },
   bestand: { '6':{liste:899, preis:499}, '12':{liste:739, preis:349} },
 };
 const pct = o => Math.round((o.liste - o.preis) / o.liste * 100);
@@ -604,7 +610,7 @@ const TEXT = {
     h1:'Premium-Abo. <span class="akz">Zum Smart-Preis.</span>',
     lead:'Ihre Stellenanzeige bei GreenCareers ganz oben, dazu auf Instagram und Facebook. Zum Preis des kleinen Pakets, fest für die ganze Laufzeit.',
     heroBtn:'Paket wählen', hlink:'oder Rückruf anfordern',
-    hpreis:'Premium <b>499 €</b> <s>statt 699 €</s> im Monat · 12 Monate · gesamt 5.988 € netto',
+    hpreis:`Premium <b>499 €</b> <s>statt ${STATT_PREMIUM_12} €</s> im Monat · 12 Monate · gesamt 5.988 € netto`,
     mrund:'',
     rund:'',
     formKicker:'Kostenloser Rückruf', formH:'Wir rufen Sie zurück.', formBtn:'Rückruf anfordern', formBtnSmall:'unverbindlich · dauert 10 Sekunden',
@@ -667,6 +673,7 @@ if (MODE === 'bestand') {
 }
 
 const T = TEXT[MODE];
+if (document.documentElement.dataset.mode === 'auto') document.title = MODE === 'abo' ? 'Black Month: Premium-Abo zum Smart-Preis | GreenCareers' : 'Black Month: alle Pakete 15 % günstiger | GreenCareers';
 document.querySelectorAll('[data-t]').forEach(el => { if (T[el.dataset.t] !== undefined) el.innerHTML = T[el.dataset.t]; });
 { const ru = document.getElementById('rund'); if (ru) { if (T.rund) ru.innerHTML = T.rund; else ru.remove(); } }
 document.getElementById('allin').innerHTML = T.allin.map(c => `<span>${c}</span>`).join('');
