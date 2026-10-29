@@ -149,11 +149,14 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 @media(min-width:900px){.mrund{display:none}}
 .hp-r{white-space:nowrap}
 .hp-k{display:block;width:100%;font-size:13px;color:rgb(234 245 220/.8)}
-.hp-r+.hp-r::before,.hp-n::before{content:"·";margin:0 8px 0 2px;color:rgb(234 245 220/.6)}
+.hp-r+.hp-r::before{content:"·";margin:0 8px 0 2px;color:rgb(234 245 220/.6)}
+.hp-n{display:block;width:100%;font-size:13.5px;color:rgb(234 245 220/.8)}
 .htrust{display:none}
 .hp-m{display:none}
+.hp-top{color:inherit;text-decoration:none}
+@media(max-width:899px){.hp-top{border:1px solid rgb(198 241 123/.55);background:rgb(198 241 123/.10);border-radius:9px;padding:3px 10px;margin:2px 0}}
 .hp-f{display:none;font-style:normal;font-size:12px;color:rgb(234 245 220/.7)}
-.hpreis s{color:rgb(234 245 220/.6);font-size:.9em;text-decoration-thickness:2px}
+.hpreis s{color:rgb(234 245 220/.82);font-size:1em;font-weight:500;text-decoration-thickness:2px}
 @media(max-width:899px){
   html:not([data-mode="bestand"]) .stage__in>div:first-child{text-align:center}
   html:not([data-mode="bestand"]) .bm,html:not([data-mode="bestand"]) .hero__cta{justify-content:center}
@@ -171,6 +174,16 @@ section{padding:clamp(56px,6.5vw,104px) 0}
   html:not([data-mode="bestand"]) .hero__cta .btn{width:100%}
   html:not([data-mode="bestand"]) .hlink{display:none}
   html:not([data-mode="bestand"]) .bm b{display:none}
+  html:not([data-mode="bestand"]) .bm span{font-size:12px;letter-spacing:0}
+  .hp-n{font-size:12px!important}
+  html:not([data-mode="bestand"]) .mrund{margin-top:8px;padding:5px 12px}
+  html:not([data-mode="bestand"]) .mrund b{font-size:20px}
+  html:not([data-mode="bestand"]) .stage h1{margin-top:8px}
+  html:not([data-mode="bestand"]) .htrust{margin-top:8px!important}
+  html:not([data-mode="bestand"]) .hpreis{gap:0}
+  html:not([data-mode="bestand"]) .hero__cta{margin-top:10px!important}
+  html:not([data-mode="bestand"]) .stage__in{padding-top:14px}
+  html:not([data-mode="bestand"]) .bm span::before{content:"Black Month · ";color:var(--gc-accent);font-weight:700}
   html:not([data-mode="bestand"]) .mrund-w{margin-top:-2px}
   .hp-f{display:inline}
   html:not([data-mode="bestand"]) .htrust{flex-wrap:nowrap;gap:4px}
@@ -528,7 +541,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
     <ul class="feat"><li>Zugang zu 30.000+ Fachkräften der grünen Branche</li><li>Ihre Anzeige ganz oben, auffällig hervorgehoben</li><li>Ausspielung auf Instagram und Facebook</li><li>Bewerbungen per E-Mail und WhatsApp</li><li>Unpassende Bewerbungen sortieren wir vorher aus</li><li>Fester Ansprechpartner</li></ul>
     <a class="btn btn-main" href="#formular">Auf die Warteliste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a><span class="bhint">Kauf ab Do 05.11., bis dahin Platz auf der Warteliste sichern.</span>
   </div></div>
-    <p class="legal" style="margin-top:22px;font-size:14px;color:var(--gc-ink)"><b>Mehrere Stellen:</b> jede Stelle günstiger, bei 2 Stellen je −10 %, bei 3 je −20 %, bei 4 je −30 %. Einfach oben in der Karte die Anzahl wählen.</p>
+    <p class="legal" style="margin-top:22px;font-size:14px;color:var(--gc-ink)"><b>Mehrere Stellen:</b> jede Stelle zusätzlich günstiger, auch auf den Black-Month-Preis: bei 2 Stellen je −10 %, bei 3 je −20 %, bei 4 je −30 %. Einfach oben in der Karte die Anzahl wählen.</p>
     <div class="allin" id="allin"><span>Preis fest für die ganze Laufzeit</span><span>Keine Setup-Gebühr</span><span>Stelle besetzt? Nächste Stelle drauf.</span><span>In der Laufzeit niemand eingestellt? +30&nbsp;Tage gratis</span></div>
     <div class="vertrag" id="vertrag"><b>Vertrag in Klartext</b><ul id="vertragList"><li>Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.</li><li>Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.</li><li>Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.</li><li>Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.</li></ul></div>
     <p class="legal" data-t="legal">Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf <a href="https://www.green-careers.de/abo" target="_blank" rel="noopener">green-careers.de/abo</a>. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze.</p>
@@ -671,7 +684,7 @@ const TEXT = {
     h1:'<span class="l">Mitarbeiter finden</span><span class="l akz">zum Black-Month-Deal.</span>',
     lead:'Ihre Stellenanzeige im GreenCareers-Netzwerk mit 30.000+ Fachkräften der grünen Branche. Alle drei Pakete zum Black-Month-Preis, einmal zahlen, kein Abo.',
     heroBtn:'Paket wählen', hlink:'oder Rückruf anfordern',
-    hpreis:'<span class="hp-r">Smart <b>2.550 €</b> <s>2.990 €</s></span><span class="hp-r">Premium <i class="hp-f">(Vorarbeiter)</i> <b>3.650 €</b> <s>4.290 €</s></span><span class="hp-r hp-m">Exzellenz <b>6.370 €</b> <s>7.490 €</s></span><span class="hp-n">einmalig netto, kein Abo</span>',
+    hpreis:'<span class="hp-r">Smart <b>2.550 €</b> <s>2.990 €</s></span><a class="hp-r hp-top" href="#karte-premium">Premium <i class="hp-f">(Vorarbeiter)</i> <b>3.650 €</b> <s>4.290 €</s></a><span class="hp-r hp-m">Exzellenz <b>6.370 €</b> <s>7.490 €</s></span><span class="hp-n">einmalig netto, kein Abo · keine Einstellung? +30&nbsp;Tage gratis</span>',
     mrund:'<b>−15 %</b> auf alle Pakete',
     rund:'<div><small>alle Pakete</small><b>−15 %</b></div>',
     formKicker:'Kostenloser Rückruf', formH:'Wir rufen Sie zurück.', formBtn:'Rückruf anfordern', formBtnSmall:'unverbindlich · dauert 10 Sekunden',
@@ -695,7 +708,7 @@ const TEXT = {
     h1:'<span class="l">Premium-Abo.</span><span class="l akz">Zum Smart&#8209;Preis.</span>',
     lead:'Ihre Stellenanzeige bei GreenCareers ganz oben, dazu auf Instagram und Facebook. Zum Preis des kleinen Pakets, fest für die ganze Laufzeit.',
     heroBtn:'Premium wählen', hlink:'oder Rückruf anfordern',
-    hpreis:`<span class="hp-r">Premium <b>499 €</b> <s>statt ${STATT_PREMIUM_12} €</s></span><span class="hp-n">im Monat · 12 Monate · gesamt 5.988 € netto</span><span class="hp-k">Keine Setup-Gebühr · in der Laufzeit niemand eingestellt? +30&nbsp;Tage gratis</span>`,
+    hpreis:`<span class="hp-r">Premium <i class="hp-f">(Vorarbeiter)</i> <b>499 €</b> <s>statt ${STATT_PREMIUM_12} €</s></span><span class="hp-n">im Monat · 12 Monate · gesamt 5.988 € netto</span><span class="hp-k">Keine Setup-Gebühr · in der Laufzeit niemand eingestellt? +30&nbsp;Tage gratis</span>`,
     mrund:`bis zu <b>−${ABO_MAXPCT} %</b> mit Mengenpreis`,
     rund:`<div><small>bis zu</small><b>−${ABO_MAXPCT} %</b><small>Premium-Abo</small></div>`,
     formKicker:'Kostenloser Rückruf', formH:'Wir rufen Sie zurück.', formBtn:'Rückruf anfordern', formBtnSmall:'unverbindlich · dauert 10 Sekunden',
@@ -775,7 +788,9 @@ document.getElementById('allin').innerHTML = T.allin.map(c => `<span>${c}</span>
 document.getElementById('steps').innerHTML = T.steps.map(s => `<div class="step rv"><span>${s[0]}</span><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
 document.getElementById('faq').innerHTML = T.faq.map(f => `<details class="rv"><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('');
 const NEUKUNDEN = MODE !== 'bestand';
-if (MODE === 'abo') document.querySelector('.hero__cta .btn').href = '#karte-premium';
+if (MODE === 'abo') { const hb = document.querySelector('.hero__cta .btn');
+  if (FREIGABE.abo && KAUF.abo['12'].premium) hb.href = '#karte-premium';
+  else { hb.href = '#formular'; hb.querySelector('span').textContent = 'Platz per Rückruf sichern'; } }
 if (!NEUKUNDEN) { document.querySelector('.hero__cta .btn').href = '#formular'; document.querySelector('.hlink').href = '#pakete'; document.querySelector('.beweis')?.remove(); }
 if (NEUKUNDEN) { for (const id of ['bandBtn','stickyBtn']) { const b = document.getElementById(id); b.href = '#pakete'; (b.querySelector('span') || b).textContent = 'Paket wählen'; } }
 document.querySelectorAll('[data-only]').forEach(el => { if ((el.dataset.only === 'bestand') === NEUKUNDEN) el.remove(); });
@@ -828,7 +843,7 @@ function karte(k, p, pr, n, opts) {
       <b>${eur(gesamt)} <small>€</small></b>
       <em>${opts.einheit}</em>
       ${opts.deal ? `<span class="deal">${opts.deal}</span>` : ''}${opts.regulaer ? `<span class="smartnote" style="color:var(--gc-ink-muted)">${opts.regulaer}</span>` : ''}
-      <div class="qtynote">${n > 1 ? `${n} Stellen · ${eur(proStelle)} € je Stelle (−${STAFFEL[n]} % Mengenpreis)` : (NEUKUNDEN ? 'Ab 2 Stellen wird jede Stelle günstiger (−10 % bis −30 %)' : '')}</div>
+      <div class="qtynote">${n > 1 ? `${n} Stellen · ${eur(proStelle)} € je Stelle (−${STAFFEL[n]} % Mengenpreis)` : ''}</div>
     </div>
     <hr>
     <div class="feat-l">${p.featL}</div>
@@ -859,7 +874,7 @@ function render() {
       return karte(k, p, preise[k], n, {
         einheit: MODE === 'abo' ? `pro Monat netto · ${term} Monate · gesamt ${eur(jeStelle(preise[k].preis, n) * n * +term)} €` : `einmalig netto · ${p.lauf}`,
         deal: MODE === 'abo' ? '' : '−15 % Black Month',
-        btnTxt:'Jetzt buchen', ersatzTxt:'Jetzt beraten lassen',
+        btnTxt:'Jetzt buchen', ersatzTxt: MODE === 'abo' && k === 'premium' ? 'Premium per Rückruf sichern' : 'Jetzt beraten lassen',
         hint: MODE === 'abo' ? 'Weiter zur Bestellung · Karte oder SEPA-Lastschrift' : 'Weiter zur Bestellung · Karte oder Rechnung',
         smartnote: MODE === 'abo' && k === 'smart' ? `Für ${preise.smart.preis} € bekommen Sie im Black Month schon Premium.` : '',
         soft: MODE === 'abo' && k === 'smart',
