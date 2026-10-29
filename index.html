@@ -426,7 +426,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <b>499 <small>€</small></b>
       <em>pro Monat netto · 6 Monate · gesamt 2.994 €</em>
       
-      <div class="qtynote">Mehrere Stellen: jede Stelle günstiger (2 Stellen je −10 %, 3 je −20 %, 4 je −30 %), zusätzlich zum Black-Month-Preis</div>
+      <div class="qtynote"></div>
     </div>
     <hr>
     <div class="feat-l">Im Premium-Abo enthalten</div>
@@ -443,13 +443,14 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <b>349 <small>€</small></b>
       <em>pro Monat netto · 12 Monate · gesamt 4.188 €</em>
       
-      <div class="qtynote">Mehrere Stellen: jede Stelle günstiger (2 Stellen je −10 %, 3 je −20 %, 4 je −30 %), zusätzlich zum Black-Month-Preis</div>
+      <div class="qtynote"></div>
     </div>
     <hr>
     <div class="feat-l">Im Premium-Abo enthalten</div>
     <ul class="feat"><li>Zugang zu 30.000+ Fachkräften der grünen Branche</li><li>Ihre Anzeige ganz oben, auffällig hervorgehoben</li><li>Ausspielung auf Instagram und Facebook</li><li>Bewerbungen per E-Mail und WhatsApp</li><li>Unpassende Bewerbungen sortieren wir vorher aus</li><li>Fester Ansprechpartner</li></ul>
     <a class="btn btn-main" href="#formular">Auf die Warteliste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a><span class="bhint">Kauf ab Do 05.11., bis dahin Platz auf der Warteliste sichern.</span><span class="ph">Kauf-Link von Patric eingebaut, klickbar nach seiner Bestätigung (Mo 02.11.)</span>
   </div></div>
+    <p class="legal" style="margin-top:22px;font-size:14px;color:var(--gc-ink)"><b>Mehrere Stellen:</b> jede Stelle günstiger, bei 2 Stellen je −10 %, bei 3 je −20 %, bei 4 je −30 %. Einfach oben in der Karte die Anzahl wählen.</p>
     <div class="allin" id="allin"><span>Preis fest für die ganze Laufzeit</span><span>Keine Setup-Gebühr</span><span>Stelle besetzt? Nächste Stelle drauf.</span><span>In der Laufzeit niemand eingestellt? +30 Tage gratis</span></div>
     <div class="vertrag" id="vertrag"><b>Vertrag in Klartext</b><ul id="vertragList"><li>Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.</li><li>Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.</li><li>Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.</li><li>Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.</li></ul></div>
     <p class="legal" data-t="legal">Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.</p>
@@ -582,7 +583,7 @@ const FEAT_BESTAND = ['Zugang zu 30.000+ Fachkräften der grünen Branche','Ihre
 const TEXT = {
   einmal: {
     topNote:'nur bis 15.11.', topBtn:'Rückruf anfordern',
-    bmLine:'Nur bis 15.11. · 30 Plätze',
+    bmLine:'Für Neukunden · nur bis 15.11. · 30 Plätze',
     h1:'Mitarbeiter finden. <span class="akz">Alle Pakete reduziert.</span>',
     lead:'Ihre Stellenanzeige im GreenCareers-Netzwerk mit 30.000+ Fachkräften der grünen Branche. Alle drei Pakete zum Black-Month-Preis, einmal zahlen, kein Abo.',
     heroBtn:'Paket wählen', hlink:'oder Rückruf anfordern',
@@ -594,7 +595,7 @@ const TEXT = {
     doneH:'Danke, wir melden uns.', doneP:'Unser Vertrieb ruft Sie schnellstmöglich zurück.',
     pOver:'Pakete', pH2:'Drei Pakete. <span class="akz">Alle 15 % günstiger.</span>',
     allin:['Einmal zahlen','Keine Verlängerung, kein Abo','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise auf green-careers.de. Black-Month-Preise bis 15.11.2026, begrenzt auf 30 Plätze.',
+    legal:'Alle Preise netto zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen und Neukunden. Statt-Preise = reguläre Listenpreise auf green-careers.de. Black-Month-Preise bis 15.11.2026, begrenzt auf 30 Plätze.',
     steps:[['01','Paket wählen.','Paket und Anzahl der Stellen wählen oder kurz mit uns sprechen.'],['02','Betrieb zeigen.','Position, Ort, ein paar Bilder. Wir bauen Ihre Anzeige.'],['03','Bewerber kennenlernen.','Passende Bewerbungen kommen direkt zu Ihnen.']],
     faq:[['Wie lange läuft meine Anzeige?','Smart und Premium 60 Tage, Exzellenz 90 Tage. Wird in dieser Zeit niemand eingestellt, kommen 30 Tage ohne Aufpreis dazu.'],
          ['Verlängert sich das Paket automatisch?','Nein. Sie zahlen einmal, kein Abo.'],
@@ -606,7 +607,7 @@ const TEXT = {
   },
   abo: {
     topNote:'16.–30.11.', topBtn:'Rückruf anfordern',
-    bmLine:'16.–30.11. · 30 Plätze',
+    bmLine:'Für Neukunden · 16.–30.11. · 30 Plätze',
     h1:'Premium-Abo. <span class="akz">Zum Smart-Preis.</span>',
     lead:'Ihre Stellenanzeige bei GreenCareers ganz oben, dazu auf Instagram und Facebook. Zum Preis des kleinen Pakets, fest für die ganze Laufzeit.',
     heroBtn:'Paket wählen', hlink:'oder Rückruf anfordern',
@@ -618,7 +619,7 @@ const TEXT = {
     doneH:'Danke, wir melden uns.', doneP:'Unser Vertrieb ruft Sie schnellstmöglich zurück.',
     pOver:'Pakete', pH2:'Premium. <span class="akz">Zum Smart-Preis.</span>',
     allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto pro Monat zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise auf green-careers.de/abo. Black-Month-Preis bei Abschluss vom 16.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.',
+    legal:'Alle Preise netto pro Monat zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen und Neukunden. Statt-Preise = reguläre Listenpreise auf green-careers.de/abo. Black-Month-Preis bei Abschluss vom 16.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.',
     steps:[['01','Abo wählen.','Paket, Laufzeit und Stellen wählen oder kurz mit uns sprechen.'],['02','Betrieb zeigen.','Position, Ort, ein paar Bilder. Wir bauen Ihre Anzeige.'],['03','Bewerber kennenlernen.','Laufend passende Bewerbungen, direkt zu Ihnen.']],
     faq:[['Gilt der Preis nur im ersten Monat?','Nein, für die gesamte Mindestlaufzeit.'],
          ['Was passiert, wenn meine Stelle besetzt ist?','Sie setzen die nächste offene Stelle auf Ihren Abo-Platz.'],
@@ -729,7 +730,7 @@ function karte(k, p, pr, n, opts) {
       <b>${eur(gesamt)} <small>€</small></b>
       <em>${opts.einheit}</em>
       ${opts.deal ? `<span class="deal">${opts.deal}</span>` : ''}${opts.regulaer ? `<span class="smartnote" style="color:var(--gc-ink-muted)">${opts.regulaer}</span>` : ''}
-      <div class="qtynote">${n > 1 ? `${n} Stellen · ${eur(proStelle)} € je Stelle (−${STAFFEL[n]} % Mengenpreis)` : `Mehrere Stellen: jede Stelle günstiger (2 Stellen je −10 %, 3 je −20 %, 4 je −30 %), zusätzlich zum ${pr.liste ? 'Black-Month-Preis' : 'Paketpreis'}`}</div>
+      <div class="qtynote">${n > 1 ? `${n} Stellen · ${eur(proStelle)} € je Stelle (−${STAFFEL[n]} % Mengenpreis)` : ''}</div>
     </div>
     <hr>
     <div class="feat-l">${p.featL}</div>
