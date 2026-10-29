@@ -414,10 +414,10 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
           <div class="bm-kicker"><span class="bm-tag">Black Month</span><span class="ex-tag" id="p-tag">Nur für Bestandskunden</span></div>
           <h1><span id="p-h1">Ihr Bestandskunden-Preis.</span><span class="akz">Über 50&nbsp;% auf Premium.</span></h1>
           <p class="hist" id="p-hist">Wir haben schon zusammengearbeitet. Darum bekommen Sie unser Premium-Abo zum Bestandskunden-Preis, fest für die ganze Laufzeit.</p>
-          <div class="seats"><i></i><span id="p-seats">Begrenzt auf 30 Betriebe · nur bis Fr 20.11.</span></div>
+          <div class="seats"><i></i><span id="p-seats">Begrenzt auf 30 Betriebe · nur bis Mo 30.11.</span></div>
           <div class="when">
             <div><b>Do 05.11., 8 Uhr</b><span id="p-w1">Kauf startet</span></div>
-            <div><b>Fr 20.11., 23:59 Uhr</b><span>Angebot endet</span></div>
+            <div><b>Mo 30.11., 23:59 Uhr</b><span>Angebot endet</span></div>
           </div>
         </div>
         <div class="hcard" id="buchen">
@@ -481,7 +481,7 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
     </div>
     <div class="info2">
       <div class="info"><b>Preis fest für die ganze Laufzeit</b><p>Der Vorzugspreis gilt für alle Monate der Mindestlaufzeit, nicht nur für den ersten.</p></div>
-      <div class="info"><b>30 Plätze, bis Fr 20.11.</b><p>Nur für GreenCareers-Bestandskunden. Wir nehmen 30 Betriebe auf, damit das Onboarding sauber läuft.</p></div>
+      <div class="info"><b>30 Plätze, bis Mo 30.11.</b><p>Nur für GreenCareers-Bestandskunden. Wir nehmen 30 Betriebe auf, damit das Onboarding sauber läuft.</p></div>
     </div>
   </div></div>
 </section>
@@ -520,7 +520,7 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
       <details><summary><span>03</span>Gilt der Preis nur im ersten Monat?</summary><p>Nein. Der Preis gilt für die ganze Mindestlaufzeit von 6 bzw. 12 Monaten.</p></details>
       <details><summary><span>04</span>Was ist, wenn meine Stelle schnell besetzt ist?</summary><p>Dann setzen Sie die nächste Stelle auf denselben Platz. Ohne Aufpreis.</p></details>
       <details><summary><span>05</span>Was ist, wenn niemand passt?</summary><p>Wird die gesuchte Person innerhalb der Mindestlaufzeit nicht eingestellt, kommen 30 Tage ohne Aufpreis dazu. Eine Einstellung wird nicht zugesagt.</p></details>
-      <details><summary><span>06</span>Bis wann gilt das Angebot?</summary><p>Von Do 05.11., 8 Uhr, bis Fr 20.11., 23:59 Uhr.</p></details>
+      <details><summary><span>06</span>Bis wann gilt das Angebot?</summary><p>Von Do 05.11., 8 Uhr, bis Mo 30.11., 23:59 Uhr.</p></details>
     </div>
   </div></div>
 </section>
@@ -535,7 +535,7 @@ footer a{text-decoration:none} footer a:hover{color:#fff}
       <div class="stage__bg"></div>
       <div class="band__in">
         <h2 id="p-band">Ihre nächste Stelle.<span class="akz">Über 50&nbsp;% günstiger.</span></h2>
-        <p class="lead">Nur für Bestandskunden, 30 Plätze, bis Fr 20.11.</p>
+        <p class="lead">Nur für Bestandskunden, 30 Plätze, bis Mo 30.11.</p>
         <a href="#angebot" class="btn btn-accent btn-lg">Jetzt Paket wählen <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
       </div>
     </div>
@@ -651,9 +651,9 @@ document.querySelectorAll('[data-buy]').forEach(a => {
 });
 if (NACH) { document.querySelectorAll('[data-buy="12m"] small').forEach(x => x.textContent = '399 € statt 739 € im Monat · Nachzügler'); document.querySelectorAll('[data-buy="6m"] small').forEach(x => x.textContent = '599 € statt 899 € im Monat · Nachzügler'); }
 
-/* Zeitplan Variante B: öffnet Mo 02.11. 08:00, endet Fr 20.11. 23:59 (MEZ) */
+/* Zeitplan Variante B: öffnet Mo 02.11. 08:00, endet Mo 30.11. 23:59 (MEZ) */
 const OPEN = NACH ? new Date('2026-11-23T09:00:00+01:00').getTime() : new Date('2026-11-05T08:00:00+01:00').getTime();
-const END = NACH ? new Date('2026-11-24T09:00:00+01:00').getTime() : new Date('2026-11-20T23:59:59+01:00').getTime();
+const END = NACH ? new Date('2026-11-24T09:00:00+01:00').getTime() : new Date('2026-11-30T23:59:59+01:00').getTime();
 if (NACH) {
   document.querySelectorAll('.when').forEach(w => w.innerHTML = '<div><b>Nur 24 Stunden</b><span>Nachzügler-Preis</span></div><div><b>Di 24.11., 9 Uhr</b><span>Angebot endet</span></div>');
   document.getElementById('p-seats').textContent = 'Nachzügler-Preis · nur bis Di 24.11., 9 Uhr';

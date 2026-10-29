@@ -200,7 +200,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 .toggle{display:inline-flex;background:#fff;border:1px solid var(--gc-line);border-radius:14px;padding:5px;gap:4px;margin-top:20px;box-shadow:var(--sh-card)}
 .toggle button{border:0;background:transparent;font:600 15px Poppins,Arial,sans-serif;color:var(--gc-ink);padding:11px 22px;border-radius:10px;cursor:pointer;min-height:46px}
 .toggle button.on{background:var(--gc-dark);color:#fff}
-.cards{display:grid;gap:22px;align-items:center}
+.cards{display:grid;gap:22px;align-items:stretch}
 .cards--3{max-width:1120px;margin:0 auto}
 .cards--2{max-width:820px;margin:0 auto}
 @media(min-width:960px){.cards--3{grid-template-columns:1fr 1.08fr 1fr;gap:20px}}
@@ -209,7 +209,8 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 .card:hover{transform:translateY(-4px);box-shadow:var(--sh-card-hover);border-color:var(--gc-action)}
 .card--top{background:linear-gradient(160deg,#1F4A35 0%,var(--gc-dark) 45%,var(--gc-dark-deep) 100%);border:2px solid var(--gc-accent);color:var(--gc-on-dark);box-shadow:0 30px 80px rgb(20 45 29/.32),0 0 0 6px rgb(198 241 123/.18);padding:34px 24px 24px}
 .card--top:hover{border-color:var(--gc-accent)}
-@media(min-width:960px){.cards--3 .card--top{transform:scale(1.03)}.cards--3 .card--top:hover{transform:scale(1.03) translateY(-4px)}}
+@media(min-width:960px){.cards--3{padding-top:16px}.cards--3 .card--top{transform:translateY(-16px)}.cards--3 .card--top:hover{transform:translateY(-20px)}}
+@media(min-width:760px){.cards--2 .card--top{transform:translateY(-12px)}.cards--2 .card--top:hover{transform:translateY(-16px)}}
 .card--top h3,.card--top .price b{color:#fff}
 .card__badge{position:absolute;top:-17px;left:50%;transform:translateX(-50%);white-space:nowrap;background:var(--gc-accent);color:var(--gc-dark-deep);font-size:14px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:8px 16px;border-radius:var(--r-btn);box-shadow:0 10px 26px rgb(20 45 29/.25)}
 .card__rund{position:absolute;top:-22px;right:-10px;width:92px;height:92px;border-radius:50%;background:var(--gc-accent);color:var(--gc-dark-deep);display:grid;place-items:center;text-align:center;transform:rotate(-8deg);box-shadow:0 14px 30px rgb(20 45 29/.25);line-height:1.05}
@@ -339,7 +340,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <div class="stage__in">
         <div>
           <div class="pers" id="pers" hidden=""><div class="pers__logo" id="p-logo"></div><div><b id="p-betrieb"></b><span>Bestandskunde</span></div></div>
-          <div class="bm"><b>Black Month</b><span data-t="bmLine">Kauf 05.–20.11. · bis dahin Warteliste</span></div>
+          <div class="bm"><b>Black Month</b><span data-t="bmLine">Kauf 05.–30.11. · bis dahin Warteliste</span></div>
           <div class="mrund-w"><span class="mrund" data-t="mrund">bis zu <b>−53 %</b> Premium-Abo</span></div>
           <h1 data-t="h1">Black-Month-Deal <span class="akz">für Bestandskunden.</span></h1>
           <p class="lead" data-t="lead">Das Premium-Abo für Ihren nächsten Mitarbeiter, nur für Bestandskunden. Jetzt Platz vormerken, Kauf ab 05.11.</p>
@@ -450,8 +451,8 @@ section{padding:clamp(56px,6.5vw,104px) 0}
     <a class="btn btn-main" href="#formular">Auf die Warteliste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a><span class="bhint">Kauf ab Do 05.11., bis dahin Platz auf der Warteliste sichern.</span><span class="ph">Kauf-Link von Patric eingebaut, klickbar nach seiner Bestätigung (Mo 02.11.)</span>
   </div></div>
     <div class="allin" id="allin"><span>Preis fest für die ganze Laufzeit</span><span>Keine Setup-Gebühr</span><span>Stelle besetzt? Nächste Stelle drauf.</span><span>In der Laufzeit niemand eingestellt? +30 Tage gratis</span></div>
-    <div class="vertrag" id="vertrag"><b>Vertrag in Klartext</b><ul id="vertragList"><li>Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.</li><li>Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.</li><li>Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar. Den Preis dafür nennt Ihnen Ihr Ansprechpartner vor dem Kauf.</li><li>Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.</li></ul></div>
-    <p class="legal" data-t="legal">Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 20.11.2026, begrenzt auf 30 Plätze.</p>
+    <div class="vertrag" id="vertrag"><b>Vertrag in Klartext</b><ul id="vertragList"><li>Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.</li><li>Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.</li><li>Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.</li><li>Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.</li></ul></div>
+    <p class="legal" data-t="legal">Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.</p>
   </div>
 </section>
 
@@ -481,7 +482,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <span class="over">Fragen</span>
       <h2>Kurz <span class="akz">beantwortet.</span></h2>
     </div>
-    <div class="faq" id="faq"><details class="rv"><summary>Wer bekommt den Preis?</summary><p>Betriebe, die schon bei GreenCareers eine Stelle ausgeschrieben haben. Die Plätze sind auf 30 begrenzt.</p></details><details class="rv"><summary>Kostet die Warteliste etwas?</summary><p>Nein. Der Eintrag ist unverbindlich.</p></details><details class="rv"><summary>Gilt der Preis nur im ersten Monat?</summary><p>Nein, für die gesamte Mindestlaufzeit.</p></details><details class="rv"><summary>Ich suche mehrere Mitarbeiter.</summary><p>Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen.</p></details><details class="rv"><summary>Bis wann gilt das Angebot?</summary><p>Gekauft werden kann vom 05.11. bis 20.11.2026.</p></details></div>
+    <div class="faq" id="faq"><details class="rv"><summary>Wer bekommt den Preis?</summary><p>Betriebe, die schon bei GreenCareers eine Stelle ausgeschrieben haben. Die Plätze sind auf 30 begrenzt.</p></details><details class="rv"><summary>Kostet die Warteliste etwas?</summary><p>Nein. Der Eintrag ist unverbindlich.</p></details><details class="rv"><summary>Gilt der Preis nur im ersten Monat?</summary><p>Nein, für die gesamte Mindestlaufzeit.</p></details><details class="rv"><summary>Ich suche mehrere Mitarbeiter.</summary><p>Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen.</p></details><details class="rv"><summary>Bis wann gilt das Angebot?</summary><p>Gekauft werden kann vom 05.11. bis 30.11.2026.</p></details></div>
   </div>
 </section>
 
@@ -491,7 +492,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <div class="stage__bg"></div><div class="stage__glow"></div>
       <div class="band__in">
         <h2 data-t="bandH2">Ihr nächster Mitarbeiter. <span class="akz">Mit bis zu 53 % Preisvorteil.</span></h2>
-        <p data-t="bandP">Premium-Abo für Bestandskunden, 30 Plätze, bis 20. November.</p>
+        <p data-t="bandP">Premium-Abo für Bestandskunden, 30 Plätze, bis 30. November.</p>
         <a class="btn btn-accent" href="#formular" id="bandBtn"><span data-t="topBtn">Auf die Warteliste</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
       </div>
     </div>
@@ -535,7 +536,7 @@ const KAUF = {
     '12': 'https://www.green-careers.de/abo?gutschein=NACHZUEGLER2026&paket=premium&laufzeit=12&anzahl=1',
   },
 };
-/* Kaufzeitraum Bestandskunden (Patric): 05.11. 0 Uhr bis 20.11. 23:59, Nachzügler ab 23.11. */
+/* Kaufzeitraum Bestandskunden: 05.11. bis 30.11. (Freddy 29.10., vorher 20.11.), Nachzügler-Teil unverändert bis Freddy entscheidet */
 const KAUF_AB = new Date(NACH ? '2026-11-23T00:00:00+01:00' : '2026-11-05T00:00:00+01:00').getTime();
 
 /* ===== PREISE (netto) =====
@@ -616,7 +617,7 @@ const TEXT = {
     doneH:'Danke, wir melden uns.', doneP:'Unser Vertrieb ruft Sie schnellstmöglich zurück.',
     pOver:'Pakete', pH2:'Premium. <span class="akz">Zum Smart-Preis.</span>',
     allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto pro Monat zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise auf green-careers.de/abo. Black-Month-Preis bei Abschluss vom 16.11. bis 30.11.2026, begrenzt auf 30 Plätze.',
+    legal:'Alle Preise netto pro Monat zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise auf green-careers.de/abo. Black-Month-Preis bei Abschluss vom 16.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.',
     steps:[['01','Abo wählen.','Paket, Laufzeit und Stellen wählen oder kurz mit uns sprechen.'],['02','Betrieb zeigen.','Position, Ort, ein paar Bilder. Wir bauen Ihre Anzeige.'],['03','Bewerber kennenlernen.','Laufend passende Bewerbungen, direkt zu Ihnen.']],
     faq:[['Gilt der Preis nur im ersten Monat?','Nein, für die gesamte Mindestlaufzeit.'],
          ['Was passiert, wenn meine Stelle besetzt ist?','Sie setzen die nächste offene Stelle auf Ihren Abo-Platz.'],
@@ -629,7 +630,7 @@ const TEXT = {
   },
   bestand: {
     topNote:'nur für Bestandskunden', topBtn:'Auf die Warteliste',
-    bmLine:'Kauf 05.–20.11. · bis dahin Warteliste',
+    bmLine:'Kauf 05.–30.11. · bis dahin Warteliste',
     h1:'Black-Month-Deal <span class="akz">für Bestandskunden.</span>',
     lead:'Das Premium-Abo für Ihren nächsten Mitarbeiter, nur für Bestandskunden. Jetzt Platz vormerken, Kauf ab 05.11.',
     heroBtn:'Auf die Warteliste', hlink:'oder Preise ansehen',
@@ -641,14 +642,14 @@ const TEXT = {
     doneH:'Sie sind vorgemerkt.', doneP:'Ihr Ansprechpartner meldet sich ab Di 03.11. bei Ihnen. Buchen können Sie ab Do 05.11. Die 30 Plätze gehen in der Reihenfolge der Einträge.',
     pOver:'Ihr Angebot', pH2:`Premium-Abo. <span class="akz">Bis zu ${MAXPCT} % unter Listenpreis.</span>`,
     allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 20.11.2026, begrenzt auf 30 Plätze.',
+    legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.',
     steps:[['01','Eintragen.','Name, E-Mail, Telefon. Unverbindlich.'],['02','Kauf-Link per Mail.','Ab Do 05.11. bekommen Sie den Kauf-Link. Ihr Ansprechpartner meldet sich vorher.'],['03','Stelle geht live.','Wir bauen Ihre Anzeige, die Bewerbungen kommen zu Ihnen.']],
     faq:[['Wer bekommt den Preis?','Betriebe, die schon bei GreenCareers eine Stelle ausgeschrieben haben. Die Plätze sind auf 30 begrenzt.'],
          ['Kostet die Warteliste etwas?','Nein. Der Eintrag ist unverbindlich.'],
          ['Gilt der Preis nur im ersten Monat?','Nein, für die gesamte Mindestlaufzeit.'],
          ['Ich suche mehrere Mitarbeiter.','Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen.'],
-         ['Bis wann gilt das Angebot?','Gekauft werden kann vom 05.11. bis 20.11.2026.']],
-    bandH2:`Ihr nächster Mitarbeiter. <span class="akz">Mit bis zu ${MAXPCT} % Preisvorteil.</span>`, bandP:'Premium-Abo für Bestandskunden, 30 Plätze, bis 20. November.',
+         ['Bis wann gilt das Angebot?','Gekauft werden kann vom 05.11. bis 30.11.2026.']],
+    bandH2:`Ihr nächster Mitarbeiter. <span class="akz">Mit bis zu ${MAXPCT} % Preisvorteil.</span>`, bandP:'Premium-Abo für Bestandskunden, 30 Plätze, bis 30. November.',
     stickySmall:'Nur für Bestandskunden', stickyB:`Premium bis zu −${MAXPCT} %`,
   },
 };
@@ -788,7 +789,7 @@ if (MODE !== 'einmal') {
   document.getElementById('vertragList').innerHTML = [
     'Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.',
     'Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.',
-    MODE === 'bestand' ? 'Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar. Den Preis dafür nennt Ihnen Ihr Ansprechpartner vor dem Kauf.' : 'Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.',
+    'Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.',
     'Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.',
   ].map(x => `<li>${x}</li>`).join('');
 }
