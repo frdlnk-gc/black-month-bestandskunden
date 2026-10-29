@@ -137,6 +137,10 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 
 .blink{display:block;margin-top:10px;text-align:center;font-size:14px;font-weight:600;color:var(--gc-action);text-underline-offset:3px}
 .card--top .blink{color:var(--gc-accent)}
+.staffel{max-width:520px;margin:24px auto 0;background:rgb(255 255 255/.9);border:1px solid var(--gc-line);border-radius:var(--r-card);padding:14px 18px;display:grid;gap:4px;font-size:14px;color:var(--gc-ink)}
+.staffel b{font-weight:600}
+.staffel small{color:var(--gc-ink-muted);font-size:12.5px}
+@media(min-width:760px){.staffel{text-align:center}}
 .bhint{display:block;margin-top:8px;text-align:center;font-size:12.5px;color:var(--gc-ink-muted)}
 .card--top .bhint{color:rgb(234 245 220/.72)}
 .card .btn-soft{background:#fff;color:var(--gc-action);border:1.5px solid var(--gc-action);box-shadow:none}
@@ -153,6 +157,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 .hp-n{display:block;width:100%;font-size:13.5px;color:rgb(234 245 220/.8)}
 .htrust{display:none}
 .hp-m{display:none}
+.hp-v{display:none}
 .hp-top{color:inherit;text-decoration:none}
 @media(max-width:899px){.hp-top{border:1px solid rgb(198 241 123/.55);background:rgb(198 241 123/.10);border-radius:9px;padding:3px 10px;margin:2px 0}}
 .hp-f{display:none;font-style:normal;font-size:12px;color:rgb(234 245 220/.7)}
@@ -166,6 +171,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
   html:not([data-mode="bestand"]) .hpreis{display:grid;gap:2px;justify-items:center;text-align:center;width:100%;margin-top:14px}
   .hp-r,.hp-n{display:block}
   .hp-k{display:none}
+  .hp-v{display:block;font-size:12.5px;color:var(--gc-accent);font-weight:600}
   .hp-m{display:block}
   html:not([data-mode="bestand"]) .htrust{margin:10px 0 0}
   .allin{flex-direction:column;align-items:flex-start;max-width:320px;margin-left:auto;margin-right:auto}
@@ -391,7 +397,8 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 .foot{background:var(--gc-dark-deep);color:rgb(234 245 220/.76);padding:32px 0 26px;font-size:14px}
 .foot .wrap{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between}
 .foot img{height:40px;width:auto}
-.foot a{color:var(--gc-on-dark);text-decoration:none;margin-left:16px}
+.foot a{color:var(--gc-on-dark);text-decoration:none;margin-right:16px}
+#gc-consent-link{background:var(--gc-dark-deep)!important;color:rgb(234 245 220/.6)!important;margin:0!important;padding:0 0 22px!important}
 
 /* Sticky mobil */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:60;background:#fff;border-top:1px solid var(--gc-line);padding:10px 16px calc(10px + env(safe-area-inset-bottom));display:flex;gap:12px;align-items:center;justify-content:space-between;transform:translateY(110%);transition:transform .4s var(--ease)}
@@ -541,7 +548,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
     <ul class="feat"><li>Zugang zu 30.000+ Fachkräften der grünen Branche</li><li>Ihre Anzeige ganz oben, auffällig hervorgehoben</li><li>Ausspielung auf Instagram und Facebook</li><li>Bewerbungen per E-Mail und WhatsApp</li><li>Unpassende Bewerbungen sortieren wir vorher aus</li><li>Fester Ansprechpartner</li></ul>
     <a class="btn btn-main" href="#formular">Auf die Warteliste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a><span class="bhint">Kauf ab Do 05.11., bis dahin Platz auf der Warteliste sichern.</span>
   </div></div>
-    <p class="legal" style="margin-top:22px;font-size:14px;color:var(--gc-ink)"><b>Mehrere Stellen:</b> jede Stelle zusätzlich günstiger, auch auf den Black-Month-Preis: bei 2&nbsp;Stellen je −10&nbsp;%, bei 3 je −20&nbsp;%, bei 4 je −30&nbsp;%. Einfach oben in der Karte die Anzahl wählen.</p>
+    <div class="staffel"><b>Mehrere Stellen? Jede Stelle wird günstiger, auch auf den Black-Month-Preis:</b><span>2 Stellen: je −10&nbsp;%</span><span>3 Stellen: je −20&nbsp;%</span><span>4 Stellen: je −30&nbsp;%</span><small>Anzahl einfach oben in der Karte wählen.</small></div>
     <div class="allin" id="allin"><span>Preis fest für die ganze Laufzeit</span><span>Keine Setup-Gebühr</span><span>Stelle besetzt? Nächste Stelle drauf.</span><span>In der Laufzeit niemand eingestellt? +30&nbsp;Tage gratis</span></div>
     <div class="vertrag" id="vertrag"><b>Vertrag in Klartext</b><ul id="vertragList"><li>Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.</li><li>Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.</li><li>Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.</li><li>Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.</li></ul></div>
     <p class="legal" data-t="legal">Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf <a href="https://www.green-careers.de/abo" target="_blank" rel="noopener">green-careers.de/abo</a>. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze.</p>
@@ -708,7 +715,7 @@ const TEXT = {
     h1:'<span class="l">Premium-Abo.</span><span class="l akz">Zum Smart&#8209;Preis.</span>',
     lead:'Ihre Stellenanzeige bei GreenCareers ganz oben, dazu auf Instagram und Facebook. Zum Preis des kleinen Pakets, fest für die ganze Laufzeit.',
     heroBtn:'Premium wählen', hlink:'oder Rückruf anfordern',
-    hpreis:`<span class="hp-r">Premium <i class="hp-f">(Vorarbeiter)</i> <b>499 €</b> <s>statt ${STATT_PREMIUM_12} €</s></span><span class="hp-n">im Monat · 12 Monate · gesamt 5.988 € netto</span><span class="hp-k">Keine Setup-Gebühr · in der Laufzeit niemand eingestellt? +30&nbsp;Tage gratis</span>`,
+    hpreis:`<span class="hp-r">Premium <i class="hp-f">(Vorarbeiter)</i> <b>499 €</b> <s>statt ${STATT_PREMIUM_12} €</s></span><span class="hp-v">Anzeige ganz oben + Instagram &amp; Facebook</span><span class="hp-n">im Monat · 12 Monate · gesamt 5.988 € netto</span><span class="hp-k">Keine Setup-Gebühr · in der Laufzeit niemand eingestellt? +30&nbsp;Tage gratis</span>`,
     mrund:`bis zu <b>−${ABO_MAXPCT} %</b> mit Mengenpreis`,
     rund:`<div><small>bis zu</small><b>−${ABO_MAXPCT} %</b><small>Premium-Abo</small></div>`,
     formKicker:'Kostenloser Rückruf', formH:'Wir rufen Sie zurück.', formBtn:'Rückruf anfordern', formBtnSmall:'unverbindlich · dauert 10 Sekunden',
@@ -724,7 +731,7 @@ const TEXT = {
          ['Wie lange läuft das Abo?','Mindestlaufzeit 6 oder 12 Monate. Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende. Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.'],
          ['Und wenn niemand passt?','Wird innerhalb der Mindestlaufzeit niemand eingestellt, kommen 30 Tage ohne Aufpreis dazu.'],
          ['Wie zahle ich?','Per Kreditkarte oder SEPA-Lastschrift, monatlich.']],
-    bandH2:'Ihr nächster Mitarbeiter. <span class="akz">Premium zum Smart-Preis.</span>', bandP:'6 oder 12 Monate wählbar. Premium ab 499 € im Monat, nur bis 30. November.',
+    bandH2:'Ihr nächster Mitarbeiter. <span class="akz">Premium zum Smart&#8209;Preis.</span>', bandP:'6 oder 12 Monate wählbar. Premium ab 499 € im Monat, nur bis 30. November.',
     stickySmall:'Black Month bis 30.11.', stickyB:'Premium ab 499 €/Monat',
   },
   bestand: {
