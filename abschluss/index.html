@@ -637,19 +637,17 @@ if (P.s || P.y) {
 }
 txt('c-av', cl[0][0]); txt('c-name', cl[0]); txt('c-rolle', `${cl[1]} · ${du ? 'dein' : 'Ihr'} Ansprechpartner bei GreenCareers`);
 
-/* Stripe-Zahlungslinks (Patric legt an, Freddy 27.10.): Karte + SEPA-Lastschrift aktiv. Platzhalter bis die Links da sind.
-   ?n=1 = Nachzügler-Links (23.11. 9 Uhr bis 24.11. 9 Uhr). Vorbelegung der E-Mail aus ?p= (prefilled_email). */
-const STRIPE = NACH ? { '6m': 'STRIPE_LINK_NACHZUEGLER_6M', '12m': 'STRIPE_LINK_NACHZUEGLER_12M' }
-                    : { '6m': 'STRIPE_LINK_6M', '12m': 'STRIPE_LINK_12M' };
+/* Kauf-Links von Patric (Slack C07GRRAR49X, Thread 1793092914.267039): Premium-Abo über green-careers.de/abo mit Gutschein.
+   Erst klickbar nach Patrics Bestätigung (Mo 02.11. abends) → LINKS_FREIGEGEBEN = true. Bis dahin Hinweis statt Link. */
+const LINKS_FREIGEGEBEN = false;
+const KAUF = NACH
+  ? { '6m': 'https://www.green-careers.de/abo?gutschein=NACHZUEGLER2026&paket=premium&laufzeit=6&anzahl=1',
+      '12m': 'https://www.green-careers.de/abo?gutschein=NACHZUEGLER2026&paket=premium&laufzeit=12&anzahl=1' }
+  : { '6m': 'https://www.green-careers.de/abo?gutschein=BLACKWEEK2026&paket=premium&laufzeit=6&anzahl=1',
+      '12m': 'https://www.green-careers.de/abo?gutschein=BLACKWEEK2026&paket=premium&laufzeit=12&anzahl=1' };
 document.querySelectorAll('[data-buy]').forEach(a => {
-  const url = STRIPE[a.dataset.buy];
-  if (/^https:\/\//.test(url)) {
-    const u = new URL(url); if (P.e) u.searchParams.set('prefilled_email', P.e);
-    u.searchParams.set('client_reference_id', (P.k || P.b || 'bw').toString().replace(/[^A-Za-z0-9_-]/g, '_').slice(0, 200));
-    a.href = u.toString(); a.target = '_blank'; a.rel = 'noopener';
-  } else {
-    a.addEventListener('click', e => { e.preventDefault(); const er = document.getElementById('buy-err'); er.classList.add('show'); er.scrollIntoView({ behavior: 'smooth', block: 'center' }); });
-  }
+  if (LINKS_FREIGEGEBEN) { a.href = KAUF[a.dataset.buy]; a.target = '_blank'; a.rel = 'noopener'; }
+  else a.addEventListener('click', e => { e.preventDefault(); const er = document.getElementById('buy-err'); er.classList.add('show'); er.scrollIntoView({ behavior: 'smooth', block: 'center' }); });
 });
 if (NACH) { document.querySelectorAll('[data-buy="12m"] small').forEach(x => x.textContent = '399 € statt 739 € im Monat · Nachzügler'); document.querySelectorAll('[data-buy="6m"] small').forEach(x => x.textContent = '599 € statt 899 € im Monat · Nachzügler'); }
 
