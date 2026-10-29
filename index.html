@@ -517,11 +517,10 @@ const MODE = document.documentElement.dataset.mode;           // einmal | abo | 
 const LIVE = /(^|\.)green-careers\.de$/.test(location.hostname);
 if (LIVE) document.getElementById('vorschau').remove();
 const Q = new URLSearchParams(location.search);
-const NACH = MODE === 'bestand' && Q.get('n') === '1';        // Bestandskunden-Nachzügler (Mail 7)
 
 /* ===== KAUF-LINKS =====
    Neukunden: Links von Patric fehlen noch (Zentrale klärt). Leer = Knopf führt zum Rückruf-Formular.
-   Bestandskunden: Patrics 4 Links (Slack C07GRRAR49X, Thread 1793092914.267039). Erst klickbar, wenn Patric sie bestätigt
+   Bestandskunden: Patrics Links (nur die 2 Black-Week-Links, Nachzügler entfällt) (Slack C07GRRAR49X, Thread 1793092914.267039). Erst klickbar, wenn Patric sie bestätigt
    hat (Mo 02.11. abends) → dann LINKS_FREIGEGEBEN = true. anzahl = gewählte Stellen (vor Freischaltung mit Patric testen). */
 const LINKS_FREIGEGEBEN = false;
 const KAUF = {
@@ -531,25 +530,21 @@ const KAUF = {
     '6':  'https://www.green-careers.de/abo?gutschein=BLACKWEEK2026&paket=premium&laufzeit=6&anzahl=1',
     '12': 'https://www.green-careers.de/abo?gutschein=BLACKWEEK2026&paket=premium&laufzeit=12&anzahl=1',
   },
-  nachzuegler: {
-    '6':  'https://www.green-careers.de/abo?gutschein=NACHZUEGLER2026&paket=premium&laufzeit=6&anzahl=1',
-    '12': 'https://www.green-careers.de/abo?gutschein=NACHZUEGLER2026&paket=premium&laufzeit=12&anzahl=1',
-  },
 };
-/* Kaufzeitraum Bestandskunden: 05.11. bis 30.11. (Freddy 29.10., vorher 20.11.), Nachzügler-Teil unverändert bis Freddy entscheidet */
-const KAUF_AB = new Date(NACH ? '2026-11-23T00:00:00+01:00' : '2026-11-05T00:00:00+01:00').getTime();
+/* Kaufzeitraum Bestandskunden: 05.11. bis 30.11. (Freddy 29.10.). Nachzügler entfällt (Freddy 29.10.). */
+const KAUF_AB = new Date('2026-11-05T00:00:00+01:00').getTime();
 
 /* ===== PREISE (netto) =====
    Einmal 01.–15.11.: Listenpreis ab 01.11. −15 % (Liam/Patric 24.10., Call 28.10.).
    Abo 16.–30.11. (Call 28.10., Freddy 29.10.): 6 M Smart 699 · Premium 899 → 699 · Exzellenz 1.099; 12 M Smart 499 · Premium 699 → 499 · Exzellenz 899.
-   Bestandskunden (Freddy 27.10.): Premium 6 M 899 → 499, 12 M 739 → 349; Nachzügler 599 / 399.
+   Bestandskunden (Freddy 27.10.): Premium 6 M 899 → 499, 12 M 739 → 349.
    Mengenstaffel IMMER je Stelle: 2 −10 %, 3 −20 %, 4 −30 %. */
 const STAFFEL = {1:0, 2:10, 3:20, 4:30};
 const PREISE = {
   einmal: { smart:{liste:2990, preis:2550}, premium:{liste:4290, preis:3650}, exzellenz:{liste:7490, preis:6370} },
   abo: { '6':  { smart:{preis:699}, premium:{liste:899, preis:699}, exzellenz:{preis:1099} },
          '12': { smart:{preis:499}, premium:{liste:699, preis:499}, exzellenz:{preis:899} } },
-  bestand: NACH ? { '6':{liste:899, preis:599}, '12':{liste:739, preis:399} } : { '6':{liste:899, preis:499}, '12':{liste:739, preis:349} },
+  bestand: { '6':{liste:899, preis:499}, '12':{liste:739, preis:349} },
 };
 const pct = o => Math.round((o.liste - o.preis) / o.liste * 100);
 const MAXPCT = Math.max(pct(PREISE.bestand['6']), pct(PREISE.bestand['12']));
@@ -653,13 +648,6 @@ const TEXT = {
     stickySmall:'Nur für Bestandskunden', stickyB:`Premium bis zu −${MAXPCT} %`,
   },
 };
-if (NACH) Object.assign(TEXT.bestand, {
-  bmLine:'Nachzügler · nur 24 Stunden', topNote:'Nachzügler · bis Di 24.11., 9 Uhr',
-  h1:'Nachzügler-Deal <span class="akz">für Bestandskunden.</span>',
-  formNote:'Nur bis Di 24.11., 9 Uhr · Preise netto zzgl. USt.',
-  legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Nachzügler-Preis bis Di 24.11.2026, 9 Uhr.',
-  bandP:'Nachzügler-Preis, nur bis Di 24.11., 9 Uhr.', stickySmall:'Nachzügler bis 24.11., 9 Uhr',
-});
 
 /* Personalisierung Bestandskunden (?t → ?p, wie bisher) */
 let P = {};
@@ -708,7 +696,7 @@ const ARROW = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 function kaufLink(k, n) {
   if (MODE === 'bestand') {
     if (!LINKS_FREIGEGEBEN || Date.now() < KAUF_AB) return '';
-    const u = new URL((NACH ? KAUF.nachzuegler : KAUF.bestand)[k]); u.searchParams.set('anzahl', n); return u.toString();
+    const u = new URL(KAUF.bestand[k]); u.searchParams.set('anzahl', n); return u.toString();
   }
   return MODE === 'abo' ? KAUF.abo[term][k] : KAUF.einmal[k];
 }
