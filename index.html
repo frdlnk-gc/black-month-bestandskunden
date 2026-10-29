@@ -453,7 +453,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
     <p class="legal" style="margin-top:22px;font-size:14px;color:var(--gc-ink)"><b>Mehrere Stellen:</b> jede Stelle günstiger, bei 2 Stellen je −10 %, bei 3 je −20 %, bei 4 je −30 %. Einfach oben in der Karte die Anzahl wählen.</p>
     <div class="allin" id="allin"><span>Preis fest für die ganze Laufzeit</span><span>Keine Setup-Gebühr</span><span>Stelle besetzt? Nächste Stelle drauf.</span><span>In der Laufzeit niemand eingestellt? +30 Tage gratis</span></div>
     <div class="vertrag" id="vertrag"><b>Vertrag in Klartext</b><ul id="vertragList"><li>Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.</li><li>Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.</li><li>Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.</li><li>Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.</li></ul></div>
-    <p class="legal" data-t="legal">Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.</p>
+    <p class="legal" data-t="legal">Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf <a href="https://www.green-careers.de/abo" target="_blank" rel="noopener">green-careers.de/abo</a>. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze.</p>
   </div>
 </section>
 
@@ -483,7 +483,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <span class="over">Fragen</span>
       <h2>Kurz <span class="akz">beantwortet.</span></h2>
     </div>
-    <div class="faq" id="faq"><details class="rv"><summary>Wer bekommt den Preis?</summary><p>Betriebe, die schon bei GreenCareers eine Stelle ausgeschrieben haben. Die Plätze sind auf 30 begrenzt.</p></details><details class="rv"><summary>Kostet die Warteliste etwas?</summary><p>Nein. Der Eintrag ist unverbindlich.</p></details><details class="rv"><summary>Gilt der Preis nur im ersten Monat?</summary><p>Nein, für die gesamte Mindestlaufzeit.</p></details><details class="rv"><summary>Ich suche mehrere Mitarbeiter.</summary><p>Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen.</p></details><details class="rv"><summary>Bis wann gilt das Angebot?</summary><p>Gekauft werden kann vom 05.11. bis 30.11.2026.</p></details></div>
+    <div class="faq" id="faq"><details class="rv"><summary>Wer bekommt den Preis?</summary><p>Betriebe, die schon bei GreenCareers eine Stelle ausgeschrieben haben. Die Plätze sind auf 30 begrenzt.</p></details><details class="rv"><summary>Kostet die Warteliste etwas?</summary><p>Nein. Der Eintrag ist unverbindlich.</p></details><details class="rv"><summary>Gilt der Preis nur im ersten Monat?</summary><p>Nein. Ihr Preis bleibt, solange das Abo läuft.</p></details><details class="rv"><summary>Ich suche mehrere Mitarbeiter.</summary><p>Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen.</p></details><details class="rv"><summary>Bis wann gilt das Angebot?</summary><p>Gekauft werden kann vom 05.11. bis 30.11.2026.</p></details></div>
   </div>
 </section>
 
@@ -610,8 +610,8 @@ const TEXT = {
     bmLine:'Für Neukunden · 16.–30.11. · 30 Plätze',
     h1:'Premium-Abo. <span class="akz">Zum Smart-Preis.</span>',
     lead:'Ihre Stellenanzeige bei GreenCareers ganz oben, dazu auf Instagram und Facebook. Zum Preis des kleinen Pakets, fest für die ganze Laufzeit.',
-    heroBtn:'Paket wählen', hlink:'oder Rückruf anfordern',
-    hpreis:`Premium <b>499 €</b> <s>statt ${STATT_PREMIUM_12} €</s> im Monat · 12 Monate · gesamt 5.988 € netto`,
+    heroBtn:'Premium wählen', hlink:'oder Rückruf anfordern',
+    hpreis:`Premium <b>499 €</b> <s>statt ${STATT_PREMIUM_12} €</s> im Monat · 12 Monate · gesamt 5.988 € netto<br><span style="font-size:13px;color:rgb(234 245 220/.8)">Keine Setup-Gebühr · in der Laufzeit niemand eingestellt? +30 Tage gratis</span>`,
     mrund:'',
     rund:'',
     formKicker:'Kostenloser Rückruf', formH:'Wir rufen Sie zurück.', formBtn:'Rückruf anfordern', formBtnSmall:'unverbindlich · dauert 10 Sekunden',
@@ -619,9 +619,9 @@ const TEXT = {
     doneH:'Danke, wir melden uns.', doneP:'Unser Vertrieb ruft Sie schnellstmöglich zurück.',
     pOver:'Pakete', pH2:'Premium. <span class="akz">Zum Smart-Preis.</span>',
     allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto pro Monat zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen und Neukunden. Statt-Preise = reguläre Listenpreise auf green-careers.de/abo. Black-Month-Preis bei Abschluss vom 16.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.',
+    legal:'Alle Preise netto pro Monat zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen und Neukunden. Statt-Preise = reguläre Listenpreise auf <a href="https://www.green-careers.de/abo" target="_blank" rel="noopener">green-careers.de/abo</a>. Black-Month-Preis bei Abschluss vom 16.11. bis 30.11.2026, begrenzt auf 30 Plätze.',
     steps:[['01','Abo wählen.','Paket, Laufzeit und Stellen wählen oder kurz mit uns sprechen.'],['02','Betrieb zeigen.','Position, Ort, ein paar Bilder. Wir bauen Ihre Anzeige.'],['03','Bewerber kennenlernen.','Laufend passende Bewerbungen, direkt zu Ihnen.']],
-    faq:[['Gilt der Preis nur im ersten Monat?','Nein, für die gesamte Mindestlaufzeit.'],
+    faq:[['Gilt der Preis nur im ersten Monat?','Nein. Ihr Preis bleibt, solange das Abo läuft.'],
          ['Was passiert, wenn meine Stelle besetzt ist?','Sie setzen die nächste offene Stelle auf Ihren Abo-Platz.'],
          ['Ich suche mehrere Mitarbeiter.','Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen. Zusätzlich zum Black-Month-Preis.'],
          ['Wie lange läuft das Abo?','Mindestlaufzeit 6 oder 12 Monate. Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende. Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.'],
@@ -644,11 +644,11 @@ const TEXT = {
     doneH:'Sie sind vorgemerkt.', doneP:'Ihr Ansprechpartner meldet sich ab Di 03.11. bei Ihnen. Buchen können Sie ab Do 05.11. Die 30 Plätze gehen in der Reihenfolge der Einträge.',
     pOver:'Ihr Angebot', pH2:`Premium-Abo. <span class="akz">Bis zu ${MAXPCT} % unter Listenpreis.</span>`,
     allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze. Ihr Preis bleibt, solange das Abo läuft.',
+    legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf <a href="https://www.green-careers.de/abo" target="_blank" rel="noopener">green-careers.de/abo</a>. Kauf vom 05.11. bis 30.11.2026, begrenzt auf 30 Plätze.',
     steps:[['01','Eintragen.','Name, E-Mail, Telefon. Unverbindlich.'],['02','Kauf-Link per Mail.','Ab Do 05.11. bekommen Sie den Kauf-Link. Ihr Ansprechpartner meldet sich vorher.'],['03','Stelle geht live.','Wir bauen Ihre Anzeige, die Bewerbungen kommen zu Ihnen.']],
     faq:[['Wer bekommt den Preis?','Betriebe, die schon bei GreenCareers eine Stelle ausgeschrieben haben. Die Plätze sind auf 30 begrenzt.'],
          ['Kostet die Warteliste etwas?','Nein. Der Eintrag ist unverbindlich.'],
-         ['Gilt der Preis nur im ersten Monat?','Nein, für die gesamte Mindestlaufzeit.'],
+         ['Gilt der Preis nur im ersten Monat?','Nein. Ihr Preis bleibt, solange das Abo läuft.'],
          ['Ich suche mehrere Mitarbeiter.','Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen.'],
          ['Bis wann gilt das Angebot?','Gekauft werden kann vom 05.11. bis 30.11.2026.']],
     bandH2:`Ihr nächster Mitarbeiter. <span class="akz">Mit bis zu ${MAXPCT} % Preisvorteil.</span>`, bandP:'Premium-Abo für Bestandskunden, 30 Plätze, bis 30. November.',
@@ -791,7 +791,8 @@ if (MODE !== 'einmal') {
 }
 if (MODE === 'bestand') {
   const ck = String(P.c || '').toLowerCase(), CL = { julian:'Julian Kohansal', liam:'Liam Quick' }[ck], CM = { julian:'julian.kohansal@green-careers.de', liam:'liam.quick@green-careers.de' }[ck];
-  if (CL) { const c = document.getElementById('closer'); c.hidden = false;
+  if (CL) { const sm = document.querySelector('#lf button small'); if (sm) sm.textContent = `unverbindlich · ${CL} meldet sich ab Di 03.11.`;
+    const c = document.getElementById('closer'); c.hidden = false;
     c.innerHTML = `<img src="img/avatar-${ck}.png" alt=""><span><b>${CL}</b>, ${P.g === 'du' ? 'dein' : 'Ihr'} Ansprechpartner<br><a href="mailto:${CM}" style="color:var(--gc-accent)">${CM}</a></span>`; }
   const du = P.g === 'du', lead = document.querySelector('.stage .lead');
   const bezug = P.y ? (du ? `${P.y} hast du bei uns eine Stelle ausgeschrieben. ` : `${P.y} haben Sie bei uns eine Stelle ausgeschrieben. `) : '';
