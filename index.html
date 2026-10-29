@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="de" data-mode="bestand">
-<head>
+<!DOCTYPE html>
+<html lang="de" data-mode="bestand"><head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
@@ -8,8 +8,8 @@
 <title>Black-Month-Deal für Bestandskunden | GreenCareers</title>
 <link rel="icon" href="img/marke-signet.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
 :root{
   --gc-action:#126440;--gc-action-hover:#0F5636;--gc-accent:#C6F17B;--gc-accent-hover:#D6F6A1;
@@ -111,8 +111,11 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 @media(max-width:959px){.cards--3 .card--top{order:-1}}
 .bhint{display:block;margin-top:8px;text-align:center;font-size:12.5px;color:var(--gc-ink-muted)}
 .card--top .bhint{color:rgb(234 245 220/.72)}
+.card .btn-soft{background:#fff;color:var(--gc-action);border:1.5px solid var(--gc-action);box-shadow:none}
 .smartnote{display:block;margin-top:8px;font-size:12.5px;font-weight:600;color:var(--gc-action)}
 .mrund{display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--gc-accent);color:var(--gc-dark-deep);border-radius:var(--r-btn);padding:8px 14px;transform:rotate(-2deg);box-shadow:0 10px 26px rgb(0 0 0/.22);font-size:14px;font-weight:600}
+.mrund:empty,.mrund-w:has(.mrund:empty){display:none}
+.hlink{display:inline-flex;align-items:center;min-height:52px;color:var(--gc-on-dark);font-size:14.5px;font-weight:500;text-underline-offset:4px}
 .mrund b{font-size:24px;font-weight:700;letter-spacing:-.04em}
 @media(max-width:899px){.rund{display:none!important}}
 @media(min-width:900px){.mrund{display:none}}
@@ -131,6 +134,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 .form input[type=text],.form input[type=email],.form input[type=tel]{width:100%;height:50px;border:1px solid var(--gc-line-ui);border-radius:var(--r-btn);font:16px Poppins,Arial,sans-serif;padding:0 14px;background:#fff;color:var(--gc-ink)}
 .form input:focus{outline:none;border-color:var(--gc-action);box-shadow:0 0 0 3px rgb(18 100 64/.18)}
 .fld{display:grid;gap:4px}
+.form .ok-chk{font-weight:400}
 .ok-chk{display:flex;gap:10px;align-items:flex-start;font-size:12.5px;line-height:1.45;color:var(--gc-ink-muted);font-weight:400}
 .ok-chk input{margin-top:2px;width:18px;height:18px;flex:none;accent-color:var(--gc-action)}
 .form .btn{width:100%;flex-direction:column;gap:2px;min-height:56px}
@@ -142,7 +146,11 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 .done .ico{width:52px;height:52px;margin:6px auto 10px;border-radius:50%;background:var(--gc-accent);color:var(--gc-dark-deep);display:grid;place-items:center}
 .done .ico svg{width:26px;height:26px}
 .hnote{margin-top:10px;font-size:12px;color:var(--gc-ink-muted);text-align:center}
-.pers[hidden],.hnote[hidden],.closer[hidden],.vertrag[hidden]{display:none}
+.team{display:flex;align-items:center;gap:8px;margin-top:12px;font-size:12.5px;line-height:1.4;color:var(--gc-ink-muted)}
+.team img{width:32px;height:32px;border-radius:50%;object-fit:cover;border:2px solid #fff;box-shadow:0 0 0 1px var(--gc-line)}
+.team img+img{margin-left:-14px}
+.team b{color:var(--gc-ink)}
+.team[hidden],.pers[hidden],.hnote[hidden],.closer[hidden],.vertrag[hidden]{display:none}
 .pers{display:flex;align-items:center;gap:12px;margin-bottom:12px}
 .pers__logo{width:46px;height:46px;border-radius:10px;background:#fff;display:grid;place-items:center;overflow:hidden;color:var(--gc-action);font-weight:700}
 .pers__logo img{max-width:40px;max-height:40px}
@@ -173,11 +181,12 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 /* Eingestellt */
 .hired{display:grid;gap:14px}
 .hc{background:rgb(255 255 255/.92);border:1px solid var(--gc-line);border-radius:var(--r-card);box-shadow:var(--sh-card);padding:18px;display:flex;gap:16px;align-items:center}
-.hc__logo{flex:none;width:72px;height:54px;display:grid;place-items:center}
-.hc__logo img{max-height:50px;width:auto;object-fit:contain}
+.hc__logo{flex:none;width:104px;height:68px;display:grid;place-items:center;background:#fff;border-radius:10px}
+.hc__logo img{max-height:64px;max-width:100px;width:auto;object-fit:contain}
 .hc b{display:block;color:var(--gc-ink);font-size:15px;line-height:1.35}
 .hc small{display:block;font-size:13px;color:var(--gc-ink-muted)}
 .hc .pos{display:inline-block;margin-top:6px;font-size:13px;font-weight:600;color:var(--gc-action)}
+@media(max-width:759px){.hired{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;scrollbar-width:none}.hired::-webkit-scrollbar{display:none}.hired .hc{flex:none;width:82%;scroll-snap-align:start}}
 @media(min-width:760px){.hired{grid-template-columns:repeat(3,1fr)}}
 
 /* Pakete */
@@ -206,6 +215,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 .card__rund{position:absolute;top:-22px;right:-10px;width:92px;height:92px;border-radius:50%;background:var(--gc-accent);color:var(--gc-dark-deep);display:grid;place-items:center;text-align:center;transform:rotate(-8deg);box-shadow:0 14px 30px rgb(20 45 29/.25);line-height:1.05}
 .card__rund b{display:block;font-size:26px;font-weight:700;letter-spacing:-.04em}
 .card__rund small{display:block;font-size:11px;font-weight:600}
+.card--rund h3,.card--rund .card__sub{padding-right:74px}
 .card__sub{margin-top:4px;font-size:14px;line-height:1.5;color:var(--gc-ink-muted);min-height:42px}
 .card--top .card__sub{color:rgb(234 245 220/.74)}
 .qty{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:16px}
@@ -244,7 +254,8 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 .card--top .btn:hover{background:var(--gc-accent-hover)}
 .ph{display:block;margin-top:8px;text-align:center;font-size:12px;font-weight:600;color:#7A4A00;background:#FFF4DC;border:1px dashed #E2A93B;border-radius:8px;padding:4px 8px}
 .allin{margin-top:28px;display:flex;flex-wrap:wrap;justify-content:center;gap:10px 22px;font-size:14px;font-weight:500;color:var(--gc-ink)}
-.allin span{display:inline-flex;align-items:center;gap:8px}
+.allin span{display:inline-flex;align-items:flex-start;gap:8px}
+.allin span::before{flex:none;margin-top:2px}
 .allin span::before{content:"";width:18px;height:18px;border-radius:50%;background:var(--gc-accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23142D1D' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/11px no-repeat}
 .legal{margin-top:14px;text-align:center;font-size:12.5px;line-height:1.6;color:var(--gc-ink-muted)}
 
@@ -259,6 +270,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 /* Bewertungen */
 .rhead{display:inline-flex;align-items:center;gap:10px;margin-top:14px;background:#fff;border:1px solid var(--gc-line);border-radius:var(--r-chip);padding:6px 14px;font-size:14px;font-weight:600;color:var(--gc-ink)}
 .rhead i{font-style:normal;color:var(--gc-star);letter-spacing:2px}
+.halb{background:linear-gradient(90deg,var(--gc-star) 50%,#D9D9D9 50%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .rwrap{mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
 .rtrack{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px max(var(--pad),7%) 18px;scrollbar-width:none;scroll-padding:0 max(var(--pad),7%)}
 .rtrack::-webkit-scrollbar{display:none}
@@ -314,8 +326,8 @@ section{padding:clamp(56px,6.5vw,104px) 0}
   <div class="wrap">
     <a href="#"><img src="img/logo-tinte-380.png" alt="GreenCareers" width="80" height="45"></a>
     <div class="top__right">
-      <span class="top__bm"><i>Black Month</i><span data-t="topNote"></span></span>
-      <a class="btn btn-main" href="#formular" data-t="topBtn"></a>
+      <span class="top__bm"><i>Black Month</i><span data-t="topNote">nur für Bestandskunden</span></span>
+      <a class="btn btn-main" href="#formular" data-t="topBtn">Auf die Warteliste</a>
     </div>
   </div>
 </header>
@@ -326,40 +338,42 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <div class="stage__bg"></div><div class="stage__glow"></div>
       <div class="stage__in">
         <div>
-          <div class="pers" id="pers" hidden><div class="pers__logo" id="p-logo"></div><div><b id="p-betrieb"></b><span>Bestandskunde</span></div></div>
-          <div class="bm"><b>Black Month</b><span data-t="bmLine"></span></div>
-          <div><span class="mrund" data-t="mrund"></span></div>
-          <h1 data-t="h1"></h1>
-          <p class="lead" data-t="lead"></p>
-          <div class="hpreis" data-t="hpreis"></div>
-          <div class="beweis"><i>★★★★★</i><span>KNAPPMANN, Essen: Vorarbeiter gesucht, eingestellt in 28 Tagen.</span></div>
-          <div class="closer" id="closer" hidden></div>
+          <div class="pers" id="pers" hidden=""><div class="pers__logo" id="p-logo"></div><div><b id="p-betrieb"></b><span>Bestandskunde</span></div></div>
+          <div class="bm"><b>Black Month</b><span data-t="bmLine">Kauf 05.–20.11. · bis dahin Warteliste</span></div>
+          <div class="mrund-w"><span class="mrund" data-t="mrund">bis zu <b>−53 %</b> Premium-Abo</span></div>
+          <h1 data-t="h1">Black-Month-Deal <span class="akz">für Bestandskunden.</span></h1>
+          <p class="lead" data-t="lead">Das Premium-Abo für Ihren nächsten Mitarbeiter, nur für Bestandskunden. Jetzt Platz vormerken, Kauf ab 05.11.</p>
+          <div class="hpreis" data-t="hpreis">Ab <b>349 €</b> <s>statt 739 €</s> im Monat bei 12 Monaten · gesamt 4.188 € netto</div>
+          
+          <div class="closer" id="closer" hidden=""></div>
           <div class="hero__cta">
-            <a class="btn btn-accent" href="#pakete"><span data-t="heroBtn"></span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+            <a class="btn btn-accent" href="#formular"><span data-t="heroBtn">Auf die Warteliste</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
+            <a class="hlink" href="#pakete" data-t="hlink">oder Preise ansehen</a>
           </div>
         </div>
         <div class="hero__side" id="formular">
-          <div class="rund" id="rund"></div>
+          <div class="rund" id="rund"><div><small>bis zu</small><b>−53 %</b><small>Premium-Abo</small></div></div>
           <div class="formcard">
-            <div class="t" data-t="formKicker"></div>
-            <h3 data-t="formH"></h3>
-            <form class="form" id="lf" novalidate>
+            <div class="t" data-t="formKicker">Warteliste · 30 Plätze</div>
+            <h3 data-t="formH">Platz vormerken, ohne zu kaufen.</h3>
+            <form class="form" id="lf" novalidate="">
               <input type="text" name="website" id="f-web" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
               <div class="fld"><label for="f-name">Name</label><input id="f-name" type="text" autocomplete="name" placeholder="Vor- und Nachname"></div>
-              <div class="fld" data-only="neukunden"><label for="f-betrieb">Betrieb</label><input id="f-betrieb" type="text" autocomplete="organization" placeholder="Name Ihres Betriebs"></div>
+              
               <div class="fld" data-only="bestand"><label for="f-mail">E-Mail</label><input id="f-mail" type="email" autocomplete="email" placeholder="name@betrieb.de"></div>
-              <div class="fld"><label for="f-tel">Telefon</label><input id="f-tel" type="tel" autocomplete="tel" placeholder="Für den Rückruf"></div>
+              <div class="fld"><label for="f-tel">Telefon <span style="font-weight:400;color:var(--gc-ink-muted)">· für den Rückruf</span></label><input id="f-tel" type="tel" autocomplete="tel" placeholder="Für den Rückruf"></div>
               <label class="ok-chk"><input type="checkbox" id="f-ok"><span>Ich bin einverstanden, dass GreenCareers mich zu diesem Angebot per Telefon oder E-Mail kontaktiert. Widerruf jederzeit möglich, zum Beispiel per E-Mail an hello@green-careers.de. <a href="https://www.green-careers.de/datenschutz" target="_blank" rel="noopener">Datenschutz</a></span></label>
-              <button class="btn btn-main" type="submit"><span data-t="formBtn"></span><small data-t="formBtnSmall"></small></button>
+              <button class="btn btn-main" type="submit"><span data-t="formBtn">Auf die Warteliste</span><small data-t="formBtnSmall">unverbindlich · Ihr Ansprechpartner meldet sich ab Di 03.11.</small></button>
               <p class="err" id="f-err"></p>
             </form>
             <div class="done" id="f-done">
-              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"/></svg></div>
-              <h3 data-t="doneH"></h3>
-              <p data-t="doneP"></p>
+              <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg></div>
+              <h3 data-t="doneH">Sie sind vorgemerkt.</h3>
+              <p data-t="doneP">Ihr Ansprechpartner meldet sich ab Di 03.11. bei Ihnen. Buchen können Sie ab Do 05.11. Die 30 Plätze gehen in der Reihenfolge der Einträge.</p>
             </div>
-            <p class="hnote" data-t="formNote"></p>
-            <p class="hnote" id="p-closer" hidden></p>
+            <div class="team" id="team" hidden=""><img src="img/avatar-julian.png" alt=""><img src="img/avatar-liam.png" alt=""><span>Es ruft Sie <b>Julian Kohansal</b> oder <b>Liam Quick</b> aus unserem Vertrieb an.</span></div>
+            <p class="hnote" data-t="formNote">Kauf ab Do 05.11. · Preise netto zzgl. USt.</p>
+            <p class="hnote" id="p-closer" hidden=""></p>
           </div>
         </div>
       </div>
@@ -372,9 +386,9 @@ section{padding:clamp(56px,6.5vw,104px) 0}
     <div class="panel">
       <div class="panel__top">
         <div class="big"><b>300+</b><span>GaLaBau-Betriebe stellen mit uns ein.</span></div>
-        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Eingestellt in durchschnittlich 45 Tagen</span>
+        <span class="pill"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 6v6l4 2"></path></svg>Eingestellt in durchschnittlich 45 Tagen</span>
       </div>
-      <div class="logos"><div class="logos__track" id="logos"></div></div>
+      <div class="logos"><div class="logos__track" id="logos"><div><img src="img/logos/roring.png" alt="" loading="lazy"></div><div><img src="img/logos/diederich.png" alt="" loading="lazy"></div><div><img src="img/logos/knappmann.png" alt="" loading="lazy"></div><div><img src="img/logos/lemberghof.png" alt="" loading="lazy"></div><div><img src="img/logos/floreana.png" alt="" loading="lazy"></div><div><img src="img/logos/beck.png" alt="" loading="lazy"></div><div><img src="img/logos/huben.png" alt="" loading="lazy"></div><div><img src="img/logos/spilker.png" alt="" loading="lazy"></div><div><img src="img/logos/garten-linke.png" alt="" loading="lazy"></div><div><img src="img/logos/astwerk.png" alt="" loading="lazy"></div><div><img src="img/logos/goldblume.png" alt="" loading="lazy"></div><div><img src="img/logos/lieblingsgaertner.png" alt="" loading="lazy"></div><div><img src="img/logos/prager-kurz.png" alt="" loading="lazy"></div><div><img src="img/logos/gruenkonzept.png" alt="" loading="lazy"></div><div><img src="img/logos/gerlach.png" alt="" loading="lazy"></div><div><img src="img/logos/blumenkamp.png" alt="" loading="lazy"></div><div><img src="img/logos/idh.png" alt="" loading="lazy"></div><div><img src="img/logos/reiss.png" alt="" loading="lazy"></div><div><img src="img/logos/schenk.png" alt="" loading="lazy"></div><div><img src="img/logos/gruenbau.png" alt="" loading="lazy"></div><div><img src="img/logos/groebner.png" alt="" loading="lazy"></div><div><img src="img/logos/roring.png" alt="" loading="lazy"></div><div><img src="img/logos/diederich.png" alt="" loading="lazy"></div><div><img src="img/logos/knappmann.png" alt="" loading="lazy"></div><div><img src="img/logos/lemberghof.png" alt="" loading="lazy"></div><div><img src="img/logos/floreana.png" alt="" loading="lazy"></div><div><img src="img/logos/beck.png" alt="" loading="lazy"></div><div><img src="img/logos/huben.png" alt="" loading="lazy"></div><div><img src="img/logos/spilker.png" alt="" loading="lazy"></div><div><img src="img/logos/garten-linke.png" alt="" loading="lazy"></div><div><img src="img/logos/astwerk.png" alt="" loading="lazy"></div><div><img src="img/logos/goldblume.png" alt="" loading="lazy"></div><div><img src="img/logos/lieblingsgaertner.png" alt="" loading="lazy"></div><div><img src="img/logos/prager-kurz.png" alt="" loading="lazy"></div><div><img src="img/logos/gruenkonzept.png" alt="" loading="lazy"></div><div><img src="img/logos/gerlach.png" alt="" loading="lazy"></div><div><img src="img/logos/blumenkamp.png" alt="" loading="lazy"></div><div><img src="img/logos/idh.png" alt="" loading="lazy"></div><div><img src="img/logos/reiss.png" alt="" loading="lazy"></div><div><img src="img/logos/schenk.png" alt="" loading="lazy"></div><div><img src="img/logos/gruenbau.png" alt="" loading="lazy"></div><div><img src="img/logos/groebner.png" alt="" loading="lazy"></div></div></div>
     </div>
   </div>
 </div>
@@ -386,24 +400,58 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <h2>Diese Betriebe <span class="akz">haben eingestellt.</span></h2>
     </div>
     <div class="fall rv"><div class="fall__logo"><img src="img/logos/knappmann.png" alt="KNAPPMANN"></div><div><b>Vorarbeiter gesucht. <em>13 Bewerbungen erhalten.</em> Eine Einstellung in 28 Tagen.</b><span>So hat KNAPPMANN Unternehmensgruppe, Essen (45356), mit uns seine offene Stelle besetzt.</span></div></div>
-    <div class="hired" id="hired"></div>
+    <div class="hired" id="hired"><div class="hc rv"><div class="hc__logo"><img src="img/logos/lemberghof.png" alt="Bio-Gärtnerei Lemberghof" loading="lazy"></div><div><b>Bio-Gärtnerei Lemberghof</b><small>Erdmannhausen (71729)</small><span class="pos">Eingestellt: Abteilungsleiter Produktion und Gärtner (m/w/d)</span></div></div><div class="hc rv"><div class="hc__logo"><img src="img/logos/diederich.png" alt="Baumschule &amp; Gartenbau Ingo Diederich" loading="lazy"></div><div><b>Baumschule &amp; Gartenbau Ingo Diederich</b><small>Buxtehude (21614)</small><span class="pos">Eingestellt: 2 Vorarbeiter, 1 Facharbeiter (m/w/d)</span></div></div><div class="hc rv"><div class="hc__logo"><img src="img/logos/roring.png" alt="Roring Garten- und Landschaftsbau" loading="lazy"></div><div><b>Roring Garten- und Landschaftsbau</b><small>Heiden (46359)</small><span class="pos">Eingestellt: Landschaftsgärtner (m/w/d)</span></div></div><div class="hc rv"><div class="hc__logo"><img src="img/logos/astwerk.png" alt="Astwerk Niels Beyer (Baumpflege)" loading="lazy"></div><div><b>Astwerk Niels Beyer (Baumpflege)</b><small>Niederkassel (53859)</small><span class="pos">Eingestellt: 2 Facharbeiter (m/w/d)</span></div></div><div class="hc rv"><div class="hc__logo"><img src="img/logos/gruenkonzept.png" alt="Grünkonzept" loading="lazy"></div><div><b>Grünkonzept</b><small>Lohmar (53797)</small><span class="pos">Eingestellt: 2 Landschaftsgärtner (m/w/d)</span></div></div><div class="hc rv"><div class="hc__logo"><img src="img/logos/gruenbau.png" alt="Grünbau-inklusiv" loading="lazy"></div><div><b>Grünbau-inklusiv</b><small>Dortmund (44145)</small><span class="pos">Eingestellt: Bauleiter (m/w/d)</span></div></div></div>
   </div>
 </section>
 
 <section class="pricing" id="pakete">
   <div class="wrap">
     <div class="sec-head">
-      <span class="over" data-t="pOver"></span>
-      <h2 data-t="pH2"></h2>
-      <div class="toggle" id="toggle" role="tablist" aria-label="Laufzeit" hidden>
+      <span class="over" data-t="pOver">Ihr Angebot</span>
+      <h2 data-t="pH2">Premium-Abo. <span class="akz">Bis zu 53 % unter Listenpreis.</span></h2>
+      <div class="toggle" id="toggle" role="tablist" aria-label="Laufzeit" hidden="">
         <button type="button" data-term="6" role="tab">6 Monate</button>
         <button type="button" data-term="12" role="tab">12 Monate</button>
       </div>
     </div>
-    <div class="cards" id="cards"></div>
-    <div class="allin" id="allin"></div>
-    <div class="vertrag" id="vertrag" hidden><b>Vertrag in Klartext</b><ul id="vertragList"></ul></div>
-    <p class="legal" data-t="legal"></p>
+    <div class="cards cards--2" id="cards"><div class="card card--rund" data-pkg="6">
+    
+    <div class="card__rund"><div><b>−44 %</b></div></div>
+    <h3>Premium · 6 Monate</h3>
+    <div class="card__sub">Wenn eine Stelle drängt. Regulär 899 € im Monat.</div>
+    <div class="qty"><span>Stellen gleichzeitig</span><div class="seg"><button type="button" data-n="1" class="on" aria-pressed="true">1</button><button type="button" data-n="2" class="" aria-pressed="false">2</button><button type="button" data-n="3" class="" aria-pressed="false">3</button><button type="button" data-n="4" class="" aria-pressed="false">4</button></div></div>
+    <div class="price">
+      <s>statt 899 €</s>
+      <b>499 <small>€</small></b>
+      <em>pro Monat netto · 6 Monate · gesamt 2.994 €</em>
+      
+      <div class="qtynote">Mehrere Stellen: jede Stelle günstiger (2 Stellen je −10 %, 3 je −20 %, 4 je −30 %), zusätzlich zum Black-Month-Preis</div>
+    </div>
+    <hr>
+    <div class="feat-l">Im Premium-Abo enthalten</div>
+    <ul class="feat"><li>Zugang zu 30.000+ Fachkräften der grünen Branche</li><li>Ihre Anzeige ganz oben, auffällig hervorgehoben</li><li>Ausspielung auf Instagram und Facebook</li><li>Bewerbungen per E-Mail und WhatsApp</li><li>Unpassende Bewerbungen sortieren wir vorher aus</li><li>Fester Ansprechpartner</li></ul>
+    <a class="btn btn-main" href="#formular">Auf die Warteliste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a><span class="bhint">Kauf ab Do 05.11., bis dahin Platz auf der Warteliste sichern.</span><span class="ph">Kauf-Link von Patric eingebaut, klickbar nach seiner Bestätigung (Mo 02.11.)</span>
+  </div><div class="card card--top card--rund" data-pkg="12">
+    <div class="card__badge">Empfehlung</div>
+    <div class="card__rund"><div><b>−53 %</b><small>max. 30 Plätze</small></div></div>
+    <h3>Premium · 12 Monate</h3>
+    <div class="card__sub">Für das ganze Jahr. Regulär 739 € im Monat.</div>
+    <div class="qty"><span>Stellen gleichzeitig</span><div class="seg"><button type="button" data-n="1" class="on" aria-pressed="true">1</button><button type="button" data-n="2" class="" aria-pressed="false">2</button><button type="button" data-n="3" class="" aria-pressed="false">3</button><button type="button" data-n="4" class="" aria-pressed="false">4</button></div></div>
+    <div class="price">
+      <s>statt 739 €</s>
+      <b>349 <small>€</small></b>
+      <em>pro Monat netto · 12 Monate · gesamt 4.188 €</em>
+      
+      <div class="qtynote">Mehrere Stellen: jede Stelle günstiger (2 Stellen je −10 %, 3 je −20 %, 4 je −30 %), zusätzlich zum Black-Month-Preis</div>
+    </div>
+    <hr>
+    <div class="feat-l">Im Premium-Abo enthalten</div>
+    <ul class="feat"><li>Zugang zu 30.000+ Fachkräften der grünen Branche</li><li>Ihre Anzeige ganz oben, auffällig hervorgehoben</li><li>Ausspielung auf Instagram und Facebook</li><li>Bewerbungen per E-Mail und WhatsApp</li><li>Unpassende Bewerbungen sortieren wir vorher aus</li><li>Fester Ansprechpartner</li></ul>
+    <a class="btn btn-main" href="#formular">Auf die Warteliste <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a><span class="bhint">Kauf ab Do 05.11., bis dahin Platz auf der Warteliste sichern.</span><span class="ph">Kauf-Link von Patric eingebaut, klickbar nach seiner Bestätigung (Mo 02.11.)</span>
+  </div></div>
+    <div class="allin" id="allin"><span>Preis fest für die ganze Laufzeit</span><span>Keine Setup-Gebühr</span><span>Stelle besetzt? Nächste Stelle drauf.</span><span>In der Laufzeit niemand eingestellt? +30 Tage gratis</span></div>
+    <div class="vertrag" id="vertrag"><b>Vertrag in Klartext</b><ul id="vertragList"><li>Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.</li><li>Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.</li><li>Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar. Den Preis dafür nennt Ihnen Ihr Ansprechpartner vor dem Kauf.</li><li>Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.</li></ul></div>
+    <p class="legal" data-t="legal">Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 20.11.2026, begrenzt auf 30 Plätze.</p>
   </div>
 </section>
 
@@ -413,7 +461,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <span class="over">So läuft es</span>
       <h2>Drei Schritte. <span class="akz">Wenig Aufwand.</span></h2>
     </div>
-    <div class="steps" id="steps"></div>
+    <div class="steps" id="steps"><div class="step rv"><span>01</span><h3>Eintragen.</h3><p>Name, E-Mail, Telefon. Unverbindlich.</p></div><div class="step rv"><span>02</span><h3>Kauf-Link per Mail.</h3><p>Ab Do 05.11. bekommen Sie den Kauf-Link. Ihr Ansprechpartner meldet sich vorher.</p></div><div class="step rv"><span>03</span><h3>Stelle geht live.</h3><p>Wir bauen Ihre Anzeige, die Bewerbungen kommen zu Ihnen.</p></div></div>
   </div>
 </section>
 
@@ -421,9 +469,9 @@ section{padding:clamp(56px,6.5vw,104px) 0}
   <div class="sec-head wrap">
     <span class="over">Google-Bewertungen</span>
     <h2>Das sagen <span class="akz">unsere Kunden.</span></h2>
-    <span class="rhead"><b>4,5</b><i>★★★★★</i>31 Bewertungen auf Google</span>
+    <a class="rhead" href="https://www.google.com/search?q=GreenCareers+K%C3%B6ln+Bewertungen" target="_blank" rel="noopener" style="text-decoration:none"><b>4,5</b><i>★★★★<span class="halb">★</span></i>31 Bewertungen auf Google&nbsp;↗</a>
   </div>
-  <div class="rwrap"><div class="rtrack" id="rtrack"></div></div>
+  <div class="rwrap"><div class="rtrack" id="rtrack"><div class="rc"><span class="rchip">Zwei Fachkräfte eingestellt</span><div class="stars">★★★★★</div><q>Zwei neue Fachkräfte über GreenCareers eingestellt. Nachdem wir bei einer Recruiting-Agentur und anderen Stellenportalen monatelang nur unpassende Profile bekommen haben, war hier die Qualität spürbar höher. Die Betreuung von Frau Reike war zudem sehr angenehm.</q><div class="rc__who"><small>Google-Bewertung · vor 7 Monaten</small><b>Dominik Heinlein</b></div></div><div class="rc"><span class="rchip">Vielzahl an Bewerbern</span><div class="stars">★★★★★</div><q>Es ist unser erster Kontakt mit GreenCareers. Mit der bisherigen Zusammenarbeit und den Vermittlungsresultaten sind wir als kleine Firma sehr zufrieden. Wir waren überrascht über die Vielzahl an Bewerbern auf unsere zwei geschalteten Anzeigen und auch über die große Reichweite.</q><div class="rc__who"><small>Google-Bewertung · vor einer Woche</small><b>Saatzucht Breun</b></div></div><div class="rc"><span class="rchip">20+ Bewerber</span><div class="stars">★★★★★</div><q>Nach kurzer Zeit hatte ich mehr als 20 Bewerber auf meine ausgeschriebene Stelle im Garten- und Landschaftsbau. Ich kann GreenCareers jedem Arbeitgeber und Arbeitnehmer nur empfehlen. …</q><div class="rc__who"><small>Google-Bewertung · vor 6 Monaten</small><b>Tobias Knauf</b></div></div><div class="rc"><span class="rchip">Eingestellt nach 3 Wochen</span><div class="stars">★★★★★</div><q>Nach 3 Wochen konnten wir einen Baumschulgärtner fest einstellen. Es waren zwar auch sehr viele Gespräche mit Bewerbern nötig, aber ein vergleichbares Ergebnis hatten wir über andere Wege noch nicht. Ich kann GreenCareers empfehlen.</q><div class="rc__who"><small>Google-Bewertung · vor 7 Monaten</small><b>Christine U.</b></div></div><div class="rc"><span class="rchip">Straßen- und Tiefbau</span><div class="stars">★★★★★</div><q>Wir waren ehrlich gesagt skeptisch, ob GreenCareers für ein Straßen- und Tiefbauunternehmen geeignet ist. Nach der ersten erfolgreichen Einstellung muss ich das revidieren. Hat besser funktioniert als ich dachte …</q><div class="rc__who"><small>Google-Bewertung · vor 4 Monaten</small><b>Jana Sturm</b></div></div><div class="rc"><span class="rchip">Mehrere Bewerber pro Tag</span><div class="stars">★★★★★</div><q>Unkomplizierte Plattform, bei der es einen guten Rücklauf von mehreren Bewerbern pro Tag gegeben hat. Eine gute, unkomplizierte und offene Kommunikation der Mitarbeiter erleichtern die Zusammenarbeit! Vielen Dank für Eure Bemühungen! Die Plattform kann man weiterempfehlen!</q><div class="rc__who"><small>Google-Bewertung · vor 6 Monaten</small><b>Boas Diehl</b></div></div></div></div>
   <div class="rnav"><button type="button" id="rprev" aria-label="Zurück">←</button><button type="button" id="rnext" aria-label="Weiter">→</button></div>
 </section>
 
@@ -433,7 +481,7 @@ section{padding:clamp(56px,6.5vw,104px) 0}
       <span class="over">Fragen</span>
       <h2>Kurz <span class="akz">beantwortet.</span></h2>
     </div>
-    <div class="faq" id="faq"></div>
+    <div class="faq" id="faq"><details class="rv"><summary>Wer bekommt den Preis?</summary><p>Betriebe, die schon bei GreenCareers eine Stelle ausgeschrieben haben. Die Plätze sind auf 30 begrenzt.</p></details><details class="rv"><summary>Kostet die Warteliste etwas?</summary><p>Nein. Der Eintrag ist unverbindlich.</p></details><details class="rv"><summary>Gilt der Preis nur im ersten Monat?</summary><p>Nein, für die gesamte Mindestlaufzeit.</p></details><details class="rv"><summary>Ich suche mehrere Mitarbeiter.</summary><p>Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen.</p></details><details class="rv"><summary>Bis wann gilt das Angebot?</summary><p>Gekauft werden kann vom 05.11. bis 20.11.2026.</p></details></div>
   </div>
 </section>
 
@@ -442,9 +490,9 @@ section{padding:clamp(56px,6.5vw,104px) 0}
     <div class="stage dark">
       <div class="stage__bg"></div><div class="stage__glow"></div>
       <div class="band__in">
-        <h2 data-t="bandH2"></h2>
-        <p data-t="bandP"></p>
-        <a class="btn btn-accent" href="#formular"><span data-t="topBtn"></span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"/></svg></a>
+        <h2 data-t="bandH2">Ihr nächster Mitarbeiter. <span class="akz">Mit bis zu 53 % Preisvorteil.</span></h2>
+        <p data-t="bandP">Premium-Abo für Bestandskunden, 30 Plätze, bis 20. November.</p>
+        <a class="btn btn-accent" href="#formular" id="bandBtn"><span data-t="topBtn">Auf die Warteliste</span> <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 5l7 7-7 7"></path></svg></a>
       </div>
     </div>
   </div>
@@ -459,8 +507,8 @@ section{padding:clamp(56px,6.5vw,104px) 0}
 </footer>
 
 <div class="sticky" id="sticky">
-  <div><small data-t="stickySmall"></small><b data-t="stickyB"></b></div>
-  <a class="btn btn-main" href="#formular" data-t="topBtn"></a>
+  <div><small data-t="stickySmall">Nur für Bestandskunden</small><b data-t="stickyB">Premium bis zu −53 %</b></div>
+  <a class="btn btn-main" href="#formular" data-t="topBtn" id="stickyBtn">Auf die Warteliste</a>
 </div>
 
 <script>
@@ -473,7 +521,7 @@ const NACH = MODE === 'bestand' && Q.get('n') === '1';        // Bestandskunden-
 /* ===== KAUF-LINKS =====
    Neukunden: Links von Patric fehlen noch (Zentrale klärt). Leer = Knopf führt zum Rückruf-Formular.
    Bestandskunden: Patrics 4 Links (Slack C07GRRAR49X, Thread 1793092914.267039). Erst klickbar, wenn Patric sie bestätigt
-   hat (Mo 02.11. abends) → dann LINKS_FREIGEGEBEN = true. anzahl = gewählte Stellen (Staffel; Patric-Link nennt anzahl=1, mehr ungeprüft). */
+   hat (Mo 02.11. abends) → dann LINKS_FREIGEGEBEN = true. anzahl = gewählte Stellen (vor Freischaltung mit Patric testen). */
 const LINKS_FREIGEGEBEN = false;
 const KAUF = {
   einmal: { smart:'', premium:'', exzellenz:'' },
@@ -508,47 +556,48 @@ const MAXPCT = Math.max(pct(PREISE.bestand['6']), pct(PREISE.bestand['12']));
 const PAKETE = {
   einmal: {
     smart:     { name:'Smart', sub:'Für einfache und saisonale Stellen (z. B. Helfer)', lauf:'60 Tage Laufzeit', featL:'Im Paket enthalten',
-                 feat:['Zugang zu 30.000+ Fachkräften der grünen Branche','Stellenanzeige mit Ihren Bildern und Videos','Nur passende Bewerbungen durch KI-Filterung','Bewerbung in 30 Sekunden','Niemand eingestellt? +30 Tage gratis'] },
+                 feat:['Zugang zu 30.000+ Fachkräften im GreenCareers-Netzwerk','Stellenanzeige mit Ihren Bildern und Videos','Unpassende Bewerbungen sortieren wir vorher aus','Bewerber melden sich in 30 Sekunden per Kurzformular'] },
     premium:   { name:'Premium', sub:'Für qualifizierte Stellen (z. B. Facharbeiter, Vorarbeiter)', lauf:'60 Tage Laufzeit', featL:'Alles aus Smart, plus', top:'Empfehlung',
-                 feat:['Ihre Anzeige ganz oben, 3-fach sichtbarer','Auffallende Darstellung der Anzeige','Ausspielung auf den Social-Media-Kanälen','Einbindung in Ihre Karriereseite','Niemand eingestellt? +30 Tage gratis'] },
+                 feat:['Ihre Anzeige ganz oben, auffällig hervorgehoben','Ausspielung auf Instagram und Facebook','Einbindung in Ihre Karriereseite','Gezielte Ausspielung in Ihrer Region'] },
     exzellenz: { name:'Exzellenz', sub:'Für hochqualifizierte Stellen (z. B. Bauleiter, Kalkulator)', lauf:'90 Tage Laufzeit', featL:'Alles aus Premium, plus',
-                 feat:['Direkte Ansprache auf Premium-Karrierenetzwerken','Recruiting-Partner aus der Branche','Vorqualifizierung aller Bewerber','90 Tage Laufzeit statt 60','Niemand eingestellt? +30 Tage gratis'] },
+                 feat:['Direkte Ansprache auf Premium-Karrierenetzwerken','Recruiting-Partner aus der Branche','Telefonische Vorqualifizierung aller Bewerber','90 Tage Laufzeit statt 60'] },
   },
   abo: {
     smart:     { name:'Smart', sub:'Für einfache und saisonale Stellen (z. B. Helfer)', featL:'Im Abo enthalten',
-                 feat:['Zugang zu 30.000+ aktiven Fachkräften','Stellenanzeige mit Bildern und Videos','KI-Filterung für passende Bewerbungen','Bewerbungen per E-Mail und WhatsApp','Fester Ansprechpartner'] },
+                 feat:['Zugang zu 30.000+ aktiven Fachkräften','Stellenanzeige mit Bildern und Videos','Unpassende Bewerbungen sortieren wir vorher aus','Bewerbungen per E-Mail und WhatsApp','Fester Ansprechpartner'] },
     premium:   { name:'Premium', sub:'Für qualifizierte Stellen (z. B. Facharbeiter, Vorarbeiter)', featL:'Alles aus Smart, plus', top:'Black-Month-Angebot',
-                 feat:['Ausspielung auf allen Social-Media-Kanälen','Ihre Anzeige ganz oben, 3-fach sichtbarer','Premium-Darstellung der Anzeige','Einbindung in Ihre Karriereseite','Bewerber-Targeting DACH-weit'] },
+                 feat:['Ausspielung auf Instagram und Facebook','Ihre Anzeige ganz oben, auffällig hervorgehoben','Einbindung in Ihre Karriereseite','Gezielte Ausspielung in Ihrer Region'] },
     exzellenz: { name:'Exzellenz', sub:'Für hochqualifizierte Stellen (z. B. Bauleiter, Kalkulator)', featL:'Alles aus Premium, plus',
-                 feat:['Direkte Ansprache auf Premium-Karrierenetzwerken','Recruiting-Partner aus der Branche','Vorqualifizierung aller Bewerber','Persönlicher Senior-Recruiter','Reichweite in der GreenCareers-Community'] },
+                 feat:['Direkte Ansprache auf Premium-Karrierenetzwerken','Recruiting-Partner aus der Branche','Telefonische Vorqualifizierung aller Bewerber','Persönlicher Senior-Recruiter','Reichweite in der GreenCareers-Community'] },
   },
   bestand: {
     '6':  { name:'Premium · 6 Monate', sub:'Wenn eine Stelle drängt. Regulär 899 € im Monat.', featL:'Im Premium-Abo enthalten' },
     '12': { name:'Premium · 12 Monate', sub:'Für das ganze Jahr. Regulär 739 € im Monat.', featL:'Im Premium-Abo enthalten', top:'Empfehlung' },
   },
 };
-const FEAT_BESTAND = ['Zugang zu 30.000+ Fachkräften der grünen Branche','Ihre Anzeige ganz oben, 3-fach sichtbarer','Ausspielung auf allen Social-Media-Kanälen','Bewerbungen per E-Mail und WhatsApp','Stelle besetzt? Nächste Stelle drauf.','Fester Ansprechpartner'];
+const FEAT_BESTAND = ['Zugang zu 30.000+ Fachkräften der grünen Branche','Ihre Anzeige ganz oben, auffällig hervorgehoben','Ausspielung auf Instagram und Facebook','Bewerbungen per E-Mail und WhatsApp','Unpassende Bewerbungen sortieren wir vorher aus','Fester Ansprechpartner'];
 
 const TEXT = {
   einmal: {
     topNote:'nur bis 15.11.', topBtn:'Rückruf anfordern',
     bmLine:'Nur bis 15.11. · 30 Plätze',
     h1:'Mitarbeiter finden. <span class="akz">Alle Pakete reduziert.</span>',
-    lead:'Ihre Stellenanzeige vor 30.000+ Fachkräften der grünen Branche. Alle drei Pakete zum Black-Month-Preis, einmal zahlen, kein Abo.',
-    heroBtn:'Paket wählen',
-    hpreis:'Premium <b>3.650 €</b> <s>statt 4.290 €</s> einmalig netto',
+    lead:'Ihre Stellenanzeige im GreenCareers-Netzwerk mit 30.000+ Fachkräften der grünen Branche. Alle drei Pakete zum Black-Month-Preis, einmal zahlen, kein Abo.',
+    heroBtn:'Paket wählen', hlink:'oder Rückruf anfordern',
+    hpreis:'Smart <b>2.550 €</b> · Premium <b>3.650 €</b> · einmalig netto, kein Abo',
     mrund:'<b>−15 %</b> auf alle Pakete',
     rund:'<div><small>alle Pakete</small><b>−15 %</b></div>',
     formKicker:'Kostenloser Rückruf', formH:'Wir rufen Sie zurück.', formBtn:'Rückruf anfordern', formBtnSmall:'unverbindlich · dauert 10 Sekunden',
     formNote:'Preise netto zzgl. USt., nur für Unternehmen.',
     doneH:'Danke, wir melden uns.', doneP:'Unser Vertrieb ruft Sie schnellstmöglich zurück.',
     pOver:'Pakete', pH2:'Drei Pakete. <span class="akz">Alle 15 % günstiger.</span>',
-    allin:['Einmal zahlen','Keine Verlängerung, kein Abo','Niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise ab 01.11.2026. Black-Month-Preise bis 15.11.2026, begrenzt auf 30 Plätze.',
+    allin:['Einmal zahlen','Keine Verlängerung, kein Abo','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
+    legal:'Alle Preise netto zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise auf green-careers.de. Black-Month-Preise bis 15.11.2026, begrenzt auf 30 Plätze.',
     steps:[['01','Paket wählen.','Paket und Anzahl der Stellen wählen oder kurz mit uns sprechen.'],['02','Betrieb zeigen.','Position, Ort, ein paar Bilder. Wir bauen Ihre Anzeige.'],['03','Bewerber kennenlernen.','Passende Bewerbungen kommen direkt zu Ihnen.']],
     faq:[['Wie lange läuft meine Anzeige?','Smart und Premium 60 Tage, Exzellenz 90 Tage. Wird in dieser Zeit niemand eingestellt, kommen 30 Tage ohne Aufpreis dazu.'],
          ['Verlängert sich das Paket automatisch?','Nein. Sie zahlen einmal, kein Abo.'],
-         ['Ich suche mehrere Mitarbeiter.','Ab der zweiten Stelle sinkt der Preis je Stelle: 10 % bei 2, 20 % bei 3, 30 % bei 4 Stellen. Zusätzlich zum Black-Month-Preis.'],
+         ['Ich suche mehrere Mitarbeiter.','Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen. Zusätzlich zum Black-Month-Preis.'],
+         ['Was heißt „+30 Tage gratis“?','Wird die gesuchte Person innerhalb der regulären Laufzeit nicht eingestellt, kommen 30 zusätzliche Tage ohne Aufpreis dazu. Eine Einstellung wird nicht zugesagt.'],
          ['Wie schnell finde ich jemanden?','Unsere Kunden stellen im Durchschnitt in 45 Tagen ein.']],
     bandH2:'Ihr nächster Mitarbeiter. <span class="akz">Zum Black-Month-Preis.</span>', bandP:'Alle Pakete 15 % günstiger, nur bis 15. November.',
     stickySmall:'Black Month bis 15.11.', stickyB:'Alle Pakete −15 %',
@@ -557,49 +606,49 @@ const TEXT = {
     topNote:'16.–30.11.', topBtn:'Rückruf anfordern',
     bmLine:'16.–30.11. · 30 Plätze',
     h1:'Premium-Abo. <span class="akz">Zum Smart-Preis.</span>',
-    lead:'Ihre Stelle ganz oben und auf allen Social-Media-Kanälen, zum Preis des kleinen Pakets. Fest für die ganze Laufzeit.',
-    heroBtn:'Paket wählen',
+    lead:'Ihre Stellenanzeige bei GreenCareers ganz oben, dazu auf Instagram und Facebook. Zum Preis des kleinen Pakets, fest für die ganze Laufzeit.',
+    heroBtn:'Paket wählen', hlink:'oder Rückruf anfordern',
     hpreis:'Premium <b>499 €</b> <s>statt 699 €</s> im Monat · 12 Monate · gesamt 5.988 € netto',
-    mrund:'<b>Premium</b> zum Smart-Preis',
-    rund:'<div><small>Premium zum</small><b class="s">Smart-</b><small>Preis</small></div>',
+    mrund:'',
+    rund:'',
     formKicker:'Kostenloser Rückruf', formH:'Wir rufen Sie zurück.', formBtn:'Rückruf anfordern', formBtnSmall:'unverbindlich · dauert 10 Sekunden',
     formNote:'Preise netto zzgl. USt., nur für Unternehmen.',
     doneH:'Danke, wir melden uns.', doneP:'Unser Vertrieb ruft Sie schnellstmöglich zurück.',
     pOver:'Pakete', pH2:'Premium. <span class="akz">Zum Smart-Preis.</span>',
-    allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','Niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto pro Monat zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise ab 01.11.2026 (green-careers.de/abo). Black-Month-Preis bei Abschluss vom 16.11. bis 30.11.2026, begrenzt auf 30 Plätze.',
-    steps:[['01','Abo wählen.','Paket, Laufzeit und Stellen wählen oder kurz mit uns sprechen.'],['02','Betrieb zeigen.','Position, Ort, ein paar Bilder. Wir bauen Ihre Anzeige.'],['03','Bewerber kennenlernen.','Laufend passende Bewerbungen. Stelle besetzt? Die nächste kommt drauf.']],
+    allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
+    legal:'Alle Preise netto pro Monat zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise auf green-careers.de/abo. Black-Month-Preis bei Abschluss vom 16.11. bis 30.11.2026, begrenzt auf 30 Plätze.',
+    steps:[['01','Abo wählen.','Paket, Laufzeit und Stellen wählen oder kurz mit uns sprechen.'],['02','Betrieb zeigen.','Position, Ort, ein paar Bilder. Wir bauen Ihre Anzeige.'],['03','Bewerber kennenlernen.','Laufend passende Bewerbungen, direkt zu Ihnen.']],
     faq:[['Gilt der Preis nur im ersten Monat?','Nein, für die gesamte Mindestlaufzeit.'],
          ['Was passiert, wenn meine Stelle besetzt ist?','Sie setzen die nächste offene Stelle auf Ihren Abo-Platz.'],
-         ['Ich suche mehrere Mitarbeiter.','Ab der zweiten Stelle sinkt der Preis je Stelle: 10 % bei 2, 20 % bei 3, 30 % bei 4 Stellen. Zusätzlich zum Black-Month-Preis.'],
-         ['Wie lange läuft das Abo?','6 oder 12 Monate. Danach verlängert es sich einmal um 3 Monate, dann monatlich. Kündigung per E-Mail bis Ende Monat 3 (6 Monate) bzw. Monat 9 (12 Monate).'],
+         ['Ich suche mehrere Mitarbeiter.','Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen. Zusätzlich zum Black-Month-Preis.'],
+         ['Wie lange läuft das Abo?','Mindestlaufzeit 6 oder 12 Monate. Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende. Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.'],
          ['Und wenn niemand passt?','Wird innerhalb der Mindestlaufzeit niemand eingestellt, kommen 30 Tage ohne Aufpreis dazu.'],
          ['Wie zahle ich?','Per Kreditkarte oder SEPA-Lastschrift, monatlich.']],
-    bandH2:'Ihr nächster Mitarbeiter. <span class="akz">Premium zum Smart-Preis.</span>', bandP:'Premium ab 499 € im Monat, nur bis 30. November.',
+    bandH2:'Ihr nächster Mitarbeiter. <span class="akz">Premium zum Smart-Preis.</span>', bandP:'6 oder 12 Monate wählbar. Premium ab 499 € im Monat, nur bis 30. November.',
     stickySmall:'Black Month bis 30.11.', stickyB:'Premium ab 499 €/Monat',
   },
   bestand: {
-    topNote:'nur für Bestandskunden', topBtn:'Platz sichern',
-    bmLine:'Nur für Bestandskunden · bis 20.11.',
+    topNote:'nur für Bestandskunden', topBtn:'Auf die Warteliste',
+    bmLine:'Kauf 05.–20.11. · bis dahin Warteliste',
     h1:'Black-Month-Deal <span class="akz">für Bestandskunden.</span>',
-    lead:'Das Premium-Abo für Ihren nächsten Mitarbeiter. Jetzt starten, damit Ihr Team im Frühjahr komplett ist.',
-    heroBtn:'Preise ansehen',
+    lead:'Das Premium-Abo für Ihren nächsten Mitarbeiter, nur für Bestandskunden. Jetzt Platz vormerken, Kauf ab 05.11.',
+    heroBtn:'Auf die Warteliste', hlink:'oder Preise ansehen',
     mrund:`bis zu <b>−${MAXPCT} %</b> Premium-Abo`,
-    hpreis:`Ab <b>${PREISE.bestand['12'].preis} €</b> <s>statt ${PREISE.bestand['12'].liste} €</s> im Monat, Preis fest`,
+    hpreis:`Ab <b>${PREISE.bestand['12'].preis} €</b> <s>statt ${PREISE.bestand['12'].liste} €</s> im Monat bei 12 Monaten · gesamt ${(PREISE.bestand['12'].preis * 12).toLocaleString('de-DE')} € netto`,
     rund:`<div><small>bis zu</small><b>−${MAXPCT} %</b><small>Premium-Abo</small></div>`,
-    formKicker:'Warteliste · 30 Plätze', formH:'Preis sichern, ohne zu kaufen.', formBtn:'Auf die Warteliste', formBtnSmall:'unverbindlich · sichert Ihnen den Preis bis 20.11.',
+    formKicker:'Warteliste · 30 Plätze', formH:'Platz vormerken, ohne zu kaufen.', formBtn:'Auf die Warteliste', formBtnSmall:'unverbindlich · Ihr Ansprechpartner meldet sich ab Di 03.11.',
     formNote:'Kauf ab Do 05.11. · Preise netto zzgl. USt.',
-    doneH:'Sie stehen auf der Warteliste.', doneP:'Damit ist Ihr Platz gesichert. Wir melden uns schnellstmöglich.',
+    doneH:'Sie sind vorgemerkt.', doneP:'Ihr Ansprechpartner meldet sich ab Di 03.11. bei Ihnen. Buchen können Sie ab Do 05.11. Die 30 Plätze gehen in der Reihenfolge der Einträge.',
     pOver:'Ihr Angebot', pH2:`Premium-Abo. <span class="akz">Bis zu ${MAXPCT} % unter Listenpreis.</span>`,
-    allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','Niemand eingestellt? +30 Tage gratis'],
-    legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos ab 01.11.2026 (green-careers.de/abo). Kauf vom 05.11. bis 20.11.2026, begrenzt auf 30 Plätze.',
-    steps:[['01','Eintragen.','Name, E-Mail, Telefon. Unverbindlich.'],['02','Wir melden uns.','Ihr Ansprechpartner klärt, welche Stelle Sie besetzen wollen.'],['03','Stelle geht live.','Wir bauen Ihre Anzeige, die Bewerbungen kommen zu Ihnen.']],
-    faq:[['Wer bekommt den Preis?','Betriebe, die schon mit GreenCareers eingestellt haben. Die Plätze sind auf 30 begrenzt.'],
+    allin:['Preis fest für die ganze Laufzeit','Keine Setup-Gebühr','Stelle besetzt? Nächste Stelle drauf.','In der Laufzeit niemand eingestellt? +30 Tage gratis'],
+    legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Kauf vom 05.11. bis 20.11.2026, begrenzt auf 30 Plätze.',
+    steps:[['01','Eintragen.','Name, E-Mail, Telefon. Unverbindlich.'],['02','Kauf-Link per Mail.','Ab Do 05.11. bekommen Sie den Kauf-Link. Ihr Ansprechpartner meldet sich vorher.'],['03','Stelle geht live.','Wir bauen Ihre Anzeige, die Bewerbungen kommen zu Ihnen.']],
+    faq:[['Wer bekommt den Preis?','Betriebe, die schon bei GreenCareers eine Stelle ausgeschrieben haben. Die Plätze sind auf 30 begrenzt.'],
          ['Kostet die Warteliste etwas?','Nein. Der Eintrag ist unverbindlich.'],
          ['Gilt der Preis nur im ersten Monat?','Nein, für die gesamte Mindestlaufzeit.'],
-         ['Ich suche mehrere Mitarbeiter.','Ab der zweiten Stelle sinkt der Preis je Stelle: 10 % bei 2, 20 % bei 3, 30 % bei 4 Stellen.'],
+         ['Ich suche mehrere Mitarbeiter.','Bei mehreren Stellen wird jede Stelle günstiger: je 10 % bei 2, je 20 % bei 3, je 30 % bei 4 Stellen.'],
          ['Bis wann gilt das Angebot?','Gekauft werden kann vom 05.11. bis 20.11.2026.']],
-    bandH2:`Ihr nächster Mitarbeiter. <span class="akz">Bis zu ${MAXPCT} % günstiger.</span>`, bandP:'Premium-Abo für Bestandskunden, 30 Plätze, bis 20. November.',
+    bandH2:`Ihr nächster Mitarbeiter. <span class="akz">Mit bis zu ${MAXPCT} % Preisvorteil.</span>`, bandP:'Premium-Abo für Bestandskunden, 30 Plätze, bis 20. November.',
     stickySmall:'Nur für Bestandskunden', stickyB:`Premium bis zu −${MAXPCT} %`,
   },
 };
@@ -607,7 +656,7 @@ if (NACH) Object.assign(TEXT.bestand, {
   bmLine:'Nachzügler · nur 24 Stunden', topNote:'Nachzügler · bis Di 24.11., 9 Uhr',
   h1:'Nachzügler-Deal <span class="akz">für Bestandskunden.</span>',
   formNote:'Nur bis Di 24.11., 9 Uhr · Preise netto zzgl. USt.',
-  legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos ab 01.11.2026 (green-careers.de/abo). Nachzügler-Preis bis Di 24.11.2026, 9 Uhr.',
+  legal:'Alle Preise netto pro Monat je Stelle zzgl. gesetzlicher Umsatzsteuer, nur für Unternehmen. Statt-Preise = reguläre Listenpreise des Premium-Abos auf green-careers.de/abo. Nachzügler-Preis bis Di 24.11.2026, 9 Uhr.',
   bandP:'Nachzügler-Preis, nur bis Di 24.11., 9 Uhr.', stickySmall:'Nachzügler bis 24.11., 9 Uhr',
 });
 
@@ -622,25 +671,27 @@ if (MODE === 'bestand') {
   }
   try { const raw = Q.get('p'); if (raw) P = JSON.parse(decodeURIComponent(escape(atob(raw.replace(/-/g,'+').replace(/_/g,'/'))))); } catch (e) { P = {}; }
   if (P.g === 'du') Object.assign(TEXT.bestand, {
-    lead:'Premium-Abo für deinen nächsten Mitarbeiter. Jetzt starten, im Frühjahr komplett. Preis fest für die ganze Laufzeit.',
-    formH:'Preis sichern, ohne zu kaufen.', formBtnSmall:'unverbindlich · sichert dir den Preis bis 20.11.', doneH:'Du stehst auf der Warteliste.', doneP:'Damit ist dein Platz gesichert. Wir melden uns schnellstmöglich.',
-    pOver:'Dein Angebot', bandH2:`Dein nächster Mitarbeiter. <span class="akz">Bis zu ${MAXPCT} % günstiger.</span>`,
+    lead:'Das Premium-Abo für deinen nächsten Mitarbeiter, nur für Bestandskunden. Jetzt Platz vormerken, Kauf ab 05.11.',
+    formH:'Platz vormerken, ohne zu kaufen.', doneH:'Du bist vorgemerkt.', doneP:'Dein Ansprechpartner meldet sich ab Di 03.11. bei dir. Buchen kannst du ab Do 05.11. Die 30 Plätze gehen in der Reihenfolge der Einträge.',
+    pOver:'Dein Angebot', bandH2:`Dein nächster Mitarbeiter. <span class="akz">Mit bis zu ${MAXPCT} % Preisvorteil.</span>`,
   });
 }
 
 const T = TEXT[MODE];
 document.querySelectorAll('[data-t]').forEach(el => { if (T[el.dataset.t] !== undefined) el.innerHTML = T[el.dataset.t]; });
-document.getElementById('rund').innerHTML = T.rund;
+{ const ru = document.getElementById('rund'); if (ru) { if (T.rund) ru.innerHTML = T.rund; else ru.remove(); } }
 document.getElementById('allin').innerHTML = T.allin.map(c => `<span>${c}</span>`).join('');
 document.getElementById('steps').innerHTML = T.steps.map(s => `<div class="step rv"><span>${s[0]}</span><h3>${s[1]}</h3><p>${s[2]}</p></div>`).join('');
 document.getElementById('faq').innerHTML = T.faq.map(f => `<details class="rv"><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join('');
 const NEUKUNDEN = MODE !== 'bestand';
+if (!NEUKUNDEN) { document.querySelector('.hero__cta .btn').href = '#formular'; document.querySelector('.hlink').href = '#pakete'; document.querySelector('.beweis')?.remove(); }
+if (NEUKUNDEN) document.getElementById('team').hidden = false;
+if (NEUKUNDEN) { for (const id of ['bandBtn','stickyBtn']) { const b = document.getElementById(id); b.href = '#pakete'; (b.querySelector('span') || b).textContent = 'Paket wählen'; } }
 document.querySelectorAll('[data-only]').forEach(el => { if ((el.dataset.only === 'bestand') === NEUKUNDEN) el.remove(); });
 if (MODE === 'bestand' && P.b) {
   const pe = document.getElementById('pers'); pe.hidden = false;
   document.getElementById('p-betrieb').textContent = P.b;
   document.getElementById('p-logo').innerHTML = P.l ? `<img src="${P.l}" alt="">` : P.b.trim()[0];
-  if (P.y) document.querySelector('#pers span').textContent = `Kunde seit ${P.y}`;
 }
 if (MODE === 'bestand') {
   const CL = { julian:'Julian Kohansal', liam:'Liam Quick' }[String(P.c || '').toLowerCase()];
@@ -666,22 +717,23 @@ function karte(k, p, pr, n, opts) {
   const listeGesamt = pr.liste ? jeStelle(pr.liste, n) * n : null;
   const href = kaufLink(k, n);
   const btnTxt = opts.btnTxt;
-  const btn = href
-    ? `<a class="btn btn-main" href="${href}" target="_blank" rel="noopener">${btnTxt} ${ARROW}</a>`
-    : `<a class="btn btn-main" href="#formular">${opts.ersatzTxt} ${ARROW}</a>`;
+  const bcls = opts.soft ? 'btn btn-soft' : 'btn btn-main';
+  const btn = (opts.smartnote ? `<span class="smartnote" style="margin:0 0 10px">${opts.smartnote}</span>` : '') + (href
+    ? `<a class="${bcls}" href="${href}" target="_blank" rel="noopener">${btnTxt} ${ARROW}</a>`
+    : `<a class="${bcls}" href="#formular">${opts.ersatzTxt} ${ARROW}</a>`);
   const hinweis = (opts.hint ? `<span class="bhint">${opts.hint}</span>` : '') + (!href && !LIVE && opts.phHinweis ? `<span class="ph">${opts.phHinweis}</span>` : '');
-  return `<div class="card${p.top ? ' card--top' : ''}" data-pkg="${k}">
+  return `<div class="card${p.top ? ' card--top' : ''}${opts.rund ? ' card--rund' : ''}" data-pkg="${k}">
     ${p.top ? `<div class="card__badge">${p.top}</div>` : ''}
     ${opts.rund ? `<div class="card__rund"><div>${opts.rund}</div></div>` : ''}
     <h3>${p.name}</h3>
     <div class="card__sub">${p.sub}</div>
-    <div class="qty"><span>Stellen</span><div class="seg">${[1,2,3,4].map(i => `<button type="button" data-n="${i}" class="${i===n?'on':''}" aria-pressed="${i===n}">${i}</button>`).join('')}</div></div>
+    <div class="qty"><span>Stellen gleichzeitig</span><div class="seg">${[1,2,3,4].map(i => `<button type="button" data-n="${i}" class="${i===n?'on':''}" aria-pressed="${i===n}">${i}</button>`).join('')}</div></div>
     <div class="price">
       ${listeGesamt ? `<s>statt ${eur(listeGesamt)} €</s>` : '<s class="ph0">–</s>'}
       <b>${eur(gesamt)} <small>€</small></b>
       <em>${opts.einheit}</em>
-      ${opts.deal ? `<span class="deal">${opts.deal}</span>` : ''}${opts.smartnote ? `<span class="smartnote">${opts.smartnote}</span>` : ''}
-      <div class="qtynote">${n > 1 ? `${n} Stellen · ${eur(proStelle)} € je Stelle` : ''}</div>
+      ${opts.deal ? `<span class="deal">${opts.deal}</span>` : ''}${opts.regulaer ? `<span class="smartnote" style="color:var(--gc-ink-muted)">${opts.regulaer}</span>` : ''}
+      <div class="qtynote">${n > 1 ? `${n} Stellen · ${eur(proStelle)} € je Stelle (−${STAFFEL[n]} % Mengenpreis)` : `Mehrere Stellen: jede Stelle günstiger (2 Stellen je −10 %, 3 je −20 %, 4 je −30 %), zusätzlich zum ${pr.liste ? 'Black-Month-Preis' : 'Paketpreis'}`}</div>
     </div>
     <hr>
     <div class="feat-l">${p.featL}</div>
@@ -711,10 +763,12 @@ function render() {
       const n = stellen[k] || 1;
       return karte(k, p, preise[k], n, {
         einheit: MODE === 'abo' ? `pro Monat netto · ${term} Monate · gesamt ${eur(jeStelle(preise[k].preis, n) * n * +term)} €` : `einmalig netto · ${p.lauf}`,
-        deal: MODE === 'abo' ? (k === 'premium' ? 'Premium zum Smart-Preis' : '') : '−15 % Black Month',
+        deal: MODE === 'abo' ? '' : '−15 % Black Month',
         btnTxt:`${p.name} wählen`, ersatzTxt:`${p.name} wählen`,
-        hint: kaufLink(k, n) ? 'Direkt buchen, Zahlung per Karte oder Lastschrift.' : (LIVE ? 'Wir rufen zurück und schicken Ihnen den Buchungslink.' : ''),
-        smartnote: MODE === 'abo' && k === 'smart' ? `Im Black Month bekommen Sie für ${preise.smart.preis} € schon Premium.` : '',
+        hint: (kaufLink(k, n) || !LIVE) ? (MODE === 'abo' ? 'Weiter zur Bestellung · Karte oder SEPA-Lastschrift' : 'Weiter zur Bestellung · Karte oder Rechnung') : 'Wir rufen zurück und schicken Ihnen den Buchungslink.',
+        smartnote: MODE === 'abo' && k === 'smart' ? `Für ${preise.smart.preis} € bekommen Sie im Black Month schon Premium.` : '',
+        soft: MODE === 'abo' && k === 'smart',
+        regulaer: MODE === 'abo' && k === 'exzellenz' ? 'Regulärer Preis, nicht Teil der Aktion' : '',
         phHinweis:'Kauf-Link fehlt noch (Patric)',
       });
     }).join('');
@@ -733,16 +787,19 @@ if (MODE !== 'einmal') {
   document.getElementById('vertrag').hidden = false;
   document.getElementById('vertragList').innerHTML = [
     'Mindestlaufzeit 6 oder 12 Monate, Preis fest für die ganze Zeit.',
-    'Kündigung per E-Mail bis Ende Monat 3 (6 Monate) bzw. Monat 9 (12 Monate).',
-    'Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.',
+    'Kündigung per E-Mail spätestens 3 Monate vor Laufzeitende.',
+    MODE === 'bestand' ? 'Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar. Den Preis dafür nennt Ihnen Ihr Ansprechpartner vor dem Kauf.' : 'Ohne Kündigung einmal 3 Monate weiter, danach monatlich kündbar.',
     'Zahlung monatlich per Karte oder Lastschrift, keine Setup-Gebühr.',
   ].map(x => `<li>${x}</li>`).join('');
 }
 if (MODE === 'bestand') {
-  const ck = String(P.c || '').toLowerCase(), CL = { julian:'Julian Kohansal', liam:'Liam Quick' }[ck];
+  const ck = String(P.c || '').toLowerCase(), CL = { julian:'Julian Kohansal', liam:'Liam Quick' }[ck], CM = { julian:'julian.kohansal@green-careers.de', liam:'liam.quick@green-careers.de' }[ck];
   if (CL) { const c = document.getElementById('closer'); c.hidden = false;
-    c.innerHTML = `<img src="img/avatar-${ck}.png" alt=""><span><b>${CL}</b><br>${P.g === 'du' ? 'Dein' : 'Ihr'} Ansprechpartner bei GreenCareers</span>`; }
-  if (P.s) document.querySelector('.stage .lead').textContent = (P.g === 'du' ? `Suchst du wieder ${P.s}? ` : `Suchen Sie wieder ${P.s}? `) + document.querySelector('.stage .lead').textContent;
+    c.innerHTML = `<img src="img/avatar-${ck}.png" alt=""><span><b>${CL}</b>, ${P.g === 'du' ? 'dein' : 'Ihr'} Ansprechpartner<br><a href="mailto:${CM}" style="color:var(--gc-accent)">${CM}</a></span>`; }
+  const du = P.g === 'du', lead = document.querySelector('.stage .lead');
+  const bezug = P.y ? (du ? `${P.y} hast du bei uns eine Stelle ausgeschrieben. ` : `${P.y} haben Sie bei uns eine Stelle ausgeschrieben. `) : '';
+  if (P.s) lead.textContent = bezug + (du ? `Suchst du wieder ${P.s}? Jetzt Platz vormerken, Kauf ab 05.11.` : `Suchen Sie wieder ${P.s}? Jetzt Platz vormerken, Kauf ab 05.11.`);
+  else if (bezug) lead.textContent = bezug + lead.textContent;
 }
 
 /* ===== Formular ===== */
@@ -786,9 +843,9 @@ const HIRED = [
 ];
 document.getElementById('hired').innerHTML = HIRED.map(h => `<div class="hc rv"><div class="hc__logo"><img src="img/logos/${h.logo}.png" alt="${h.name}" loading="lazy"></div><div><b>${h.name}</b><small>${h.ort}</small><span class="pos">Eingestellt: ${h.stelle}</span></div></div>`).join('');
 const REVIEWS = [
+  { chip:'Zwei Fachkräfte eingestellt', name:'Dominik Heinlein', when:'vor 7 Monaten', text:'Zwei neue Fachkräfte über GreenCareers eingestellt. Nachdem wir bei einer Recruiting-Agentur und anderen Stellenportalen monatelang nur unpassende Profile bekommen haben, war hier die Qualität spürbar höher. Die Betreuung von Frau Reike war zudem sehr angenehm.' },
   { chip:'Vielzahl an Bewerbern', name:'Saatzucht Breun', when:'vor einer Woche', text:'Es ist unser erster Kontakt mit GreenCareers. Mit der bisherigen Zusammenarbeit und den Vermittlungsresultaten sind wir als kleine Firma sehr zufrieden. Wir waren überrascht über die Vielzahl an Bewerbern auf unsere zwei geschalteten Anzeigen und auch über die große Reichweite.' },
   { chip:'20+ Bewerber', name:'Tobias Knauf', when:'vor 6 Monaten', text:'Nach kurzer Zeit hatte ich mehr als 20 Bewerber auf meine ausgeschriebene Stelle im Garten- und Landschaftsbau. Ich kann GreenCareers jedem Arbeitgeber und Arbeitnehmer nur empfehlen. …' },
-  { chip:'Zwei Fachkräfte eingestellt', name:'Dominik Heinlein', when:'vor 7 Monaten', text:'Zwei neue Fachkräfte über GreenCareers eingestellt. Nachdem wir bei einer Recruiting-Agentur und anderen Stellenportalen monatelang nur unpassende Profile bekommen haben, war hier die Qualität spürbar höher. Die Betreuung von Frau Reike war zudem sehr angenehm.' },
   { chip:'Eingestellt nach 3 Wochen', name:'Christine U.', when:'vor 7 Monaten', text:'Nach 3 Wochen konnten wir einen Baumschulgärtner fest einstellen. Es waren zwar auch sehr viele Gespräche mit Bewerbern nötig, aber ein vergleichbares Ergebnis hatten wir über andere Wege noch nicht. Ich kann GreenCareers empfehlen.' },
   { chip:'Straßen- und Tiefbau', name:'Jana Sturm', when:'vor 4 Monaten', text:'Wir waren ehrlich gesagt skeptisch, ob GreenCareers für ein Straßen- und Tiefbauunternehmen geeignet ist. Nach der ersten erfolgreichen Einstellung muss ich das revidieren. Hat besser funktioniert als ich dachte …' },
   { chip:'Mehrere Bewerber pro Tag', name:'Boas Diehl', when:'vor 6 Monaten', text:'Unkomplizierte Plattform, bei der es einen guten Rücklauf von mehreren Bewerbern pro Tag gegeben hat. Eine gute, unkomplizierte und offene Kommunikation der Mitarbeiter erleichtern die Zusammenarbeit! Vielen Dank für Eure Bemühungen! Die Plattform kann man weiterempfehlen!' },
@@ -804,6 +861,8 @@ const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting
 document.querySelectorAll('.rv').forEach(el => io.observe(el));
 const sticky = document.getElementById('sticky'), heroEl = document.querySelector('.hero');
 new IntersectionObserver(([e]) => sticky.classList.toggle('show', !e.isIntersecting)).observe(heroEl);
+document.documentElement.dataset.ok = '1';
 </script>
-</body>
-</html>
+
+
+</body></html>
